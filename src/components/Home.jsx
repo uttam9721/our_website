@@ -13,9 +13,10 @@ import { ReactTyped,Typed } from "react-typed";
 
 const Home = () => {
   return (
-    <div className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20'>
+    <>
+    <div name="Home" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20'>
      <div className="flex flex-col md:flex-row">
-     <div className="md:w-1/2 md:mt-24 space-y-2 order-2">
+     <div className="md:w-1/2 md:mt-24 space-y-2 order-2 md:order-1">
      <span className='text-xl'>Welcome In My Feed</span>
      <div className='flex space-x-1 text-2xl md:text-4xl'>
      <h1 >Hello, I'm a</h1>
@@ -37,8 +38,8 @@ to contribute to innovative web development projects.</p>
 <br />
 
 {/* social media */}
-<div className='flex justify-between'>
-<div className='space-y-2'>
+<div className='flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0'>
+<div className='space-y-2 '>
 <h1 className='font-bold'> Available on </h1>
      <ul className='flex space-x-5'>
       <li>
@@ -69,10 +70,13 @@ to contribute to innovative web development projects.</p>
       </div>
 </div>
      </div>
-     <div className="md-w-1/2 md:ml-48 md:mt-20 order">
+     <div className="md-w-1/2 md:ml-48 md:mt-20 mt-8 md:order-1">
      <img src={pic} className='rounded-full md:w-[450px] md:h-[450px]' alt="img" /></div>
      </div>
     </div>
+    {/* <br /> */}
+    <hr />
+    </>
   )
 }
 
