@@ -50,28 +50,36 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navbar */}
-        {menu && (
-          <div className='m-0'>
-            <ul className='md:hidden flex flex-col h-screen items-start justify-start space-y-4 text-left px-8 mt-16 m-0'>
-              {navItems.map(({ id, text }) => (
-                <li
-                  className='hover:scale-105 duration-200 font-semibold cursor-pointer text-xl m-0'
-                  key={id}
-                >
-                  <Link
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    onClick={() => setMenu(false)}  // Close the menu when clicking on a link
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div
+          className={`fixed top-0 right-0 w-[250px] h-screen bg-white shadow-lg transform ${
+            menu ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out z-50 m-0`}
+        >
+          {/* Close Button */}
+          <div className="flex justify-end p-4">
+            <IoClose size={24} className="cursor-pointer" onClick={() => setMenu(false)} />
           </div>
-        )}
+
+          {/* Mobile Menu Links */}
+          <ul className='flex flex-col h-full items-start justify-start space-y-4 text-left px-8 mt-4 m-0'>
+            {navItems.map(({ id, text }) => (
+              <li
+                className='hover:scale-105 duration-200 font-semibold cursor-pointer text-xl m-0'
+                key={id}
+              >
+                <Link
+                  to={text}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={() => setMenu(false)}  // Close the menu when clicking on a link
+                >
+                  {text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
