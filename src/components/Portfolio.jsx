@@ -135,6 +135,7 @@ function PortFolio() {
             <div
               key={id}
               className="border-[2px] rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 duration-300"
+              // className="border-[2px] rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 duration-300"
             >
               <img
                 src={logo}
