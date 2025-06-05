@@ -35,7 +35,6 @@ function PortFolio() {
       id: 5,
       logo: JavaScript,
       name: "Java Projects",
-      // description: "Core Java-based applications, demonstrating OOPs and data structures.",
     },
   ];
 
