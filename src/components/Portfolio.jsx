@@ -33,8 +33,8 @@ function PortFolio() {
     },
     {
       id: 5,
-      logo: JavaScript,
-      name: "Java Projects",
+      // logo: JavaScript,
+      name: "JavaScript Projects",
     },
   ];
 
