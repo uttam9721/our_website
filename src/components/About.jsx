@@ -59,9 +59,9 @@ Proficient in JavaScript, with experience in both frontend and backend developme
       <span>
       Full Stack Web Developer (Intern)
 Amzsoft Innovexa, [Lucknow]
-[June, 2024] – [August,2024]
+[June, 2024] – [December,2024]
 <li>
-Completed a 3-month internship focused on full stack web development using the MERN stack.
+Completed a 6-month internship focused on full stack web development using the MERN stack.
 </li>
 <li>
 Developed and maintained web applications, implementing both frontend and backend functionalities.
