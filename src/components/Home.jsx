@@ -42,7 +42,7 @@ to contribute to innovative web development projects.</p>
 <div className='space-y-2 '>
 <h1 className='font-bold'> Available on </h1>
      <ul className='flex space-x-5'>
-      <li>
+      {/* <li>
         {"  "} 
         <FaFacebookSquare className='text-2xl cursor-pointer'/>
         </li>
@@ -54,7 +54,47 @@ to contribute to innovative web development projects.</p>
        </li>
      <li>{" "}
        <FaGithub className='text-2xl cursor-pointer' />
-       </li>
+       </li> */}
+       <li>
+  <a
+    href="https://www.facebook.com/share/1VZeVquULm/"
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+  >
+    <FaFacebookSquare className='text-2xl cursor-pointer' />
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://www.linkedin.com/in/uttam-fullstack?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+  >
+    <FaLinkedin className='text-2xl cursor-pointer' />
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://www.instagram.com/iamuttam_maurya?utm_source=qr&igsh=MXNkZHh4MXE4MWczMw=="
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+  >
+    <FaInstagram className='text-2xl cursor-pointer' />
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/uttam9721"
+    target="_blank"
+    rel="nofollow noopener noreferrer"
+  >
+    <FaGithub className='text-2xl cursor-pointer' />
+  </a>
+</li>
+
       </ul>
       </div>
       {/* <div> */}
