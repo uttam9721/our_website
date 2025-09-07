@@ -34,7 +34,7 @@ function PortFolio() {
   name: "CryptoPlace",
   description:
     "Developed a cryptocurrency tracking platform using React.js and Tailwind CSS with real-time data visualization through React Chart. Integrated Firebase authentication for secure user access. Deployed on Vercel ensuring fast performance and responsive design.",
-  techStack: ["React.js", "React Chart", "Tailwind CSS", "Firebase"],
+  TechStack: ["React.js", "React Chart", "Tailwind CSS", "Firebase"],
   link: "https://coin-weld-zeta.vercel.app/",
 },
 
