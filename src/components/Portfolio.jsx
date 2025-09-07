@@ -33,11 +33,36 @@ function PortFolio() {
   id: 4,
   name: "CryptoPlace",
   description:
-    "Developed a cryptocurrency tracking platform using React.js and Tailwind CSS with real-time data visualization through React Chart. Integrated Firebase authentication for secure user access. Deployed on Vercel ensuring fast performance and responsive design.",
+    "Developed a cryptocurrency tracking platform using React.js and Tailwind CSS with real-time data visualization through React Chart. Integrated Firebase authentication for secure user access. Implemented dynamic searching for efficient coin lookup. Deployed on Vercel ensuring fast performance and responsive design.",
   TechStack: ["React.js", "React Chart", "Tailwind CSS", "Firebase"],
   link: "https://coin-weld-zeta.vercel.app/",
 },
-
+{
+  id: 5,
+  name: "PetWorld",
+  description:
+    "Developed a full-stack pet care and adoption platform using the MERN stack. Implemented secure authentication with JWT and bcrypt, enabling users to sign up, log in, and manage adoption requests. Styled with Tailwind CSS for a modern and responsive design. Currently available on GitHub for further deployment.",
+  TechStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "bcrypt"],
+  link: "https://github.com/uttam9721/petWord",
+},
+{
+  id: 6,
+  name: "Modexa - E-Commerce Platform",
+  description:
+    "Building a full-stack ecommerce application with product listings, cart management, secure authentication, and planned Stripe payment integration. Developed using React.js with Context API for state management, Tailwind CSS for responsive UI, and Node.js with Express and MongoDB for the backend. Integrated JWT and bcrypt for authentication and authorization. Currently under development and available on GitHub.",
+  TechStack: [
+    "React.js",
+    "Context API",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "bcrypt",
+    "Stripe"
+  ],
+  link: "https://github.com/uttam9721/Modexa",
+},
   ];
 
   const openLink = (url) => {
