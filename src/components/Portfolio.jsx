@@ -63,6 +63,24 @@ function PortFolio() {
   ],
   link: "https://github.com/uttam9721/Modexa",
 },
+{
+  id: 7,
+  name: "FloraVision",
+  description:
+    "Created a modern and responsive plant shop website using React.js and Tailwind CSS. Focused on delivering an elegant UI with smooth animations, product listings, and category filters. Designed for an engaging browsing experience and deployed on Vercel.",
+  TechStack: ["React.js", "Tailwind CSS", "JavaScript"],
+  link: "https://floravision-pied.vercel.app/",
+},
+
+{
+  id: 8,
+  name: "MyShop",
+  description:
+    "Developed a fully responsive online shopping platform using React.js and Tailwind CSS. Implemented product listing, cart management, and order summary features with a user-friendly interface. Designed to simulate a real-world e-commerce experience and deployed seamlessly on Vercel.",
+  TechStack: ["React.js", "Tailwind CSS", "JavaScript"],
+  link: "https://my-shop-ten-mauve.vercel.app/",
+},
+
   ];
 
   const openLink = (url) => {
