@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import pic from "../../public/photo.avif";
+import logo from "../../public/logo.jpg";
 import { IoMenuOutline, IoClose } from "react-icons/io5";
 import { Link } from 'react-scroll';
 
@@ -22,7 +23,7 @@ const Navbar = () => {
           
           {/* Brand Logo and Name */}
           <div className='flex space-x-2 m-0'>
-            <img src={pic} className='h-12 w-12 rounded-full m-0' alt="img" />
+            <img src={logo} className='h-12 w-12 rounded-full m-0' alt="img" />
             <h1 className='font-semibold text-xl cursor-pointer m-0'>
               Uttam <span className='text-green-500 text-2xl'>Kumar</span>
               <p className='text-sm m-0'>Full Stack Web Developer</p>

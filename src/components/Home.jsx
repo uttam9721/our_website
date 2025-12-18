@@ -1,5 +1,6 @@
 import React from 'react'
 import pic from"../../public/photo.avif";
+import logo from "../../public/logo.jpg"
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -111,7 +112,7 @@ to contribute to innovative web development projects.</p>
 </div>
      </div>
      <div className="md-w-1/2 md:ml-48 md:mt-20 mt-8 md:order-1">
-     <img src={pic} className='rounded-full md:w-[450px] md:h-[450px]' alt="img" /></div>
+     <img src={logo} className='rounded-full md:w-[450px] md:h-[450px]' alt="img" /></div>
      </div>
     </div>
     {/* <br /> */}
