@@ -49,7 +49,7 @@ function Experiance() {
   ];
   return (
     <div
-      name="Experiance"
+      name="Experience"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-16"
     >
       <div>
