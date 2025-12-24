@@ -9,7 +9,7 @@ import { SiMongodb } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
-
+import { SiNpm } from "react-icons/si";
 import { ReactTyped,Typed } from "react-typed";
 
 const Home = () => {
@@ -57,6 +57,14 @@ to contribute to innovative web development projects.</p>
        <FaGithub className='text-2xl cursor-pointer' />
        </li> */}
        <li>
+         <a
+                        href="https://www.npmjs.com/package/cb-react-smart-loader"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                      >
+                         <SiNpm size={24} />
+                      </a>
   <a
     href="https://www.facebook.com/share/1VZeVquULm/"
     target="_blank"

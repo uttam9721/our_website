@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa6";
+import { SiNpm } from "react-icons/si";
+
 
 function Footer() {
   return (
@@ -14,6 +16,14 @@ function Footer() {
         <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
           <div className="flex flex-col items-center justify-center">
             <div className="flex space-x-4">
+              <a
+                href="https://www.npmjs.com/package/cb-react-smart-loader"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                 <SiNpm size={24} />
+              </a>
               <a
                 href="https://www.facebook.com/share/aqaQwWoAyZZuRTbw/?mibextid=qi2Omg"
                 target="_blank"
