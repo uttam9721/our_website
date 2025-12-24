@@ -65,13 +65,6 @@ to contribute to innovative web development projects.</p>
                       >
                          <SiNpm size={24} />
                       </a>
-  <a
-    href="https://www.facebook.com/share/1VZeVquULm/"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-  >
-    <FaFacebookSquare className='text-2xl cursor-pointer' />
-  </a>
 </li>
 
 <li>
