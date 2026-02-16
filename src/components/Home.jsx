@@ -28,7 +28,7 @@ const Home = () => {
           </h3>
 
           {/* ===== Typing Heading ===== */}
-          <h1 className="text-5xl font-bold flex items-center gap-3">
+          <h1 className="text-4xl font-bold flex items-center gap-3">
             I am
             <span className="text-red-600">
               <ReactTyped
