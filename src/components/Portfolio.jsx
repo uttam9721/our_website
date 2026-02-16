@@ -1,140 +1,164 @@
 import React from "react";
-import mongoDB from "../../public/image.png";
-import express from "../../public/express.png";
-import reactjs from "../../public/reactjs.png";
 
 function PortFolio() {
   const cardItem = [
     {
+  id: 0,
+  name: "RudraStyles — Clothing Brand Website",
+  description:
+    "Developed a modern clothing brand e-commerce website with product showcase, responsive UI, custom design sections, and smooth navigation. Built using React.js and Tailwind CSS and deployed on Vercel.",
+  techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+  link: "https://github.com/uttam9721/rudraStyles",
+  demo: "https://rudraStyles.vercel.app/",
+  featured: true,
+},
+
+    {
       id: 1,
       name: "Food Ordering App",
       description:
-        "A full-stack food delivery web app built with the MERN stack. Users can browse the menu, add items to cart, make secure online payments, and track orders. Includes admin dashboard, JWT authentication, and Stripe integration.",
+        "A full-stack food delivery web app built with the MERN stack with cart, payments, admin dashboard, JWT authentication and Stripe integration.",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       link: "https://github.com/uttam9721/Restaurant",
+      demo: "",
+      featured: true,
     },
     {
       id: 2,
       name: "E-Learning Platform",
       description:
-        "Developed a modular MERN stack e-learning app with Clerk-based role authentication, Stripe integration for payments, and an admin panel with full CRUD capabilities.",
+        "MERN stack e-learning app with Clerk authentication, Stripe payments, and admin panel with full CRUD capabilities.",
       techStack: ["React", "MongoDB", "Stripe", "Clerk"],
       link: "https://github.com/uttam9721/E-Learning",
+      demo: "",
+      featured: true,
     },
     {
-  id: 3,
-  name: "CodeView - Code Editor",
-  description:
-    "Built a responsive online code editor using React.js and Tailwind CSS with syntax highlighting, autocomplete, and theme switching. Achieved under 2s load time, deployed on Vercel with 99.9% uptime. Improved usability and reduced coding errors based on user feedback.",
-  techStack: ["React.js", "Tailwind CSS", "Node.js", "Express", "CodeMirror"],
-  link: "https://github.com/uttam9721/CodeView_collegeProject",
-},
-{
-  id: 4,
-  name: "CryptoPlace",
-  description:
-    "Developed a cryptocurrency tracking platform using React.js and Tailwind CSS with real-time data visualization through React Chart. Integrated Firebase authentication for secure user access. Implemented dynamic searching for efficient coin lookup. Deployed on Vercel ensuring fast performance and responsive design.",
-  TechStack: ["React.js", "React Chart", "Tailwind CSS", "Firebase"],
-  link: "https://coin-weld-zeta.vercel.app/",
-},
-{
-  id: 5,
-  name: "PetWorld",
-  description:
-    "Developed a full-stack pet care and adoption platform using the MERN stack. Implemented secure authentication with JWT and bcrypt, enabling users to sign up, log in, and manage adoption requests. Styled with Tailwind CSS for a modern and responsive design. Currently available on GitHub for further deployment.",
-  TechStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "bcrypt"],
-  link: "https://github.com/uttam9721/petWord",
-},
-{
-  id: 6,
-  name: "Modexa - E-Commerce Platform",
-  description:
-    "Building a full-stack ecommerce application with product listings, cart management, secure authentication, and planned Stripe payment integration. Developed using React.js with Context API for state management, Tailwind CSS for responsive UI, and Node.js with Express and MongoDB for the backend. Integrated JWT and bcrypt for authentication and authorization. Currently under development and available on GitHub.",
-  TechStack: [
-    "React.js",
-    "Context API",
-    "Tailwind CSS",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "JWT",
-    "bcrypt",
-    "Stripe"
-  ],
-  link: "https://github.com/uttam9721/Modexa",
-},
-{
-  id: 7,
-  name: "FloraVision",
-  description:
-    "Created a modern and responsive plant shop website using React.js and Tailwind CSS. Focused on delivering an elegant UI with smooth animations, product listings, and category filters. Designed for an engaging browsing experience and deployed on Vercel.",
-  TechStack: ["React.js", "Tailwind CSS", "JavaScript"],
-  link: "https://floravision-pied.vercel.app/",
-},
-
-{
-  id: 8,
-  name: "MyShop",
-  description:
-    "Developed a fully responsive online shopping platform using React.js and Tailwind CSS. Implemented product listing, cart management, and order summary features with a user-friendly interface. Designed to simulate a real-world e-commerce experience and deployed seamlessly on Vercel.",
-  TechStack: ["React.js", "Tailwind CSS", "JavaScript"],
-  link: "https://my-shop-ten-mauve.vercel.app/",
-},
-
+      id: 3,
+      name: "CodeView - Code Editor",
+      description:
+        "Online code editor with syntax highlighting, autocomplete, and theme switching built using React and Tailwind.",
+      techStack: ["React.js", "Tailwind CSS", "Node.js", "Express", "CodeMirror"],
+      link: "https://github.com/uttam9721/CodeView_collegeProject",
+      demo: "",
+    },
+    {
+      id: 4,
+      name: "CryptoPlace",
+      description:
+        "Cryptocurrency tracking platform with real-time data visualization, Firebase authentication, and responsive UI.",
+      techStack: ["React.js", "React Chart", "Tailwind CSS", "Firebase"],
+      link: "https://coin-weld-zeta.vercel.app/",
+      demo: "https://coin-weld-zeta.vercel.app/",
+    },
+    {
+      id: 5,
+      name: "PetWorld",
+      description:
+        "Full-stack pet adoption platform with JWT authentication, MERN backend, and responsive design.",
+      techStack: ["React", "Node", "Express", "MongoDB", "JWT", "bcrypt"],
+      link: "https://github.com/uttam9721/petWord",
+    },
+    {
+      id: 6,
+      name: "Modexa - E-Commerce",
+      description:
+        "Full-stack ecommerce platform with authentication, cart system, and Stripe payment integration (in progress).",
+      techStack: ["React", "Node", "MongoDB", "JWT", "Stripe"],
+      link: "https://github.com/uttam9721/Modexa",
+    },
+    {
+      id: 7,
+      name: "FloraVision",
+      description:
+        "Modern plant shop website with elegant UI, animations, and product browsing experience.",
+      techStack: ["React", "Tailwind", "JavaScript"],
+      link: "https://floravision-pied.vercel.app/",
+      demo: "https://floravision-pied.vercel.app/",
+    },
+    {
+      id: 8,
+      name: "MyShop",
+      description:
+        "Responsive e-commerce UI with product listing, cart management, and order summary features.",
+      techStack: ["React", "Tailwind", "JavaScript"],
+      link: "https://my-shop-ten-mauve.vercel.app/",
+      demo: "https://my-shop-ten-mauve.vercel.app/",
+    },
   ];
 
-  const openLink = (url) => {
-    window.open(url, "_blank");
-  };
+  const openLink = (url) => window.open(url, "_blank");
 
   return (
-    <div
-      name="Portfolio"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
+    <section
+      id="Portfolio"
+      className="max-w-7xl mx-auto px-4 md:px-8 py-20"
     >
-      <div>
-        <h1 className="text-3xl font-bold mb-5">Portfolio</h1>
-        <span className="underline font-semibold text-lg">Featured Projects</span>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 my-5">
-          {cardItem.map(({ id, logo, name, description, techStack, link }) => (
-            <div
-              key={id}
-              className="border-[2px] rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 duration-300 bg-white"
-            >
-              {logo && (
-                <img
-                  src={logo}
-                  className="w-[120px] h-[120px] object-contain mx-auto p-2 rounded-full border-[2px]"
-                  alt={`${name} logo`}
-                />
-              )}
-              <div className="text-center">
-                <div className="font-bold text-xl mt-2 mb-1">{name}</div>
-                <p className="text-gray-700 text-sm">{description}</p>
-              </div>
-              <div className="flex justify-center gap-2 mt-3 flex-wrap">
-                {techStack?.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-center gap-4 mt-4">
-                <button
-                  onClick={() => openLink(link)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"
+      {/* ===== Title ===== */}
+      <h1 className="text-4xl font-bold text-center mb-2">
+        My <span className="text-green-500">Projects</span>
+      </h1>
+
+      <p className="text-center text-gray-600 mb-12">
+        Some of my featured full stack and frontend projects
+      </p>
+
+      {/* ===== Grid ===== */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {cardItem.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white border rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition duration-300"
+          >
+            {/* Featured Badge */}
+            {item.featured && (
+              <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full">
+                Featured
+              </span>
+            )}
+
+            {/* Title */}
+            <h2 className="text-xl font-bold mt-3">{item.name}</h2>
+
+            {/* Description */}
+            <p className="text-gray-600 text-sm mt-2">
+              {item.description}
+            </p>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-2 mt-4">
+              {item.techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
                 >
-                  Source Code
-                </button>
-              </div>
+                  {tech}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
+
+            {/* Buttons */}
+            <div className="flex gap-3 mt-6">
+              {item.demo && (
+                <button
+                  onClick={() => openLink(item.demo)}
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+                >
+                  Live Demo
+                </button>
+              )}
+
+              <button
+                onClick={() => openLink(item.link)}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+              >
+                Source Code
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,125 +1,139 @@
-import React from 'react'
-import pic from"../../public/photo.avif";
-import logo from "../../public/logo.jpg"
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
-import { SiNpm } from "react-icons/si";
-import { ReactTyped,Typed } from "react-typed";
+
+import React from "react";
+import profile from "../../public/logo.jpg";
+
+import { ReactTyped } from "react-typed";
+
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import {
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+} from "react-icons/si";
 
 const Home = () => {
   return (
-    <>
-    <div name="Home" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20'>
-     <div className="flex flex-col md:flex-row">
-     <div className="md:w-1/2 md:mt-24 space-y-2 order-2 md:order-1">
-     <span className='text-xl'>Welcome In My Feed</span>
-     <div className='flex space-x-1 text-2xl md:text-4xl'>
-     <h1 >Hello, I'm a</h1>
-     {/* <span className='text-red-700 font-bold '>Developer</span> */}
-     <ReactTyped
-                className='text-red-700 font-bold'
-          // typedRef={setTyped}
-          strings={["Developer","Programmer","Coder"]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop={true}
-        />
+    <section className="bg-gray-100 py-20">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+
+        {/* ===== LEFT CONTENT ===== */}
+        <div className="md:w-1/2 space-y-6">
+
+          {/* Title */}
+          <h3 className="text-2xl font-semibold text-gray-700">
+            Welcome To My Portfolio
+          </h3>
+
+          {/* ===== Typing Heading ===== */}
+          <h1 className="text-5xl font-bold flex items-center gap-3">
+            I am
+            <span className="text-red-600">
+              <ReactTyped
+                strings={["Coder", "Developer", "Programmer"]}
+                typeSpeed={60}
+                backSpeed={50}
+                backDelay={1000}
+                loop
+              />
+            </span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-gray-700 leading-relaxed">
+            Passionate and detail-oriented Full Stack Web Developer with hands-on
+            experience building scalable web applications. Proficient in
+            JavaScript, React, Node.js, Express.js, MongoDB, and RESTful APIs.
+            Strong foundation in problem-solving, responsive UI development,
+            and secure backend systems.
+          </p>
+
+          {/* ===== Social + Tech Icons ===== */}
+          <div className="flex gap-16 flex-wrap">
+
+            {/* Social */}
+            <div>
+              <h4 className="font-semibold mb-3">Available on</h4>
+              <div className="flex gap-4 text-3xl text-gray-700">
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                  <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
+                </a>
+
+                <a href="https://github.com" target="_blank" rel="noreferrer">
+                  <FaGithub className="hover:text-black cursor-pointer" />
+                </a>
+<a
+  href="https://leetcode.com/u/uttammaurya01/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-gray-600 hover:text-[#FFA116] hover:scale-110 transition-all duration-200"
+  aria-label="LeetCode"
+>
+  <SiLeetcode/>
+</a>
+
+
+                <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                  <FaInstagram className="hover:text-pink-500 cursor-pointer" />
+                </a>
+              </div>
+            </div>
+
+            {/* Tech Stack Icons */}
+            <div>
+              <h4 className="font-semibold mb-3">Tech Stack</h4>
+              <div className="flex gap-4 text-3xl">
+                <SiJavascript className="text-yellow-500" />
+                <SiReact className="text-blue-500" />
+                <SiNodedotjs className="text-green-600" />
+                <SiExpress className="text-gray-700" />
+                <SiMongodb className="text-green-700" />
+              </div>
+            </div>
+          </div>
+
+          {/* ===== Key Skills ===== */}
+          <div>
+            <h4 className="font-semibold mb-3">Key Skills</h4>
+            <div className="flex flex-wrap gap-3">
+              {[
+                "JavaScript",
+                "TypeScript",
+                "React.js",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "REST APIs",
+                "HTML",
+                "CSS",
+                "Tailwind CSS",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="bg-white px-4 py-2 rounded-lg shadow-sm border text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-        <br />
-     <p className='text-sm md:text-md text-justify'>A motivated and detail-oriented Full stack web developer with a solid foundation in both front-end and back-end technolo-
-gies. Eager to apply my skills in HTML, CSS, JavaScript, React, Node.js,Express.js and MongoDB management to build and
-enhance web applications. Seeking an entry-level position to leverage my technical skills and passion for continuous learning
-to contribute to innovative web development projects.</p>
-<br />
+        {/* ===== RIGHT IMAGE ===== */}
+        <div className="md:w-1/2 flex justify-center">
+          <img
+            src={profile}
+            alt="profile"
+            className="w-80 h-80 md:w-[420px] md:h-[420px] rounded-full object-cover border-4 border-gray-400 shadow-lg"
+          />
+        </div>
+{/* >>>>>>> 2d58d72 (add new feature) */}
 
-{/* social media */}
-<div className='flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0'>
-<div className='space-y-2 '>
-<h1 className='font-bold'> Available on </h1>
-     <ul className='flex space-x-5'>
-      {/* <li>
-        {"  "} 
-        <FaFacebookSquare className='text-2xl cursor-pointer'/>
-        </li>
-    <li> {" "} 
-      <FaLinkedin  className='text-2xl cursor-pointer' />
-      </li>
-     <li>{" "}
-       <FaInstagram className='text-2xl cursor-pointer' />
-       </li>
-     <li>{" "}
-       <FaGithub className='text-2xl cursor-pointer' />
-       </li> */}
-       <li>
-         <a
-                        href="https://www.npmjs.com/package/cb-react-smart-loader"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                      >
-                         <SiNpm size={24} />
-                      </a>
-</li>
-
-<li>
-  <a
-    href="https://www.linkedin.com/in/uttam-fullstack?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-  >
-    <FaLinkedin className='text-2xl cursor-pointer' />
-  </a>
-</li>
-
-<li>
-  <a
-    href="https://www.instagram.com/iamuttam_maurya?utm_source=qr&igsh=MXNkZHh4MXE4MWczMw=="
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-  >
-    <FaInstagram className='text-2xl cursor-pointer' />
-  </a>
-</li>
-
-<li>
-  <a
-    href="https://github.com/uttam9721"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-  >
-    <FaGithub className='text-2xl cursor-pointer' />
-  </a>
-</li>
-
-      </ul>
       </div>
-      {/* <div> */}
-     <div className='space-y-2'>
-     <h1 className='font-bold'>Currently working on  </h1>
-     <div className='flex space-x-5'>
-        <SiMongodb className='text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]'/>
-      <SiExpress  className='text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]' />
-       <FaReact className='text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]' />
-       <FaNodeJs className='text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]' />
-     </div>
-     
-      </div>
-</div>
-     </div>
-     <div className="md-w-1/2 md:ml-48 md:mt-20 mt-8 md:order-1">
-     <img src={logo} className='rounded-full md:w-[450px] md:h-[450px]' alt="img" /></div>
-     </div>
-    </div>
-    {/* <br /> */}
-    <hr />
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default Home
+export default Home;

@@ -1,111 +1,178 @@
-import React from 'react'
+
+import React from "react";
 
 const About = () => {
   return (
-    <div name="About" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-20'>
-      <div>
-      <h1 className='text-3xl font-bold mb-5'>About</h1>
-      <p>
-      I'm a Information & Technology undergrad, fueling my passion for crafting visually captivating and user-friendly interfaces, I wield a strong skill set in HTML, CSS, JavaScript, React, Nodejs, ExpressJS, MongoDB, SQL and currently learning Docker, Kubernetes.
-I believe in creating innovative solutions that leave a positive impact, and I'm excited to collaborate with like-minded professionals on challenging projects that drive progress and change. Let's connect and explore how we can build something extraordinary together!
+    <section
+      id="About"
+      className="max-w-7xl mx-auto px-4 md:px-8 py-20"
+    >
+      {/* ===== Title ===== */}
+      <h1 className="text-4xl font-bold mb-10 text-center">
+        About <span className="text-green-500">Me</span>
+      </h1>
+
+      {/* ===== Intro ===== */}
+      <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-16">
+        I am a B.Tech graduate in Information Technology with a strong passion
+        for Full Stack Web Development. Skilled in building scalable and
+        user-friendly web applications using the MERN stack and modern web
+        technologies. I enjoy solving real-world problems through clean,
+        efficient code and continuously learning new tools like Docker and
+        Kubernetes to grow as a developer.
       </p>
-      <br />
-      <h1 className='text-green-600 font-semibold text-xl'>
-        Education & Training
-      </h1>
-      <span>
-        {/* [Degree/Certification],[Institution],[Year][Degree/Certification],
-        [Institution],[Year][Relevant Course],[Platform/Institution],[Year] */}
-        {/* [June, 2021] – [june ,2025] */}
 
-    Currently pursuing a B.Tech in Information Technology with a strong foundation in programming and software development.
-      </span>
-      <br /><br />
-      <h1 className='text-green-600 font-semibold text-xl'>
-        Skills & Expertise
-      </h1>
-      <span>
-        {/* Proficient in [Full StackWebDevelopment (MERN)] Experienced with
-         [Software Tools/Technologies]Strong grasp of 
-         [Design Principles/Concepts]Excellent problem-solving
-          skills Effective communication and collaborator. */}
-          Full Stack Web Development (MERN)
-<li>
-Proficient in developing and deploying web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).
-Strong understanding of RESTful API design and implementation.
-Expertise in responsive design, state management, and component-based architecture using React.js.
-Backend Development
-</li>
-<li>
-Experience with server-side programming using Node.js and Express.js.
-Skilled in building and maintaining databases using MongoDB and SQL.
-Frontend Development</li>
-<li>
+      {/* ===== Sections Grid ===== */}
+      <div className="grid md:grid-cols-2 gap-8">
 
-Proficient in HTML, CSS, JavaScript, and modern frontend frameworks.
-Expertise in creating interactive user interfaces with React.js.
-Programming Languages</li>
-<li>
+        {/* ===== Education ===== */}
+        <div className="bg-white shadow-lg rounded-xl p-6 border">
+          <h2 className="text-xl font-semibold text-green-600 mb-4">
+            🎓 Education
+          </h2>
+          <p className="text-gray-700">
+            Bachelor of Technology (B.Tech) in Information Technology.
+            Built a strong foundation in programming, data structures,
+            software development, and web technologies.
+          </p>
+        </div>
 
-Expertise in C language with a deep understanding of data structures and algorithms.
-Proficient in JavaScript, with experience in both frontend and backend development.
-</li>
+        {/* ===== Skills ===== */}
+        <div className="bg-white shadow-lg rounded-xl p-6 border">
+          <h2 className="text-xl font-semibold text-green-600 mb-4">
+            💻 Skills & Expertise
+          </h2>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+            <li>MERN Stack Development (MongoDB, Express, React, Node)</li>
+            <li>RESTful API Design & Implementation</li>
+            <li>Responsive UI Development with React.js</li>
+            <li>MongoDB & SQL Database Management</li>
+            <li>Version Control using Git & GitHub</li>
+          </ul>
+        </div>
 
-      </span> 
-      <br /><br />
-      <h1 className='text-green-600 font-semibold text-xl'>
-        Professional Experience
-      </h1>
-      <span>
-      Full Stack Web Developer (Intern)
-Amzsoft Innovexa, [Lucknow]
-[June, 2024] – [December,2024]
-<li>
-Completed a 6-month internship focused on full stack web development using the MERN stack.
-</li>
-<li>
-Developed and maintained web applications, implementing both frontend and backend functionalities.
-</li>
-<li>
-Collaborated with a team to design and deploy responsive and user-friendly interfaces using React.js.</li>
-<li>
-Worked on backend services with Node.js and Express.js, integrating with MongoDB for data management.
-</li>
-<li>
-Gained hands-on experience in version control with Git and project management using Agile methodologies.
-</li>
+        {/* ===== Experience ===== */}
+       {/* ===== Professional Experience ===== */}
+<div className="md:col-span-2">
+  <h2 className="text-2xl font-semibold text-green-600 mb-6">
+    🧑‍💼 Professional Experience
+  </h2>
 
-      </span> 
-      <br /><br />
-      <h1 className='text-green-600 font-semibold text-xl'>
-        Achievements & Awards
-      </h1>
-      <span>
-       {/* [Award/Recognition],[Organization Institution],[Year][Achievement],[Organization/Platform],[Year] */}
-       Full Stack Web Development Certification
-GeeksforGeeks
+  <div className="grid md:grid-cols-2 gap-8">
 
-Successfully completed the Full Stack Web Development course.
+    {/* ===== Amzsoft Innovexa Card ===== */}
+    <div className="bg-white shadow-lg rounded-xl p-6 border hover:shadow-xl transition">
+      <h3 className="font-bold text-lg">
+        Full Stack Web Developer Intern
+      </h3>
 
-Achieved a 3-star rating in Java on HackerRank.
-Java Programming Certification
-HackerRank
-Earned a certificate for completing the Java programming Test.
-      </span> 
-      <br /><br />
-      <h1 className='text-green-600 font-semibold text-xl'>
-        {/* Mission Statement */}
-      </h1>
-      {/* <span>
-        Proficient in [Programming Language] Experienced with
-         [Software Tools/Technologies]Strong grasp of 
-         [Design Principles/Concepts]Excellent problem-solving
-          skills Effective communication and collaborator.
-      </span>  */}
-      </div>
+      <p className="text-green-600 font-medium">
+        Amzsoft Innovexa, Lucknow
+      </p>
+
+      <p className="text-sm text-gray-500 mb-3">
+        June 2024 — December 2024
+      </p>
+
+      {/* Website Link */}
+      <a
+        href="https://www.amzsoftinnovexa.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mb-4 text-sm text-blue-600 hover:underline"
+      >
+        🌐 Visit Company Website
+      </a>
+
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+        <li>Completed a 6-month MERN stack internship</li>
+        <li>Developed full stack web applications</li>
+        <li>Built responsive interfaces using React.js</li>
+        <li>Created backend APIs with Node.js & Express</li>
+        <li>Worked with MongoDB for database management</li>
+        <li>Collaborated using Git and Agile methodologies</li>
+      </ul>
     </div>
 
-  )
-}
+    {/* ===== LzyCrazy Pvt Ltd Card ===== */}
+    <div className="bg-white shadow-lg rounded-xl p-6 border hover:shadow-xl transition">
+      <h3 className="font-bold text-lg">
+        Full Stack Web Developer Intern
+      </h3>
 
-export default About
+      <p className="text-green-600 font-medium">
+        LzyCrazy Pvt Ltd
+      </p>
+
+      <p className="text-sm text-gray-500 mb-3">
+        December 2025 — Present
+      </p>
+
+      {/* Website Link */}
+      <a
+        href="https://www.lzycrazy.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mb-4 text-sm text-blue-600 hover:underline"
+      >
+        🌐 Visit Company Website
+      </a>
+
+      <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+        <li>Currently working on full stack MERN applications</li>
+        <li>Developing responsive frontend using React.js</li>
+        <li>Building secure backend APIs with Node.js & Express</li>
+        <li>Collaborating with team members on real-world projects</li>
+        <li>Implementing database solutions using MongoDB</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+        {/* ===== Achievements ===== */}
+      {/* ===== Achievements ===== */}
+<div className="bg-white shadow-lg rounded-xl p-6 border md:col-span-2">
+  <h2 className="text-xl font-semibold text-green-600 mb-4">
+    🏆 Achievements & Highlights
+  </h2>
+
+  <ul className="list-disc pl-5 space-y-2 text-gray-700">
+
+    <li>
+      Solved <span className="font-semibold">180+ problems</span> on LeetCode,
+      strengthening data structures and algorithm skills.
+    </li>
+
+    <li>
+      Built <span className="font-semibold">10+ Frontend Projects</span> using
+      HTML, CSS, JavaScript, and React.js.
+    </li>
+
+    <li>
+      Developed <span className="font-semibold">5+ Full Stack Projects</span>{" "}
+      using the MERN stack (MongoDB, Express, React, Node.js).
+    </li>
+
+    <li>
+      Full Stack Web Development Certification — GeeksforGeeks
+    </li>
+
+    <li>
+      Achieved <span className="font-semibold">3⭐ Java Rating</span> on HackerRank
+    </li>
+
+    <li>
+      Java Programming Certification — HackerRank
+    </li>
+
+  </ul>
+</div>
+
+      </div>
+    </section>
+  );
+};
+
+export default About;
