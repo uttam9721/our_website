@@ -262,6 +262,7 @@ const About = () => {
   Dr. A.P.J. Abdul Kalam Technical University, Lucknow. 
   Developed a strong foundation in programming, data structures, 
   software engineering, and modern web technologies.
+  {/* software engineering, and modern web technologies. */}
               </li>
 </ul>
 
