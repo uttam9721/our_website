@@ -197,9 +197,12 @@ function Experience() {
       skills: [
         { name: "HTML", logo: "/html.png" },
         { name: "CSS", logo: "/css.jpg" },
+        { name: "Tailwind CSS", logo: "/Tailwind.png" },
+        { name: "Bootstrap", logo: "/bootstrap.jpg" },
         { name: "JavaScript", logo: "/javascript.png" },
         { name: "TypeScript", logo: "/ts.png" },
         { name: "React.js", logo: "/reactjs.png" },
+        { name: "Next.js", logo: "/next.png" },
       ],
     },
     {
@@ -269,13 +272,21 @@ function Experience() {
             <div key={index}>
 
               {/* Category Title */}
-              <h2
+              {/* <h2
                 className="text-2xl font-semibold mb-6
                 bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
                 bg-clip-text text-transparent"
               >
                 {category.title}
-              </h2>
+              </h2> */}
+              <h2
+  className="text-2xl  font-bold mb-6
+  bg-gradient-to-r from-[#8B0000] via-[#2563EB] to-[#B8860B]
+  bg-clip-text text-transparent"
+>
+  {category.title}
+</h2>
+
 
               {/* Skills Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

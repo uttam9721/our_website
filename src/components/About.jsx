@@ -251,11 +251,20 @@ const About = () => {
               🎓 <span className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
     bg-clip-text text-transparent"> Education</span>
             </h2>
-            <p className="text-gray-300">
+            {/* <p className="text-gray-300">
               Bachelor of Technology (B.Tech) in Information Technology.
               Built a strong foundation in programming, data structures,
               software development, and web technologies.
-            </p>
+            </p> */}
+            <ul className="list-disc pl-5 space-y-2 text-gray-300">
+              <li>
+  Bachelor of Technology (B.Tech) in Information Technology from 
+  Dr. A.P.J. Abdul Kalam Technical University, Lucknow. 
+  Developed a strong foundation in programming, data structures, 
+  software engineering, and modern web technologies.
+              </li>
+</ul>
+
           </div>
 
           {/* ===== Skills ===== */}

@@ -361,9 +361,9 @@ function Contact() {
           <div className="space-y-6">
 
             <h2
-              className="text-2xl font-semibold
-              bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-              bg-clip-text text-transparent"
+              className="text-2xl  font-bold mb-6
+  bg-gradient-to-r from-[#8B0000] via-[#2563EB] to-[#B8860B]
+  bg-clip-text text-transparent"
             >
               Get in touch
             </h2>

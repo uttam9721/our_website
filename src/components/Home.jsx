@@ -181,7 +181,9 @@ const Home = () => {
         <div className="md:w-1/2 space-y-6">
 
           {/* Title */}
-          <h3 className="text-2xl font-semibold text-gray-300">
+          <h3 className="text-2xl font-bold mb-6
+  bg-gradient-to-r from-[#8B0000] via-[#2563EB] to-[#B8860B]
+  bg-clip-text text-transparent">
             Welcome To My Portfolio
           </h3>
 
@@ -262,6 +264,7 @@ const Home = () => {
               {[
                 "JavaScript",
                 "TypeScript",
+                "Java",
                 "React.js",
                 "Next.js",
                 "Node.js",
@@ -271,6 +274,9 @@ const Home = () => {
                 "HTML",
                 "CSS",
                 "Tailwind CSS",
+                "Bootstrap",
+                "git",
+                "gitHub"
               ].map((skill) => (
                 <span
                   key={skill}
