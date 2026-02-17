@@ -244,7 +244,7 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
-  const navItems = ["Home", "About", "Portfolio", "Experience", "Contact"];
+  const navItems = ["Home", "About", "Projects", "Experience", "Contact"];
 
   return (
     <>
