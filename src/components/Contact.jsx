@@ -342,13 +342,22 @@ function Contact() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
 
         {/* ===== Title ===== */}
-        <h1
+        {/* <h1
           className="text-4xl font-bold text-center mb-3
           bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
           bg-clip-text text-transparent"
         >
           Contact Me
-        </h1>
+        </h1> */}
+         <h1 className="text-4xl font-bold mb-10 text-center">
+  Contact{" "}
+  <span
+    className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
+    bg-clip-text text-transparent"
+  >
+    Me
+  </span>
+</h1>
 
         <p className="text-center text-gray-400 mb-16">
           Have a project or opportunity? Let’s connect.

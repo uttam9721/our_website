@@ -188,9 +188,9 @@ const Home = () => {
           </h3>
 
           {/* ===== Typing Heading ===== */}
-          <h1 className="text-4xl md:text-4xl font-bold flex items-center gap-3 flex-wrap">
+          <h1 className="text-4xl md:text-3xl font-bold flex items-center gap-3 flex-wrap">
             I am
-            <span className="bg-gradient-to-r from-blue-500 via-cyan-400 via-green-400 to-yellow-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 via-cyan-400 to-yellow-400 bg-clip-text text-transparent">
               <ReactTyped
                 strings={["Coder", "Developer", "Programmer"]}
                 typeSpeed={60}
