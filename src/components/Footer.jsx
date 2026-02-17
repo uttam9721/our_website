@@ -206,6 +206,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { SiNpm, SiLeetcode } from "react-icons/si";
+import ChatWidget from './ChatWidget';
 
 function Footer() {
   return (
@@ -315,6 +316,7 @@ function Footer() {
 
         </div>
       </footer>
+      <ChatWidget />
     </>
   );
 }

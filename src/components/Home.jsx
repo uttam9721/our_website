@@ -274,7 +274,7 @@ const Home = () => {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg 
+                  className="cursor-pointer bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg 
                   border border-white/10 text-sm hover:bg-white/20 transition"
                 >
                   {skill}
