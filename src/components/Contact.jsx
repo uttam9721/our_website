@@ -404,7 +404,7 @@ function Contact() {
                   rel="noopener noreferrer"
                   className="text-green-400 hover:underline"
                 >
-                  linkedin.com/in/uttam-fullstack
+                  LinkedIn
                 </a>
               </p>
 
@@ -416,7 +416,7 @@ function Contact() {
                   rel="noopener noreferrer"
                   className="text-green-400 hover:underline"
                 >
-                  github.com/uttam9721
+                  GitHub
                 </a>
               </p>
             </div>

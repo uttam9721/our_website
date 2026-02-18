@@ -161,7 +161,9 @@ import {
 
 const Home = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden 
+    <section 
+    id="Home"
+    className="relative min-h-screen overflow-hidden 
     bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] text-white py-20">
 
       {/* ===== Glow Effect ===== */}
@@ -294,13 +296,12 @@ const Home = () => {
 
         {/* ===== RIGHT IMAGE ===== */}
         <div className="md:w-1/2 flex justify-center">
-
           <img
             src={profile}
             alt="profile"
             className="w-80 h-80 md:w-[420px] md:h-[420px] 
             rounded-full object-cover border-4 border-white/20 
-            shadow-[0_0_60px_rgba(34,197,94,0.4)]"
+            shadow-[0_0_60px_rgba(34,197,94,0.4)] hover:scale-110 duration-500"
           />
 
         </div>

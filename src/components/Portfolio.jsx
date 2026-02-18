@@ -452,7 +452,7 @@ function PortFolio() {
 
   return (
     <section
-      id="Portfolio"
+      id="Projects"
       className="relative min-h-screen overflow-hidden 
       bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] 
       text-white py-20"
