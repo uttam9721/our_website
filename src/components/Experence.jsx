@@ -188,7 +188,8 @@
 
 
 // add color 
-import React from "react";
+// import React from "react";
+import Stats from './Stats'
 
 function Experience() {
   const skillCategories = [
@@ -331,7 +332,7 @@ function Experience() {
         </div>
 
       </div>
-
+<Stats/>
     </section>
   );
 }
