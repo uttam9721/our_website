@@ -316,7 +316,7 @@ function Footer() {
 
         </div>
       </footer>
-      <ChatWidget />
+      {/* <ChatWidget /> */}
     </>
   );
 }
