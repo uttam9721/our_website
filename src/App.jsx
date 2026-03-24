@@ -7,7 +7,7 @@ import Experence from './components/Experence';
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Journey from './components/Journey'
-import MiniGame from './components/MiniGame'
+// import MiniGame from './components/MiniGame'
 // import Stats from './components/Stats'
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
      <About />
      <Portfolio />
      <Experence />
-     <MiniGame/>
+     {/* <MiniGame/> */}
      <Journey/>
      {/* <Stats/> */}
      <Contact />
