@@ -442,11 +442,11 @@ const Home = () => {
               </h4>
 
               <div className="flex gap-4 text-3xl text-gray-300">
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/uttam-fullstack" target="_blank" rel="noreferrer">
                   <FaLinkedin className="hover:text-blue-500 hover:scale-110 transition" />
                 </a>
 
-                <a href="https://github.com" target="_blank" rel="noreferrer">
+                <a href="https://github.com/uttam9721" target="_blank" rel="noreferrer">
                   <FaGithub className="hover:text-white hover:scale-110 transition" />
                 </a>
 
