@@ -7,7 +7,7 @@ import code from "../assets/code.png";
 import dog from "../assets/dog.png";
 import school from "../assets/school.png";
 import port from "../assets/portfolio.png";
-import food from "../assets/Food.png";
+import food from "../assets/food.png";
 import shoping from "../assets/shoping.png";  
 import flavoro from "../assets/flavoro.png";
 import amazon from "../assets/Amazone.png";
