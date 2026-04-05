@@ -7,6 +7,11 @@ import code from "../assets/code.png";
 import dog from "../assets/dog.png";
 import school from "../assets/school.png";
 import port from "../assets/portfolio.png";
+import food from "../assets/food.png";
+import shoping from "../assets/shoping.png";  
+import flavoro from "../assets/flavoro.png";
+import amazon from "../assets/Amazone.png";
+import Analyzer from "../assets/Analyzer.png";
 
 function PortFolio() {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -134,17 +139,95 @@ function PortFolio() {
       demo: "https://pet-word.vercel.app/",
       featured: true,
     },
-    {
-  "id": 10,
-  "name": "DPGIC — Modern Web Application",
-  "category": "frontend",
-  "image": school,
+//     {
+//   "id": 10,
+//   "name": "DPGIC — Modern Web Application",
+//   "category": "frontend",
+//   "image": school,
   
-  "techStack": ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
-  // "link": "https://dpgic.vercel.app/",
-  // "demo": "https://dpgic.vercel.app/",
-  // "featured": true
-}
+//   "techStack": ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+//   "link": "https://dpgic.vercel.app/",
+//   "demo": "https://dpgic.vercel.app/",
+//   // "featured": true
+// },
+{
+  id: 10,
+  name: "DPGIC — Modern School Website",
+  category: "frontend",
+  image: school,
+  description:
+    "Developed a modern and responsive school website showcasing academic information, admissions details, events, and announcements with a clean UI and smooth user experience.",
+  techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+  link: "https://dpgic.vercel.app/",
+  demo: "https://dpgic.vercel.app/",
+  // featured: true
+},
+{
+  "id": 13,
+  "name": "Frontend Job Portal — Job Listing UI",
+  "category": "frontend",
+  "image": food,
+  "description": "Designed a modern job listing platform with responsive UI, job filtering, and clean user experience for browsing frontend job opportunities",
+  "techStack": ["React.js", "CSS", "JavaScript", "Vercel"],
+  "demo": "https://frontend-job-six.vercel.app/",
+  "link": "https://github.com/uttam9721/Frontend_job",
+  "featured": true
+},
+{
+  id: 14,
+  name: "E-Commerce Cart & Payment System",
+  category: "frontend",
+  image: shoping,
+  description:
+    "Developed a responsive e-commerce cart and payment system with product listing, add-to-cart functionality, quantity management, and dynamic cart updates.",
+  techStack: ["React.js", "Bootstrap", "JavaScript", "Vercel"],
+  link: "https://github.com/uttam9721/payment",
+  demo: "https://payment-liard-two.vercel.app/",
+  featured: false,
+},
+{
+  id: 15,
+  name: "Gokul Sweets — Food Ordering Web App",
+  category: "frontend",
+  image: flavoro,
+  description:
+    "Developed a responsive food ordering web application with product listing, category filtering, cart management, and seamless user experience using modern frontend technologies.",
+  techStack: ["React.js", "Tailwind CSS", "Redux Toolkit", "JavaScript", "Vercel"],
+  link: "https://github.com/uttam9721/flavoro",
+  demo: "https://flavoro-amber.vercel.app/",
+  featured: true,
+},
+{
+  id: 16,
+  name: "Amazon Clone — E-commerce UI",
+  category: "frontend",
+  image: amazon,
+  description:
+    "Developed a responsive Amazon-inspired e-commerce UI with modern layout, category sections, product grid, and smooth user interactions using HTML, CSS, and JavaScript.",
+  techStack: ["HTML5", "CSS3", "JavaScript", "Vercel"],
+  link: "https://github.com/uttam9721/amazon-project-clone",
+  demo: "https://amazon-project-clone-nu.vercel.app/",
+  featured: true,
+},
+{
+  id: 17,
+  name: "DevScope — Developer Analytics Dashboard",
+  category: "fullstack",
+  image: Analyzer,
+  description:
+    "A full-stack developer analytics dashboard that fetches and visualizes coding profiles from platforms like Codeforces, LeetCode, GitHub, HackerRank, and LinkedIn with interactive charts and insights.",
+  techStack: [
+    "React.js",
+    "Tailwind CSS",
+    "React Charts",
+    "Node.js",
+    "Express.js"
+  ],
+  link: "https://github.com/uttam9721/DevScope",
+  demo: "",
+  featured: true,
+},
+
   ];
 
   const openLink = (url) => window.open(url, "_blank");
