@@ -11,7 +11,7 @@ import food from "../assets/food.png";
 import shoping from "../assets/shoping.png";  
 import flavoro from "../assets/flavoro.png";
 import amazon from "../assets/Amazone.png";
-import Analyzer from "../assets/Analyzer.png";
+import Analyzer from "../assets/analyzer.png";
 
 function PortFolio() {
   const [activeTab, setActiveTab] = useState("frontend");
