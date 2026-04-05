@@ -15,7 +15,7 @@ import Analyzer from "../assets/Analyzer.png";
 
 function PortFolio() {
   const [activeTab, setActiveTab] = useState("frontend");
-
+  // const [activeTab, setActiveTab] = useState("frontend");
   const cardItem = [
     {
       id: 0,
