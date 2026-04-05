@@ -212,7 +212,7 @@ function PortFolio() {
 {
   id: 17,
   name: "DevScope — Developer Analytics Dashboard",
-  category: "fullstack",
+  category: "mern",
   image: Analyzer,
   description:
     "A full-stack developer analytics dashboard that fetches and visualizes coding profiles from platforms like Codeforces, LeetCode, GitHub, HackerRank, and LinkedIn with interactive charts and insights.",
