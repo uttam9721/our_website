@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Clothing from "../assets/image.png";
 import coin from "../assets/coin.png";
 import flora from "../assets/flora.png";
