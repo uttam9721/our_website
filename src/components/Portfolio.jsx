@@ -10,8 +10,9 @@ import port from "../assets/portfolio.png";
 import food from "../assets/food.png";
 import shoping from "../assets/shoping.png";  
 import flavoro from "../assets/flavoro.png";
-import amazon from "../assets/Amazone.png";
+// import amazon from "../assets/Amazone.png";
 import Analyzer from "../assets/analyzer.png";
+import UiSchool from "../assets/the.png";
 
 function PortFolio() {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -29,6 +30,18 @@ function PortFolio() {
       demo: "https://rudraStyles.vercel.app/",
       featured: true,
     },
+    {
+  id: 17,
+  name: "TheUiSchool — Online Learning Platform",
+  category: "frontend",
+  image: UiSchool,
+  description:
+    "Developed a modern e-learning platform featuring course exploration, learning resources, quizzes, AI study assistant, community discussions, CGPA calculator, and a fully responsive user interface for students.",
+  techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+  link: "https://github.com/uttam9721/learnify",
+  demo: "https://learnify-one-jet.vercel.app/",
+  featured: true,
+},
     {
       id: 1,
       name: "Food Ordering App",
@@ -197,18 +210,18 @@ function PortFolio() {
   demo: "https://flavoro-amber.vercel.app/",
   featured: true,
 },
-{
-  id: 16,
-  name: "Amazon Clone — E-commerce UI",
-  category: "frontend",
-  image: amazon,
-  description:
-    "Developed a responsive Amazon-inspired e-commerce UI with modern layout, category sections, product grid, and smooth user interactions using HTML, CSS, and JavaScript.",
-  techStack: ["HTML5", "CSS3", "JavaScript", "Vercel"],
-  link: "https://github.com/uttam9721/amazon-project-clone",
-  demo: "https://amazon-project-clone-nu.vercel.app/",
-  featured: true,
-},
+// {
+//   id: 16,
+//   name: "Amazon Clone — E-commerce UI",
+//   category: "frontend",
+//   image: amazon,
+//   description:
+//     "Developed a responsive Amazon-inspired e-commerce UI with modern layout, category sections, product grid, and smooth user interactions using HTML, CSS, and JavaScript.",
+//   techStack: ["HTML5", "CSS3", "JavaScript", "Vercel"],
+//   link: "https://github.com/uttam9721/amazon-project-clone",
+//   demo: "https://amazon-project-clone-nu.vercel.app/",
+//   featured: true,
+// },
 {
   id: 17,
   name: "DevScope — Developer Analytics Dashboard",

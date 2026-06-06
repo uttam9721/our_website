@@ -438,6 +438,30 @@ function Contact() {
               📄 Download Resume
             </a>
 
+            {/* Scheduling / Meeting Links */}
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3">
+              <a
+                href="https://calendly.com/your-username" /* replace with your Calendly link */
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-lg font-medium text-black
+                  bg-gradient-to-r from-[#22c55e] to-[#06b6d4]
+                  hover:brightness-110 hover:scale-[1.02] transition duration-300"
+              >
+                📅 Schedule Interview
+              </a>
+
+              <a
+                href="https://meet.google.com/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-lg font-medium text-white
+                  bg-black/70 hover:bg-black/80 transition duration-300"
+              >
+                🎥 Start Google Meet
+              </a>
+            </div>
+
           </div>
 
           {/* ===== RIGHT SIDE — FORM ===== */}
