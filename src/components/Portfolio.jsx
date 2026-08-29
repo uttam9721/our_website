@@ -13,11 +13,24 @@ import flavoro from "../assets/flavoro.png";
 // import amazon from "../assets/Amazone.png";
 import Analyzer from "../assets/analyzer.png";
 import UiSchool from "../assets/the.png";
+import BillNest from "../assets/billnest.png";
 
 function PortFolio() {
   const [activeTab, setActiveTab] = useState("frontend");
 
   const cardItem = [
+    {
+  id: 18,
+  name: "BillNest — Billing Management Website",
+  category: "frontend",
+  image: BillNest,
+  description:
+    "Developed a modern and responsive billing management website with a clean UI, intuitive navigation, and user-friendly interface for managing billing-related operations.",
+  techStack: ["React.js", "Tailwind CSS", "JavaScript"],
+  link: null,
+  demo: "https://billnest.modexa.in/",
+  featured: true,
+},
     {
       id: 0,
       name: "RudraStyles — Clothing Brand Website",
