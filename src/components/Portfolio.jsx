@@ -12,7 +12,7 @@ function PortFolio() {
       id: 101,
       name: "Qalb — Dating & Matrimonial Platform",
       category: "frontend",
-      image: "https://images.unsplash.com/photo-1518717758536-69ae228dd5fa?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
       description: "A modern dating and matrimonial platform focused on meaningful connections, featuring real-time messaging, meeting functionality, and multi-step profiles.",
       techStack: ["React.js", "TypeScript", "Tailwind CSS", "Socket.io", "Axios"],
       link: "https://github.com/uttam9721",

@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import Stats from "./Stats";
 import { readmeContent } from "../data/readmeContent";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaStar, FaCodeBranch, FaFolder } from "react-icons/fa";
 
 const Github = () => {
-  // Split the README content by the horizontal rule "---"
   const readmeSections = readmeContent.split("---").filter(section => section.trim() !== "");
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/uttam9721/repos?per_page=100&sort=updated")
+      .then(res => res.json())
+      .then(data => {
+        // Filter out forks if desired, or just show all
+        const myRepos = data.filter(repo => !repo.fork);
+        setRepos(myRepos);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching repos:", err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <section id="Github" className="relative py-24 border-t border-purple-500/20 bg-[#080214] min-h-screen">
@@ -36,39 +52,68 @@ const Github = () => {
         {/* NATIVE GITHUB STATS DASHBOARD */}
         <Stats />
 
-        {/* <div className="mt-20 max-w-5xl mx-auto space-y-10">
+        {/* GITHUB REPOSITORIES GRID */}
+        <div className="mt-32 max-w-7xl mx-auto">
           <h3 className="text-3xl font-display font-bold text-white mb-10 text-center flex items-center justify-center gap-4 relative z-20">
-            <span className="w-12 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
-            Full <span className="neon-text">README.md</span>
-            <span className="w-12 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></span>
+            <span className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Repositories</span>
+            <span className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></span>
           </h3>
 
-          {readmeSections.map((sectionContent, index) => (
-            <div key={index} className="cyber-glass p-8 md:p-10 rounded-3xl border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:border-cyan-500/30 transition-all duration-300 overflow-hidden relative">
-              
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-[50px] pointer-events-none"></div>
-              
-              <div className="prose prose-invert prose-lg max-w-none relative z-10
-                prose-headings:font-display prose-headings:text-white
-                prose-h1:text-4xl prose-h1:font-bold prose-h1:border-b prose-h1:border-white/10 prose-h1:pb-4 prose-h1:mb-6
-                prose-h2:text-2xl prose-h2:font-bold prose-h2:text-cyan-400 prose-h2:mt-4 prose-h2:mb-6
-                prose-h3:text-xl prose-h3:text-purple-400
-                prose-a:text-pink-400 hover:prose-a:text-pink-300 prose-a:no-underline
-                prose-strong:text-white
-                prose-p:text-gray-300 prose-p:leading-relaxed
-                prose-ul:text-gray-300 prose-li:marker:text-cyan-400
-                prose-img:rounded-xl prose-img:shadow-lg prose-img:mx-auto prose-img:my-6
-                prose-code:text-yellow-300 prose-code:bg-[#080214]/80 prose-code:px-2 prose-code:py-1 prose-code:rounded
-                prose-pre:bg-[#080214] prose-pre:border prose-pre:border-white/10 prose-pre:shadow-xl
-              ">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                  {sectionContent}
-                </ReactMarkdown>
-              </div>
-              
+          {loading ? (
+            <div className="flex justify-center text-cyan-400 my-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"></div>
             </div>
-          ))}
-        </div> */}
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {repos.map((repo) => (
+                <a 
+                  key={repo.id} 
+                  href={repo.html_url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="cyber-glass p-6 rounded-2xl border border-white/10 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:-translate-y-2 transition-all duration-300 group flex flex-col h-full"
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <FaFolder className="text-3xl text-cyan-400 group-hover:text-pink-400 transition-colors shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors break-words">
+                        {repo.name}
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Updated {new Date(repo.updated_at).toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-400 flex-1 line-clamp-3 mb-6">
+                    {repo.description || "No description provided for this repository."}
+                  </p>
+
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                    <div className="flex items-center gap-4 text-xs font-bold text-gray-400">
+                      {repo.language && (
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                          {repo.language}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-4 text-sm text-gray-400 font-bold">
+                      <span className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+                        <FaStar className="text-yellow-500" /> {repo.stargazers_count}
+                      </span>
+                      <span className="flex items-center gap-1.5 hover:text-purple-400 transition-colors">
+                        <FaCodeBranch className="text-purple-500" /> {repo.forks_count}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+
       </div>
     </section>
   );

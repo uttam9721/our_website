@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import logo from "../../public/logo.jpg";
-import { IoMenuOutline, IoClose } from "react-icons/io5";
 import { Link } from "react-scroll";
+import { FaHome, FaUser, FaCode, FaBriefcase, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(false);
-
-  const navItems = ["Home", "About", "Projects", "Experience", "Github", "Contact"];
+  const navItems = [
+    { name: "Home", icon: <FaHome /> },
+    { name: "About", icon: <FaUser /> },
+    { name: "Projects", icon: <FaCode /> },
+    { name: "Experience", icon: <FaBriefcase /> },
+    { name: "Github", icon: <FaGithub /> },
+    { name: "Contact", icon: <FaEnvelope /> },
+  ];
 
   return (
     <>
-      {/* ===== Navbar ===== */}
+      {/* ===== Desktop Navbar ===== */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 
         backdrop-blur-xl bg-[#080214]/60 border-b border-white/10"
@@ -32,7 +37,7 @@ const Navbar = () => {
               <h1 className="font-display font-bold text-lg leading-none text-white">
                 Uttam <span className="neon-text">Kumar</span>
               </h1>
-              <p className="text-[10px] text-cyan-400 uppercase tracking-widest mt-1">
+              <p className="text-[10px] text-cyan-400 uppercase tracking-widest mt-1 hidden sm:block">
                 Full Stack Developer
               </p>
             </div>
@@ -42,78 +47,50 @@ const Navbar = () => {
           <ul className="hidden md:flex space-x-8 font-medium text-gray-300 text-sm tracking-wider uppercase">
 
             {navItems.map((item) => (
-              <li key={item} className="cursor-pointer">
+              <li key={item.name} className="cursor-pointer flex items-center gap-2">
                 <Link
-                  to={item}
+                  to={item.name}
                   smooth
                   duration={500}
                   offset={-70}
                   spy
                   activeClass="text-cyan-400 border-b-2 border-cyan-400 pb-1"
-                  className="hover:text-cyan-400 transition duration-300"
+                  className="hover:text-cyan-400 transition duration-300 flex items-center gap-2"
                 >
-                  {item}
+                  {item.icon} {item.name}
                 </Link>
               </li>
             ))}
 
           </ul>
 
-          {/* ===== Mobile Menu Button ===== */}
-          <button
-            onClick={() => setMenu(true)}
-            className="md:hidden text-3xl text-cyan-400"
-          >
-            <IoMenuOutline />
-          </button>
-
         </div>
       </nav>
 
-      {/* ===== Mobile Overlay ===== */}
-      {menu && (
-        <div
-          className="fixed inset-0 bg-[#080214]/80 backdrop-blur-sm z-40 md:hidden"
-          onClick={() => setMenu(false)}
-        />
-      )}
-
-      {/* ===== Mobile Drawer ===== */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[260px] 
-        bg-[#080214]/90 backdrop-blur-2xl z-50 shadow-[-10px_0_30px_rgba(6,182,212,0.1)] 
-        border-l border-white/5
-        transform transition-transform duration-500 md:hidden 
-        ${menu ? "translate-x-0" : "translate-x-full"}`}
-      >
-
-        {/* Close Button */}
-        <div className="flex justify-end p-4">
-          <IoClose
-            size={30}
-            className="cursor-pointer text-pink-400 hover:text-pink-300 transition-colors"
-            onClick={() => setMenu(false)}
-          />
-        </div>
-
-        {/* Menu Links */}
-        <ul className="flex flex-col space-y-6 px-8 mt-6 text-lg font-display font-bold text-gray-300 uppercase tracking-widest">
+      {/* ===== Mobile Bottom Navigation Bar ===== */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#080214]/90 backdrop-blur-xl border-t border-white/10 pb-safe">
+        <ul className="flex justify-between items-center px-2 py-2 overflow-x-auto hide-scrollbar">
           {navItems.map((item) => (
-            <li key={item}>
+            <li key={item.name} className="flex-1 min-w-[64px]">
               <Link
-                to={item}
+                to={item.name}
                 smooth
                 duration={500}
                 offset={-70}
-                onClick={() => setMenu(false)}
-                className="block hover:text-cyan-400 transition-colors"
+                spy
+                activeClass="text-cyan-400 scale-110 drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]"
+                className="flex flex-col items-center justify-center text-gray-400 hover:text-white transition-all duration-300 gap-1"
               >
-                {item}
+                <div className="text-xl">
+                  {item.icon}
+                </div>
+                <span className="text-[9px] font-bold uppercase tracking-widest text-center">
+                  {item.name}
+                </span>
               </Link>
             </li>
           ))}
         </ul>
-
       </div>
     </>
   );

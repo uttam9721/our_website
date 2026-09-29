@@ -189,9 +189,23 @@ const Stats = () => {
 
         </div>
 
-        {/* Contribution Snake */}
+        {/* Contribution Profile Cards */}
+        <div className="cyber-glass p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-center justify-center border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+          <img 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=uttam9721&theme=github_dark" 
+            alt="GitHub Profile Details" 
+            className="w-full md:w-2/3 object-contain rounded-xl shadow-lg border border-white/10" 
+          />
+          <img 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=uttam9721&theme=github_dark" 
+            alt="GitHub Stats Details" 
+            className="w-full md:w-1/3 object-contain rounded-xl shadow-lg border border-white/10" 
+          />
+        </div>
+
+        {/* Contribution Snake (Game) */}
         <div className="cyber-glass p-8 rounded-2xl flex flex-col items-center justify-center border border-white/5 hover:border-cyan-500/30 transition-all duration-300 overflow-x-auto hide-scrollbar bg-[#080214]/50 min-h-[250px]">
-          <h3 className="text-xl font-display font-bold text-gray-300 mb-6 uppercase tracking-widest text-center">Contribution Activity</h3>
+          <h3 className="text-xl font-display font-bold text-gray-300 mb-6 uppercase tracking-widest text-center">Commit Activity Game</h3>
           <img 
             src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" 
             alt="GitHub Contribution Snake" 
