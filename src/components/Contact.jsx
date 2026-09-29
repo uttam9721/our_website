@@ -1,306 +1,8 @@
-// // import axios from "axios";
-// // import React from "react";
-// // import { useForm } from "react-hook-form";
-// // import toast from "react-hot-toast";
-
-// // function Contact() {
-// //   const {
-// //     register,
-// //     handleSubmit,
-// //     reset,  // Destructure reset from useForm
-// //     formState: { errors },
-// //   } = useForm();
-
-// //   const onSubmit = async (data) => {
-// //     const userInfo = {
-// //       name: data.name,
-// //       email: data.email,
-// //       message: data.message,
-// //     };
-// //     try {
-// //       await axios.post("https://getform.io/f/bvrejzeb", userInfo);
-// //       toast.success("Your message has been sent");
-// //       reset();  // Reset the form after a successful submission
-// //     } catch (error) {
-// //       console.log(error);
-// //       toast.error("Something went wrong");
-// //     }
-// //   };
-
-// //   return (
-// //     <>
-// //       <div
-// //         name="Contact"
-// //         className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-16"
-// //       >
-// //         <h1 className="text-3xl font-bold mb-4">Contact me</h1>
-// //         <span>Please fill out the form below to contact me</span>
-// //         <div className="flex flex-col items-center justify-center mt-5">
-// //           <form
-// //             onSubmit={handleSubmit(onSubmit)}
-// //             method="POST"
-// //             className="bg-slate-200 w-96 px-8 py-6 rounded-xl"
-// //           >
-// //             <h1 className="text-xl font-semibold mb-4">Send Your Message</h1>
-// //             <div className="flex flex-col mb-4">
-// //               <label className="block text-gray-700">FullName</label>
-// //               <input
-// //                 {...register("name", { required: true })}
-// //                 className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-// //                 id="name"
-// //                 name="name"
-// //                 type="text"
-// //                 placeholder="Enter your fullname"
-// //               />
-// //               {errors.name && <span>This field is required</span>}
-// //             </div>
-// //             <div className="flex flex-col mb-4">
-// //               <label className="block text-gray-700">Email Address</label>
-// //               <input
-// //                 {...register("email", { required: true })}
-// //                 className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-// //                 id="email"
-// //                 name="email"
-// //                 type="text"
-// //                 placeholder="Enter your email address"
-// //               />
-// //               {errors.email && <span>This field is required</span>}
-// //             </div>
-// //             <div className="flex flex-col mb-4">
-// //               <label className="block text-gray-700">Message</label>
-// //               <textarea
-// //                 {...register("message", { required: true })}
-// //                 className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-// //                 id="message"
-// //                 name="message"
-// //                 placeholder="Enter your Query"
-// //               />
-// //               {errors.message && <span>This field is required</span>}
-// //             </div>
-// //             <button
-// //               type="submit"
-// //               className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300"
-// //             >
-// //               Send
-// //             </button>
-// //           </form>
-// //         </div>
-// //       </div>
-// //     </>
-// //   );
-// // }
-
-// // export default Contact;
-
-
-
-
-
-
-
-
-
-
-
-
-// import axios from "axios";
-// import React from "react";
-// import { useForm } from "react-hook-form";
-// import toast from "react-hot-toast";
-
-// function Contact() {
-//   const {
-//     register,
-//     handleSubmit,
-//     reset,
-//     formState: { errors },
-//   } = useForm();
-
-//   const onSubmit = async (data) => {
-//     try {
-//       await axios.post("https://getform.io/f/bvrejzeb", data);
-//       toast.success("Message sent successfully ✅");
-//       reset();
-//     } catch (error) {
-//       toast.error("Something went wrong ❌");
-//     }
-//   };
-
-//   return (
-//     <section
-//       id="Contact"
-//       className="max-w-7xl mx-auto px-4 md:px-8 py-20"
-//     >
-//       {/* ===== Title ===== */}
-//       <h1 className="text-4xl font-bold text-center mb-3">
-//         Contact <span className="text-green-500">Me</span>
-//       </h1>
-
-//       <p className="text-center text-gray-600 mb-16">
-//         Have a project or opportunity? Let’s connect.
-//       </p>
-
-//       {/* ===== Content ===== */}
-//       <div className="grid md:grid-cols-2 gap-12 items-start">
-
-//         {/* ===== LEFT SIDE — Contact Info ===== */}
-//         <div className="space-y-6">
-//           <h2 className="text-2xl font-semibold">
-//             Get in touch
-//           </h2>
-
-//           <p className="text-gray-600">
-//             I’m open to internships, full-time roles, freelance work,
-//             and collaboration on exciting projects.
-//           </p>
-
-//           <div className="space-y-3 text-gray-700">
-
-//             <p>
-//               📧 Email:{" "}
-//               <a
-//                 href="mailto:uttammaurya377@gmail.com"
-//                 className="text-green-600 hover:underline"
-//               >
-//                 uttammaurya377@gmail.com
-//               </a>
-//             </p>
-
-//             <p>📍 Location: Bangalore, India</p>
-
-//             <p>
-//               💼 LinkedIn:{" "}
-//               <a
-//                 href="https://www.linkedin.com/in/uttam-fullstack"
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-green-600 hover:underline"
-//               >
-//                 linkedin.com/in/uttam-fullstack
-//               </a>
-//             </p>
-
-//             <p>
-//               🐙 GitHub:{" "}
-//               <a
-//                 href="https://github.com/uttam9721"
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-green-600 hover:underline"
-//               >
-//                 github.com/uttam9721
-//               </a>
-//             </p>
-//           </div>
-
-//           {/* ===== Resume Download ===== */}
-//           <a
-//             href="/UttamKumarCV.pdf"
-//             rel="noopener noreferrer"
-//             target="_blank"
-//             // download
-//             className="inline-block mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-lg font-medium shadow"
-//           >
-//             📄 Download Resume
-//           </a>
-//         </div>
-
-//         {/* ===== RIGHT SIDE — Contact Form ===== */}
-//         <form
-//           onSubmit={handleSubmit(onSubmit)}
-//           className="bg-white shadow-lg rounded-xl p-8 space-y-5 border"
-//         >
-//           <h2 className="text-xl font-semibold">
-//             Send a Message
-//           </h2>
-
-//           {/* Name */}
-//           <div>
-//             <input
-//               {...register("name", { required: true })}
-//               type="text"
-//               placeholder="Full Name"
-//               className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             />
-//             {errors.name && (
-//               <p className="text-red-500 text-sm mt-1">
-//                 Name is required
-//               </p>
-//             )}
-//           </div>
-
-//           {/* Email */}
-//           <div>
-//             <input
-//               {...register("email", {
-//                 required: true,
-//                 pattern: /^\S+@\S+$/i,
-//               })}
-//               type="email"
-//               placeholder="Email Address"
-//               className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             />
-//             {errors.email && (
-//               <p className="text-red-500 text-sm mt-1">
-//                 Valid email is required
-//               </p>
-//             )}
-//           </div>
-
-//           {/* Message */}
-//           <div>
-//             <textarea
-//               {...register("message", { required: true })}
-//               rows="5"
-//               placeholder="Your Message"
-//               className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-//             />
-//             {errors.message && (
-//               <p className="text-red-500 text-sm mt-1">
-//                 Message is required
-//               </p>
-//             )}
-//           </div>
-
-//           {/* Submit */}
-//           <button
-//             type="submit"
-//             className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-medium transition"
-//           >
-//             Send Message
-//           </button>
-//         </form>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Contact;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// add color 
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
   const {
@@ -310,258 +12,147 @@ function Contact() {
     formState: { errors },
   } = useForm();
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const onSubmit = async (data) => {
+    setIsSubmitting(true);
     try {
       await axios.post("https://getform.io/f/bvrejzeb", data);
-      toast.success("Message sent successfully ✅");
+      toast.success("Message sent successfully 🚀");
       reset();
     } catch (error) {
       toast.error("Something went wrong ❌");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <section
-      id="Contact"
-      className="relative min-h-screen overflow-hidden 
-      bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] 
-      text-white py-20"
-    >
+    <section id="Contact" className="relative py-24 border-t border-cyan-500/20 bg-[#080214]">
+      
+      {/* Background Effects */}
+      <div className="absolute inset-0 cyber-grid z-0 pointer-events-none"></div>
+      <div className="absolute w-[600px] h-[600px] orb-purple top-1/4 left-[-200px] pointer-events-none z-0"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-bold tracking-widest text-cyan-400 uppercase mb-2">Connect</h2>
+          <h1 className="text-4xl md:text-5xl font-display font-bold">
+            Get In <span className="neon-text">Touch</span>
+          </h1>
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+            Have a project, opportunity, or just want to say hi? Let's connect and build something amazing together.
+          </p>
+        </div>
 
-      {/* ===== Glow ===== */}
-      <div className="absolute w-[500px] h-[500px] 
-      bg-green-500/20 blur-[120px] top-1/2 left-1/2 
-      -translate-x-1/2 -translate-y-1/2"></div>
-
-      {/* ===== Grid ===== */}
-      <div className="absolute inset-0 
-      bg-[linear-gradient(#0ea5e91a_1px,transparent_1px),
-      linear-gradient(90deg,#0ea5e91a_1px,transparent_1px)] 
-      bg-[size:60px_60px]"></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-
-        {/* ===== Title ===== */}
-        {/* <h1
-          className="text-4xl font-bold text-center mb-3
-          bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-          bg-clip-text text-transparent"
-        >
-          Contact Me
-        </h1> */}
-         <h1 className="text-4xl font-bold mb-10 text-center">
-  Contact{" "}
-  <span
-    className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"
-  >
-    Me
-  </span>
-</h1>
-
-        <p className="text-center text-gray-400 mb-16">
-          Have a project or opportunity? Let’s connect.
-        </p>
-
-        {/* ===== Content ===== */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-
-          {/* ===== LEFT SIDE ===== */}
-          <div className="space-y-6">
-
-            <h2
-              className="text-2xl  font-bold mb-6
-  bg-gradient-to-r from-[#8B0000] via-[#2563EB] to-[#B8860B]
-  bg-clip-text text-transparent"
-            >
-              Get in touch
-            </h2>
-
-            <p className="text-gray-300">
-              I’m open to internships, full-time roles, freelance work,
-              and collaboration on exciting projects.
-            </p>
-
-            <div className="space-y-3 text-gray-300">
-
-              <p>
-                📧 Email:{" "}
-                <a
-                  href="mailto:uttammaurya377@gmail.com"
-                  className="text-green-400 hover:underline"
-                >
-                  uttammaurya377@gmail.com
-                </a>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT SIDE - Contact Info */}
+          <div className="space-y-10">
+            <div className="cyber-glass p-8 rounded-3xl border border-white/5 hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)]">
+              <h3 className="text-2xl font-display font-bold text-white mb-6">Contact Information</h3>
+              <p className="text-gray-400 mb-8 leading-relaxed">
+                I'm currently open to full-time roles, freelance opportunities, and exciting collaborations.
               </p>
-
-              <p>📍 Location: Bangalore, India</p>
-
-              <p>
-                💼 LinkedIn:{" "}
-                <a
-                  href="https://www.linkedin.com/in/uttam-fullstack"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-400 hover:underline"
-                >
-                  LinkedIn
+              
+              <div className="space-y-6">
+                <a href="mailto:uttammaurya377@gmail.com" className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-[#080214] transition-all duration-300">
+                    <FaEnvelope className="text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 uppercase tracking-widest font-bold mb-1">Email</p>
+                    <p className="text-gray-300 group-hover:text-cyan-400 transition-colors">uttammaurya377@gmail.com</p>
+                  </div>
                 </a>
-              </p>
 
-              <p>
-                🐙 GitHub:{" "}
-                <a
-                  href="https://github.com/uttam9721"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-400 hover:underline"
-                >
-                  GitHub
-                </a>
-              </p>
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-[#080214] transition-all duration-300">
+                    <FaMapMarkerAlt className="text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 uppercase tracking-widest font-bold mb-1">Location</p>
+                    <p className="text-gray-300 group-hover:text-purple-400 transition-colors">Bangalore, India</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Resume Button */}
-            <a
-              href="/UttamKumarCV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 
-              
-               px-6  
-             py-3 rounded-lg font-medium text-black
-  bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-  hover:brightness-110 hover:scale-[1.02]
-  transition duration-300
-  "
-            >
-              📄 Download Resume
-            </a>
-
-            {/* Scheduling / Meeting Links */}
-            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-3">
-              <a
-                href="https://calendly.com/your-username" /* replace with your Calendly link */
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 rounded-lg font-medium text-black
-                  bg-gradient-to-r from-[#22c55e] to-[#06b6d4]
-                  hover:brightness-110 hover:scale-[1.02] transition duration-300"
-              >
-                📅 Schedule Interview
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="/UttamKumarCV.pdf" target="_blank" rel="noopener noreferrer" 
+                className="flex-1 text-center py-4 rounded-xl font-bold text-white
+                bg-gradient-to-r from-cyan-600 to-blue-600 
+                shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)]
+                hover:scale-[1.02] transition-all duration-300 border border-cyan-400/50">
+                📄 Download Resume
               </a>
-
-              <a
-                href="https://meet.google.com/new"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 rounded-lg font-medium text-white
-                  bg-black/70 hover:bg-black/80 transition duration-300"
-              >
+              <a href="https://meet.google.com/new" target="_blank" rel="noopener noreferrer" 
+                className="flex-1 text-center py-4 rounded-xl font-bold text-white
+                bg-white/5 border border-white/10 hover:border-pink-500/50 hover:bg-white/10
+                hover:shadow-[0_0_20px_rgba(236,72,153,0.3)]
+                hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-2">
                 🎥 Start Google Meet
               </a>
             </div>
-
           </div>
 
-          {/* ===== RIGHT SIDE — FORM ===== */}
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="bg-white/10 backdrop-blur-md 
-            border border-white/10 rounded-xl p-8 space-y-5 shadow-lg"
-          >
+          {/* RIGHT SIDE - Contact Form */}
+          <div className="cyber-glass p-8 md:p-10 rounded-3xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-purple-500/30 transition-all duration-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/10 to-transparent pointer-events-none rounded-bl-full"></div>
+            
+            <h3 className="text-2xl font-display font-bold text-white mb-8">Send a Message</h3>
+            
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 relative z-10">
+              
+              <div className="space-y-1">
+                <input
+                  {...register("name", { required: true })}
+                  type="text"
+                  placeholder="Your Full Name"
+                  className="w-full bg-[#080214]/60 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                />
+                {errors.name && <p className="text-pink-500 text-xs font-bold pl-2">Name is required</p>}
+              </div>
 
-            <h2
-              className="text-xl font-semibold
-              bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-              bg-clip-text text-transparent"
-            >
-              Send a Message
-            </h2>
+              <div className="space-y-1">
+                <input
+                  {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                  type="email"
+                  placeholder="Your Email Address"
+                  className="w-full bg-[#080214]/60 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all"
+                />
+                {errors.email && <p className="text-pink-500 text-xs font-bold pl-2">Valid email is required</p>}
+              </div>
 
-            {/* Name */}
-            <div>
-              <input
-                {...register("name", { required: true })}
-                type="text"
-                placeholder="Full Name"
-                className="w-full bg-white/5 border border-white/10 
-                rounded-lg px-4 py-3 text-white 
-                placeholder-gray-400 
-                focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              {errors.name && (
-                <p className="text-red-400 text-sm mt-1">
-                  Name is required
-                </p>
-              )}
-            </div>
+              <div className="space-y-1">
+                <textarea
+                  {...register("message", { required: true })}
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                  className="w-full bg-[#080214]/60 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-pink-400 focus:ring-1 focus:ring-pink-400 transition-all resize-none"
+                />
+                {errors.message && <p className="text-pink-500 text-xs font-bold pl-2">Message is required</p>}
+              </div>
 
-            {/* Email */}
-            <div>
-              <input
-                {...register("email", {
-                  required: true,
-                  pattern: /^\S+@\S+$/i,
-                })}
-                type="email"
-                placeholder="Email Address"
-                className="w-full bg-white/5 border border-white/10 
-                rounded-lg px-4 py-3 text-white 
-                placeholder-gray-400 
-                focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              {errors.email && (
-                <p className="text-red-400 text-sm mt-1">
-                  Valid email is required
-                </p>
-              )}
-            </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-xl font-bold text-white
+                bg-gradient-to-r from-purple-600 to-pink-600 
+                hover:shadow-[0_0_30px_rgba(236,72,153,0.5)]
+                hover:scale-[1.02] transition-all duration-300 border border-pink-400/50 disabled:opacity-50 disabled:hover:scale-100 mt-4"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
 
-            {/* Message */}
-            <div>
-              <textarea
-                {...register("message", { required: true })}
-                rows="5"
-                placeholder="Your Message"
-                className="w-full bg-white/5 border border-white/10 
-                rounded-lg px-4 py-3 text-white 
-                placeholder-gray-400 
-                focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              {errors.message && (
-                <p className="text-red-400 text-sm mt-1">
-                  Message is required
-                </p>
-              )}
-            </div>
-
-            {/* Submit */}
-            {/* <button
-              type="submit"
-              className="w-full bg-green-500 hover:bg-green-600 
-              text-white py-3 rounded-lg font-medium transition"
-            >
-              Send Message
-            </button> */}
-            <button
-  type="submit"
-  className="w-full py-3 rounded-lg font-medium text-black
-  bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-  hover:brightness-110 hover:scale-[1.02]
-  transition duration-300
-  shadow-[0_0_25px_rgba(34,197,94,0.5)]"
->
-  Send Message
-</button>
-
-
-          </form>
+            </form>
+          </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

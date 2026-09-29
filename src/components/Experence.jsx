@@ -1,5 +1,3 @@
-import Stats from './Stats'
-
 function Experience() {
   const skillCategories = [
     {
@@ -70,17 +68,14 @@ function Experience() {
         >
           Technical Skills
         </h1> */}
-         <h1 className="text-4xl font-bold mb-10 text-center">
+         <h1 className="text-4xl md:text-5xl font-display font-bold mb-10 text-center text-white">
   Technical{" "}
-  <span
-    className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"
-  >
+  <span className="neon-text">
     Skills
   </span>
 </h1>
 
-        <p className="text-center text-gray-400 mb-16">
+        <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
           Technologies and tools I use to build scalable web applications
         </p>
 
@@ -91,20 +86,9 @@ function Experience() {
             <div key={index}>
 
               {/* Category Title */}
-              {/* <h2
-                className="text-2xl font-semibold mb-6
-                bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15]
-                bg-clip-text text-transparent"
-              >
+              <h2 className="text-2xl font-display font-bold mb-6 text-cyan-400 border-b border-cyan-400/20 pb-2 inline-block">
                 {category.title}
-              </h2> */}
-              <h2
-  className="text-2xl  font-bold mb-6
-  bg-gradient-to-r from-[#8B0000] via-[#2563EB] to-[#B8860B]
-  bg-clip-text text-transparent"
->
-  {category.title}
-</h2>
+              </h2>
 
 
               {/* Skills Grid */}
@@ -141,7 +125,6 @@ function Experience() {
         </div>
 
       </div>
-<Stats/>
     </section>
   );
 }

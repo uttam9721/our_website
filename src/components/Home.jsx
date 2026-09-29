@@ -82,9 +82,9 @@ const Home = () => {
             improving development skills.
           </p> */}
           <p className="text-gray-300 leading-relaxed">
-  MERN Stack Developer with 1 year of experience building scalable web apps 
-  and clean user interfaces.
-</p>
+            MERN Stack Developer with 1 year of experience building scalable web apps
+            and clean user interfaces.
+          </p>
 
           {/* Social + Tech */}
           <div className="flex gap-16 flex-wrap">

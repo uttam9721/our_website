@@ -5,7 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Outfit', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+      },
+      colors: {
+        cyber: {
+          dark: '#080214',
+        }
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

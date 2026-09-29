@@ -4,11 +4,10 @@ import Home from './components/Home'
 import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Experence from './components/Experence';
+import Github from './components/Github';
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Journey from './components/Journey'
-// import MiniGame from './components/MiniGame'
-// import Stats from './components/Stats'
+
 function App() {
   return (
     <div>
@@ -17,9 +16,7 @@ function App() {
      <About />
      <Portfolio />
      <Experence />
-     {/* <MiniGame/> */}
-     <Journey/>
-     {/* <Stats/> */}
+     <Github />
      <Contact />
      <Footer />
     </div>

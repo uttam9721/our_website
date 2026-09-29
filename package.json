@@ -19,11 +19,15 @@
     "react-hook-form": "^7.71.1",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-scroll": "^1.9.3",
+    "react-type-animation": "^3.2.0",
     "react-typed": "^2.0.12",
+    "rehype-raw": "^7.0.0",
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.7.0",
