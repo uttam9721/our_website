@@ -192,12 +192,12 @@ const Stats = () => {
         {/* Contribution Profile Cards */}
         <div className="cyber-glass p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-center justify-center border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
           <img 
-            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=uttam9721&theme=github_dark" 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=uttam9721&theme=tokyonight" 
             alt="GitHub Profile Details" 
             className="w-full md:w-2/3 object-contain rounded-xl shadow-lg border border-white/10" 
           />
           <img 
-            src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=uttam9721&theme=github_dark" 
+            src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=uttam9721&theme=tokyonight" 
             alt="GitHub Stats Details" 
             className="w-full md:w-1/3 object-contain rounded-xl shadow-lg border border-white/10" 
           />

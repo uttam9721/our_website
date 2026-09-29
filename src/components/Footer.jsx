@@ -212,21 +212,12 @@ function Footer() {
   return (
     <>
       <footer
-        className="relative overflow-hidden 
-        bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] 
-        text-white py-10"
+        className="relative overflow-hidden bg-[#080214] text-white py-10 border-t border-purple-500/20"
       >
-
         {/* ===== Glow ===== */}
-        <div className="absolute w-[400px] h-[400px] 
-        bg-green-500/20 blur-[120px] top-1/2 left-1/2 
-        -translate-x-1/2 -translate-y-1/2"></div>
-
-        {/* ===== Grid ===== */}
-        <div className="absolute inset-0 
-        bg-[linear-gradient(#0ea5e91a_1px,transparent_1px),
-        linear-gradient(90deg,#0ea5e91a_1px,transparent_1px)] 
-        bg-[size:60px_60px]"></div>
+        <div className="absolute inset-0 cyber-grid z-0 pointer-events-none opacity-50"></div>
+        <div className="absolute w-[400px] h-[400px] orb-cyan top-1/2 left-0 -translate-y-1/2 pointer-events-none z-0"></div>
+        <div className="absolute w-[400px] h-[400px] orb-pink top-1/2 right-0 -translate-y-1/2 pointer-events-none z-0"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center text-center">
 

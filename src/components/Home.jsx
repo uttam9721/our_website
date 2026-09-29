@@ -15,26 +15,14 @@ const Home = () => {
   return (
     <section
       id="Home"
-      className="relative min-h-screen overflow-hidden 
-      bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] 
-      text-white py-20"
+      className="relative min-h-screen overflow-hidden bg-[#080214] text-white py-20 flex items-center"
     >
-      {/* Glow Effect */}
-      <div
-        className="absolute w-[500px] h-[500px] 
-        bg-green-500/20 blur-[120px] top-1/2 left-1/3 
-        -translate-x-1/2 -translate-y-1/2"
-      ></div>
+      {/* Glow Effects */}
+      <div className="absolute inset-0 cyber-grid z-0 pointer-events-none opacity-50"></div>
+      <div className="absolute w-[600px] h-[600px] orb-cyan top-1/4 left-[-100px] pointer-events-none z-0"></div>
+      <div className="absolute w-[500px] h-[500px] orb-pink bottom-0 right-[-100px] pointer-events-none z-0"></div>
 
-      {/* Grid Background */}
-      <div
-        className="absolute inset-0 
-        bg-[linear-gradient(#0ea5e91a_1px,transparent_1px),
-        linear-gradient(90deg,#0ea5e91a_1px,transparent_1px)] 
-        bg-[size:60px_60px]"
-      ></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 mt-10 md:mt-0">
 
         {/* LEFT CONTENT */}
         <div className="md:w-1/2 space-y-6">

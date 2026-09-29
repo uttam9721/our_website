@@ -4,21 +4,13 @@ const About = () => {
   return (
     <section
       id="About"
-      className="relative min-h-screen overflow-hidden 
-      bg-gradient-to-br from-[#020617] via-[#020617] to-[#030014] 
-      text-white py-20"
+      className="relative min-h-screen overflow-hidden bg-[#080214] text-white py-20"
     >
 
       {/* ===== Glow Effect ===== */}
-      <div className="absolute w-[500px] h-[500px] 
-      bg-green-500/20 blur-[120px] top-1/2 left-1/2 
-      -translate-x-1/2 -translate-y-1/2"></div>
-
-      {/* ===== Grid Background ===== */}
-      <div className="absolute inset-0 
-      bg-[linear-gradient(#0ea5e91a_1px,transparent_1px),
-      linear-gradient(90deg,#0ea5e91a_1px,transparent_1px)] 
-      bg-[size:60px_60px]"></div>
+      <div className="absolute inset-0 cyber-grid z-0 pointer-events-none opacity-50"></div>
+      <div className="absolute w-[600px] h-[600px] orb-cyan top-0 left-[-200px] pointer-events-none z-0"></div>
+      <div className="absolute w-[600px] h-[600px] orb-pink bottom-0 right-[-200px] pointer-events-none z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
 
@@ -91,11 +83,11 @@ const About = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
           border border-white/10 hover:bg-white/20 transition">
             <h2 className="text-xl font-semibold text-green-400 mb-4">
-              💻 <span  className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent" > Skills & Expertise </span>
+              💻 <span  className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] bg-clip-text text-transparent" > Skills & Expertise </span>
             </h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-300">
               <li>MERN Stack Development (MongoDB, Express, React, Node)</li>
+              <li>Frontend Development with Angular & Tailwind CSS</li>
               <li>RESTful API Design & Implementation</li>
               <li>Responsive UI Development with React.js</li>
               <li>MongoDB & SQL Database Management</li>

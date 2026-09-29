@@ -47,7 +47,7 @@ const Navbar = () => {
           <ul className="hidden md:flex space-x-8 font-medium text-gray-300 text-sm tracking-wider uppercase">
 
             {navItems.map((item) => (
-              <li key={item.name} className="cursor-pointer flex items-center gap-2">
+              <li key={item.name} className="cursor-pointer flex items-center">
                 <Link
                   to={item.name}
                   smooth
@@ -55,9 +55,9 @@ const Navbar = () => {
                   offset={-70}
                   spy
                   activeClass="text-cyan-400 border-b-2 border-cyan-400 pb-1"
-                  className="hover:text-cyan-400 transition duration-300 flex items-center gap-2"
+                  className="hover:text-cyan-400 transition duration-300"
                 >
-                  {item.icon} {item.name}
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -69,24 +69,21 @@ const Navbar = () => {
 
       {/* ===== Mobile Bottom Navigation Bar ===== */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#080214]/90 backdrop-blur-xl border-t border-white/10 pb-safe">
-        <ul className="flex justify-between items-center px-2 py-2 overflow-x-auto hide-scrollbar">
+        <ul className="flex justify-around items-center px-2 py-3 overflow-x-auto hide-scrollbar">
           {navItems.map((item) => (
-            <li key={item.name} className="flex-1 min-w-[64px]">
+            <li key={item.name} className="flex-1 min-w-[50px]">
               <Link
                 to={item.name}
                 smooth
                 duration={500}
                 offset={-70}
                 spy
-                activeClass="text-cyan-400 scale-110 drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]"
+                activeClass="text-cyan-400 scale-125 drop-shadow-[0_0_12px_rgba(6,182,212,0.9)] -translate-y-2"
                 className="flex flex-col items-center justify-center text-gray-400 hover:text-white transition-all duration-300 gap-1"
               >
-                <div className="text-xl">
+                <div className="text-2xl">
                   {item.icon}
                 </div>
-                <span className="text-[9px] font-bold uppercase tracking-widest text-center">
-                  {item.name}
-                </span>
               </Link>
             </li>
           ))}
