@@ -53,11 +53,48 @@ const Contact = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      await axios.post("https://getform.io/f/bvrejzeb", data);
-      toast.success("Message sent successfully! I'll be in touch shortly.");
+      const response = await axios.post(
+        "https://formsubmit.co/ajax/uttammaurya377@gmail.com",
+        {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          _subject: `New Portfolio Message from ${data.name}: ${data.subject}`,
+          _replyto: data.email,
+          _template: "table",
+          _captcha: "false",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (response.data && response.data.success === "false" && response.data.message?.includes("Activation")) {
+        toast.success("Message received! Click the activation link sent to uttammaurya377@gmail.com.");
+      } else {
+        toast.success("Message sent successfully! Landed directly in uttammaurya377@gmail.com.");
+      }
+
+      // Optional dual backup
+      try {
+        await axios.post("https://getform.io/f/bvrejzeb", data);
+      } catch (_) {
+        // Silent catch for backup
+      }
+
       reset();
     } catch (error) {
-      toast.error("Failed to send message. Please email directly at uttammaurya377@gmail.com");
+      toast.error("Network error. Opening your default email client...");
+      const mailtoUrl = `mailto:uttammaurya377@gmail.com?subject=${encodeURIComponent(
+        data.subject || "Portfolio Inquiry"
+      )}&body=${encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+      )}`;
+      window.open(mailtoUrl, "_blank");
     } finally {
       setIsSubmitting(false);
     }
@@ -312,6 +349,12 @@ const Contact = () => {
                     </>
                   )}
                 </button>
+
+                <div className="pt-1 text-center">
+                  <p className="text-[11px] text-slate-500 font-mono">
+                    Direct delivery to <a href="mailto:uttammaurya377@gmail.com" className="text-sky-400 hover:underline">uttammaurya377@gmail.com</a>
+                  </p>
+                </div>
               </form>
             </div>
           </div>

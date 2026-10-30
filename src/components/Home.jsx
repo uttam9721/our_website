@@ -130,9 +130,8 @@ export const engineer = {
 
             <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
               Full-Stack & Frontend Engineer with commercial production experience at{" "}
-              <span className="text-sky-300 font-semibold">I-next Web Technologies</span> and{" "}
-              <span className="text-emerald-300 font-semibold">Amzsoft Innovexa</span>. 
-              Creator of <span className="text-emerald-400 font-mono text-xs sm:text-sm bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">cb-react-smart-loader</span> on NPM and builder of scalable enterprise platforms (Digital Payments, Fleet Operations, B2B Commerce).
+              <span className="text-sky-300 font-semibold">I-next Web Technologies</span>. 
+              Creator of <span className="text-emerald-400 font-mono text-xs sm:text-sm bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">cb-react-smart-loader</span> on NPM and builder of high-performance, scalable enterprise web platforms.
             </p>
 
             {/* Action Buttons (Mobile-First Wrap) */}
