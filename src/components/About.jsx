@@ -1,262 +1,327 @@
 import React from "react";
+import { 
+  FaBriefcase, 
+  FaGraduationCap, 
+  FaAward, 
+  FaCheckCircle, 
+  FaExternalLinkAlt, 
+  FaCode, 
+  FaShieldAlt, 
+  FaRocket 
+} from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const About = () => {
+  const experiences = [
+    {
+      company: "I-next Web Technologies Pvt. Ltd.",
+      role: "Frontend Developer",
+      period: "Apr 2026 — Present",
+      location: "Chandigarh, India",
+      type: "Full-Time",
+      website: "https://inextwebtechnologies.com/",
+      description: "Developing and maintaining ERP-based internal web applications and B2B platforms supporting 8+ enterprise modules.",
+      highlights: [
+        "Developed and maintained ERP web applications and B2B platforms using React.js, TypeScript, Tailwind CSS, HTML5, and CSS3.",
+        "Built 15+ scalable, reusable React.js components for ERPAG (enterprise workflow platform), improving UI maintainability and reducing component re-render cycles by 25%.",
+        "Optimized ERPAG dashboard modules using memoization and lazy-loaded routes, reducing initial bundle size by ~30% and improving perceived load speed.",
+        "Integrated 20+ REST APIs to power interactive dashboards, user management, orders, and reports across Aspice Affair B2B solutions, collaborating closely on Node.js/Express endpoint contracts.",
+        "Collaborated with a cross-functional team of 5+ backend developers to ensure seamless API communication and consistent data rendering across 10+ modules."
+      ],
+      skills: ["React.js", "TypeScript", "Tailwind CSS", "REST APIs", "TanStack Query", "Memoization"],
+    },
+    {
+      company: "Amzsoft Innovexa Pvt. Ltd.",
+      role: "Full Stack Web Developer",
+      period: "Jan 2025 — Mar 2026",
+      location: "Lucknow, UP",
+      type: "Full-Time",
+      website: "https://www.amzsoftinnovexa.com/",
+      description: "Converted from intern to full-time Full Stack Web Developer, taking ownership of end-to-end feature delivery across frontend and backend.",
+      highlights: [
+        "Converted from intern to full-time Full Stack Web Developer, taking ownership of end-to-end feature delivery across frontend and backend.",
+        "Built and maintained scalable web applications using React.js on the frontend and Node.js/Express on the backend, integrating REST APIs with database-backed services.",
+        "Extended the Learning Management System (LMS) with new full-stack features, role-based routing, and an interactive course dashboard used across 4 user roles."
+      ],
+      skills: ["MERN Stack", "React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+    },
+    {
+      company: "Amzsoft Innovexa Pvt. Ltd.",
+      role: "Web Development Intern",
+      period: "Jul 2024 — Dec 2024",
+      location: "Lucknow, UP",
+      type: "Internship",
+      website: "https://www.amzsoftinnovexa.com/",
+      description: "Rigorous 6-month web development internship building scalable client components and LMS features.",
+      highlights: [
+        "Built a scalable Learning Management System (LMS) frontend using React.js, implementing JWT authentication, role-based routing across 4 user roles, and an interactive course dashboard.",
+        "Collaborated in an Agile/Scrum team of 6, participating in 2-week sprint planning, daily standups, and 50+ Git-based code reviews.",
+        "Built 10+ reusable components using component-driven architecture and responsive design, integrated with REST APIs for dynamic content."
+      ],
+      skills: ["React.js", "JavaScript", "JWT Auth", "Git & GitHub", "Agile/Scrum"],
+    },
+  ];
+
+  const milestones = [
+    {
+      icon: <SiLeetcode className="text-amber-500" />,
+      title: "180+ LeetCode DSA Solved",
+      desc: "Solved 180+ algorithmic problems on LeetCode, strengthening DSA proficiency across arrays, trees, and dynamic programming.",
+      link: "https://leetcode.com/u/uttammaurya01/",
+    },
+    {
+      icon: <FaAward className="text-sky-400" />,
+      title: "Web Development Certificate — GeeksforGeeks",
+      desc: "Certified in Web Development (2024) covering full-stack architecture, backend REST APIs, and database modeling.",
+      link: null,
+    },
+    {
+      icon: <FaRocket className="text-rose-400" />,
+      title: "Published NPM Package",
+      desc: "Author of cb-react-smart-loader on npm registry for the global React developer ecosystem.",
+      link: "https://www.npmjs.com/package/cb-react-smart-loader",
+    },
+    {
+      icon: <FaShieldAlt className="text-emerald-400" />,
+      title: "Enterprise Production Systems",
+      desc: "Engineered commercial applications: InDreamPay, FleetOps, Planipro, and ERPAG across 8+ modules.",
+      link: null,
+    },
+  ];
+
   return (
     <section
       id="About"
-      className="relative min-h-screen overflow-hidden bg-[#080214] text-white py-20"
+      className="relative py-20 sm:py-24 bg-[#080d1a] text-slate-200 overflow-hidden border-t border-slate-800/80"
     >
+      <div className="absolute inset-0 tech-grid pointer-events-none opacity-30"></div>
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-sky-500/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-      {/* ===== Glow Effect ===== */}
-      <div className="absolute inset-0 cyber-grid z-0 pointer-events-none opacity-50"></div>
-      <div className="absolute w-[600px] h-[600px] orb-cyan top-0 left-[-200px] pointer-events-none z-0"></div>
-      <div className="absolute w-[600px] h-[600px] orb-pink bottom-0 right-[-200px] pointer-events-none z-0"></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-
-        <h1 className="text-4xl font-bold mb-10 text-center">
-  About{" "}
-  <span
-    className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"
-  >
-    Me
-  </span>
-</h1>
-
-
-        {/* ===== Intro ===== */}
-       <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 
-  border border-white/10 hover:bg-white/10 transition duration-300 mt-12 
-  max-w-4xl mx-auto text-center shadow-lg  mb-10">
-
-  {/* Title */}
-  {/* <h2 className="text-2xl sm:text-3xl font-semibold mb-4 
-    bg-gradient-to-r from-cyan-400 to-blue-500 
-    bg-clip-text text-transparent">
-    About Me
-  </h2> */}
-
-  {/* Line */}
-  <div className="w-16 h-1 bg-cyan-400 mx-auto mb-6 rounded-full"></div>
-
-  {/* Content */}
-  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-    I am a B.Tech graduate in Information Technology with a strong passion for 
-    Full Stack Web Development. I specialize in building scalable and 
-    user-friendly web applications using the MERN stack and modern technologies.
-    <br /><br />
-    I enjoy solving real-world problems through clean and efficient code, and I 
-    continuously explore new tools like Docker and Kubernetes to grow as a developer.
-  </p>
-
-</div>
-
-        {/* ===== Sections Grid ===== */}
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {/* ===== Education ===== */}
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-          border border-white/10 hover:bg-white/20 transition">
-            <h2 className="text-xl font-semibold text-green-400 mb-4">
-              🎓 <span className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"> Education</span>
-            </h2>
-            {/* <p className="text-gray-300">
-              Bachelor of Technology (B.Tech) in Information Technology.
-              Built a strong foundation in programming, data structures,
-              software development, and web technologies.
-            </p> */}
-            <ul className="list-disc pl-5 space-y-2 text-gray-300">
-              <li>
-  Bachelor of Technology (B.Tech) in Information Technology from 
-  Dr. A.P.J. Abdul Kalam Technical University, Lucknow. 
-  Developed a strong foundation in programming, data structures, 
-  software engineering, and modern web technologies.
-
-              </li>
-</ul>
-
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono uppercase tracking-wider">
+            <FaCode className="text-xs" />
+            <span>Background & Commercial Experience</span>
           </div>
-
-          {/* ===== Skills ===== */}
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-          border border-white/10 hover:bg-white/20 transition">
-            <h2 className="text-xl font-semibold text-green-400 mb-4">
-              💻 <span  className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] bg-clip-text text-transparent" > Skills & Expertise </span>
-            </h2>
-            <ul className="list-disc pl-5 space-y-2 text-gray-300">
-              <li>MERN Stack Development (MongoDB, Express, React, Node)</li>
-              <li>Frontend Development with Angular & Tailwind CSS</li>
-              <li>RESTful API Design & Implementation</li>
-              <li>Responsive UI Development with React.js</li>
-              <li>MongoDB & SQL Database Management</li>
-              <li>Version Control using Git & GitHub</li>
-            </ul>
-          </div>
-
-          {/* ===== Professional Experience ===== */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl font-semibold text-green-400 mb-6">
-              🧑‍💼 <span   className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"> Professional Experience </span>
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-
-              {/* ===== Company 1 ===== */}
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-              border border-white/10 hover:bg-white/20 transition">
-
-                <h3 className="font-bold text-lg">
-                <span   className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent" >  Full Stack Web Developer Intern </span>
-                </h3>
-
-                <p className="text-green-400 font-medium">
-                  Amzsoft Innovexa, Lucknow
-                </p>
-
-                <p className="text-sm text-gray-400 mb-3">
-                  June 2024 — December 2024
-                </p>
-
-                <a
-                  href="https://www.amzsoftinnovexa.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mb-4 text-sm text-blue-400 hover:underline"
-                >
-                  🌐 Visit Company Website
-                </a>
-
-                <ul className="list-disc pl-5 space-y-2 text-gray-300 text-sm">
-                  <li>Completed a 6-month MERN stack internship</li>
-                  <li>Developed full stack web applications</li>
-                  <li>Built responsive interfaces using React.js</li>
-                  <li>Created backend APIs with Node.js & Express</li>
-                  <li>Worked with MongoDB for database management</li>
-                  <li>Collaborated using Git and Agile methodologies</li>
-                </ul>
-
-              </div>
-
-              {/* ===== Company 2 ===== */}
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-              border border-white/10 hover:bg-white/20 transition">
-
-                <h3 className="font-bold text-lg">
-                <span   className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"> Full Stack Web Developer Intern </span>
-                </h3>
-
-                <p className="text-green-400 font-medium">
-                  LzyCrazy Pvt Ltd
-                </p>
-
-                <p className="text-sm text-gray-400 mb-3">
-                  November 2025 — April 2026
-                </p>
-
-                <a
-                  href="https://www.lzycrazy.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mb-4 text-sm text-blue-400 hover:underline"
-                >
-                  🌐 Visit Company Website
-                </a>
-
-                <ul className="list-disc pl-5 space-y-2 text-gray-300 text-sm">
-                  <li>Currently working on full stack MERN applications</li>
-                  <li>Developing responsive frontend using React.js</li>
-                  <li>Building secure backend APIs with Node.js & Express</li>
-                  <li>Collaborating with team members on real-world projects</li>
-                  <li>Implementing database solutions using MongoDB</li>
-                </ul>
-
-              </div>
-
-            </div>
-             
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-  border border-white/10 hover:bg-white/20 transition mt-10">
-
-  <h3 className="font-bold text-lg">
-    <span className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-      bg-clip-text text-transparent">
-      Frontend Developer
-    </span>
-  </h3>
-
-  <p className="text-green-400 font-medium">
-    I-Next Web Technologies Pvt Ltd
-  </p>
-
-  <p className="text-sm text-gray-400 mb-3">
-    April 2026 — Present
-  </p>
-
-  <a
-    href="https://inextwebtechnologies.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block mb-4 text-sm text-blue-400 hover:underline"
-  >
-    🌐 Visit Company Website
-  </a>
-
-  <ul className="list-disc pl-5 space-y-2 text-gray-300 text-sm">
-    <li>Working as a Frontend Developer building modern web applications</li>
-    <li>Developing responsive UI using React.js and Tailwind CSS</li>
-    <li>Integrating REST APIs and managing application state</li>
-    <li>Improving performance and optimizing user experience</li>
-    <li>Collaborating with backend developers and design teams</li>
-  </ul>
-
-</div>
-
-          </div>
-
-          {/* ===== Achievements ===== */}
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 
-          border border-white/10 md:col-span-2 hover:bg-white/20 transition">
-
-            <h2 className="text-xl font-semibold text-green-400 mb-4">
-              🏆 <span   className="bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-    bg-clip-text text-transparent"> Achievements & Highlights </span>
-            </h2>
-
-            <ul className="list-disc pl-5 space-y-2 text-gray-300">
-
-              <li>
-                Solved <span className="font-semibold">180+ problems</span> on LeetCode
-              </li>
-
-              <li>
-                Built <span className="font-semibold">10+ Frontend Projects</span>
-              </li>
-
-              <li>
-                Developed <span className="font-semibold">5+ Full Stack Projects</span>
-              </li>
-
-              <li>Full Stack Web Development Certification — GeeksforGeeks</li>
-
-              <li>
-                Achieved <span className="font-semibold">3⭐ Java Rating</span> on HackerRank
-              </li>
-
-              <li>Java Programming Certification — HackerRank</li>
-
-            </ul>
-
-          </div>
-
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
+            Crafting code with <span className="text-heading-gradient">purpose & precision</span>.
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Engineering scalable web architectures, reducing re-render overhead, and shipping reliable enterprise software.
+          </p>
         </div>
 
-      </div>
+        {/* Narrative & Education Grid */}
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 mb-16 sm:mb-20">
+          {/* Engineering Philosophy Card */}
+          <div className="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+            <h3 className="text-xl font-display font-bold text-white flex items-center gap-2.5">
+              <FaShieldAlt className="text-sky-400 text-lg" />
+              <span>Engineering Philosophy</span>
+            </h3>
 
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              I am a Full-Stack & Frontend Developer with a B.Tech in Information Technology from 
+              <strong className="text-white"> Ambalika Institute of Management and Technology, Lucknow</strong>. 
+              My development focus centers on building enterprise-grade applications, optimizing component rendering lifecycles, and engineering clean REST API contracts.
+            </p>
+
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              At <strong className="text-sky-300">I-next Web Technologies</strong>, I led frontend performance initiatives that cut component re-render cycles by 25% and reduced initial bundle sizes by ~30% through route-level code splitting and memoization.
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-3 pt-2">
+              <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <span className="text-sky-400 font-mono text-xs font-bold block mb-1">01. MODULARITY</span>
+                <p className="text-xs text-slate-400">Atomic, reusable components that scale across 10+ enterprise modules.</p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <span className="text-emerald-400 font-mono text-xs font-bold block mb-1">02. PERFORMANCE</span>
+                <p className="text-xs text-slate-400">Memoization, lazy routes, and ~30% bundle footprint reductions.</p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <span className="text-purple-400 font-mono text-xs font-bold block mb-1">03. RELIABILITY</span>
+                <p className="text-xs text-slate-400">Strict TypeScript typing, RBAC auth, and resilient API contracts.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Education Card (Exact Details from CV) */}
+          <div className="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-display font-bold text-white flex items-center gap-2.5">
+                  <FaGraduationCap className="text-emerald-400 text-xl" />
+                  <span>Education</span>
+                </h3>
+                <span className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                  2021 – 2025
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-base font-semibold text-white">
+                  Bachelor of Technology (B.Tech)
+                </h4>
+                <p className="text-sm text-sky-400 font-medium">
+                  Information Technology
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                  Ambalika Institute of Management and Technology
+                </p>
+                <p className="text-xs text-slate-400 font-mono">
+                  Lucknow, Uttar Pradesh
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-slate-800/80">
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Rigorous academic curriculum covering Data Structures & Algorithms, Object-Oriented Software Design, Operating Systems, Database Management Systems, and Web Technologies.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center gap-3">
+              <span className="text-2xl">🎓</span>
+              <div>
+                <p className="text-xs font-semibold text-slate-200">Degree Status</p>
+                <p className="text-[11px] text-slate-400 font-mono">B.Tech in Information Technology</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Commercial Work Experience Timeline (Exact from CV) */}
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-3 mb-8 sm:mb-10">
+            <div className="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400">
+              <FaBriefcase className="text-base" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-display font-bold text-white">
+                Work Experience
+              </h3>
+              <p className="text-xs text-slate-400 font-mono">
+                Production software engineering roles across IT firms
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8"
+              >
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-800/80">
+                  <div>
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <h4 className="text-lg sm:text-xl font-bold text-white">
+                        {exp.role}
+                      </h4>
+                      <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                        {exp.type}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 mt-1 flex-wrap">
+                      <span className="text-emerald-400 font-medium text-sm">
+                        {exp.company}
+                      </span>
+                      <span className="text-slate-500 text-xs font-mono">
+                        📍 {exp.location}
+                      </span>
+                      {exp.website && (
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-500 hover:text-slate-300 text-xs flex items-center gap-1 transition"
+                        >
+                          <FaExternalLinkAlt className="text-[10px]" />
+                          <span>Website</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <span className="text-xs font-mono text-slate-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 self-start md:self-center">
+                    {exp.period}
+                  </span>
+                </div>
+
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <div className="space-y-2.5 mb-6">
+                  {exp.highlights.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                      <FaCheckCircle className="text-sky-400 text-xs mt-1 shrink-0" />
+                      <span className="leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                  {exp.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-900 text-slate-300 border border-slate-800"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Verified Milestones & Achievements Grid */}
+        <div>
+          <div className="flex items-center gap-3 mb-8">
+            <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+              <FaAward className="text-base" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-display font-bold text-white">
+                Certifications & Achievements
+              </h3>
+              <p className="text-xs text-slate-400 font-mono">
+                Verified achievements from official credentials
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {milestones.map((item, idx) => (
+              <div
+                key={idx}
+                className="glass-card rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition"
+              >
+                <div>
+                  <div className="text-2xl mb-3">{item.icon}</div>
+                  <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+                </div>
+
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-mono pt-2 border-t border-slate-800/80 transition"
+                  >
+                    <span>Verify Profile</span>
+                    <FaExternalLinkAlt className="text-[10px]" />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

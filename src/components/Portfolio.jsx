@@ -1,399 +1,689 @@
-import { useState } from "react";
-// Import placeholder images or real images
-import Clothing from "../assets/image.png";
-import shoping from "../assets/shoping.png";  
-import port from "../assets/portfolio.png";
-import school from "../assets/school.png";
-import food from "../assets/food.png";
-import flavoro from "../assets/flavoro.png";
-import analyzer from "../assets/analyzer.png";
-import coin from "../assets/coin.png";
-import flora from "../assets/flora.png";
-import shop from "../assets/myShop.png";
-import code from "../assets/code.png";
-import dog from "../assets/dog.png";
-import UiSchool from "../assets/the.png";
+import React, { useState } from "react";
+import { 
+  FaExternalLinkAlt, 
+  FaGithub, 
+  FaLayerGroup, 
+  FaInfoCircle, 
+  FaTimes, 
+  FaCheckCircle, 
+  FaCode, 
+  FaServer, 
+  FaDatabase,
+  FaShieldAlt,
+  FaCreditCard,
+  FaCar,
+  FaBoxes,
+  FaUsersCog,
+  FaLock
+} from "react-icons/fa";
 
-function PortFolio() {
-  const [activeTab, setActiveTab] = useState("all");
+// Import real project screenshots from assets for non-confidential builds
+import billnestImg from "../assets/billnest.png";
+import flavoroImg from "../assets/flavoro.png";
+import dogImg from "../assets/dog.png";
+import analyzerImg from "../assets/analyzer.png";
+import coinImg from "../assets/coin.png";
+import codeImg from "../assets/code.png";
+import schoolImg from "../assets/school.png";
+import clothingImg from "../assets/image.png";
+import floraImg from "../assets/flora.png";
+// import shopingImg from "../assets/shoping.png"; // Commented out Cart & Checkout System
 
-  const cardItem = [
+const Portfolio = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const projects = [
+    // 1. InDreamPay — FinTech & Digital Payments (Company Project - No image per NDA)
     {
-      id: 101,
-      name: "Qalb — Dating & Matrimonial Platform",
-      category: "frontend",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
-      description: "A modern dating and matrimonial platform focused on meaningful connections, featuring real-time messaging, meeting functionality, and multi-step profiles.",
-      techStack: ["React.js", "TypeScript", "Tailwind CSS", "Socket.io", "Axios"],
-      link: "https://github.com/uttam9721",
-      demo: "",
+      id: "indreampay",
+      title: "InDreamPay — Digital Payments & FinTech Platform",
+      category: "enterprise",
+      subCategory: "fullstack",
+      badge: "Commercial FinTech System",
+      image: null,
+      iconType: "fintech",
+      isEnterprise: true,
+      summary: "Modern digital payment and financial services platform built with React (TSX), NestJS, and PostgreSQL, supporting multi-tier merchant transactions, payment gateway workflows, and real-time settlement tracking.",
+      architecture: "React.tsx frontend with modular component architecture, powered by a NestJS enterprise backend, PostgreSQL relational database, and secure payment processing pipelines.",
+      challenges: "Engineered idempotent payment transaction execution, resilient webhook consumption for payment gateways, high-performance PostgreSQL query optimization, and PCI-DSS aligned security practices.",
+      techStack: ["React.tsx", "TypeScript", "NestJS", "PostgreSQL", "Tailwind CSS", "REST APIs"],
+      demo: "https://indreampay.com/",
+      github: null,
       featured: true,
     },
+
+    // 2. HR & Fleet Management — Cars, Drivers & Car Inspection (Company Project - No image per NDA)
     {
-      id: 102,
-      name: "Digital Payment Platform",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      description: "A modern digital payment and financial services platform designed with a responsive interface, dashboard analytics, and business-oriented workflows.",
-      techStack: ["React.js", "TypeScript", "Nest.js", "PostgreSQL", "REST API"],
-      link: "https://github.com/uttam9721",
+      id: "fleet-hr-management",
+      title: "FleetOps — HR, Vehicle & Driver Management System",
+      category: "enterprise",
+      subCategory: "frontend",
+      badge: "Enterprise Fleet & HR",
+      image: null,
+      iconType: "fleet",
+      isEnterprise: true,
+      summary: "Enterprise HR and fleet management web application built to coordinate corporate drivers, vehicle allocations, shift rosters, and an end-to-end digital Car Inspection workflow with damage documentation and condition reports.",
+      architecture: "Modular React.tsx architecture with robust state machines for vehicle inspection forms, real-time driver allocation views, and secure RESTful API integrations.",
+      challenges: "Architected a complex multi-stage vehicle inspection wizard with photo attachments, offline checklist validation, dynamic driver shift scheduling, and status transition audit logs.",
+      techStack: ["React.tsx", "TypeScript", "Tailwind CSS", "REST APIs", "Axios", "Form State Machine"],
       demo: "",
+      github: null,
       featured: true,
     },
+
+    // 3. Planipro — Aspice Affair B2B Platform (From CV & Company Project)
     {
-      id: 103,
-      name: "Enterprise ERP System",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      description: "An enterprise resource planning system designed to manage business operations, workflows, interactive dashboards, and organizational data securely.",
-      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API"],
-      link: "https://github.com/uttam9721",
-      demo: "",
+      id: "planipro-b2b",
+      title: "Planipro — Aspice Affair Enterprise B2B Platform",
+      category: "enterprise",
+      subCategory: "fullstack",
+      badge: "Enterprise B2B Solution",
+      image: null,
+      iconType: "b2b",
+      isEnterprise: true,
+      summary: "Responsive, reusable React.js and JavaScript components for Planipro, a B2B enterprise platform improving UI consistency and maintainability across multiple modules.",
+      architecture: "React.js frontend paired with Node.js/Express backend APIs, powering interactive dashboards, order management, and reporting workflows.",
+      challenges: "Optimized UI performance using lazy-loaded routes and memoization, ensuring smooth cross-browser compatibility and consistent data rendering across 10+ modules.",
+      techStack: ["React.js", "TypeScript", "Node.js", "Tailwind CSS", "REST APIs", "Memoization"],
+      demo: "https://planipro.aspiceaffair.com/",
+      github: null,
       featured: true,
     },
+
+    // 4. Enterprise CRM System (Company Project - No image per NDA)
     {
-      id: 104,
-      name: "HR Management System",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-      description: "A Human Resource Management System streamlining employee tracking, department roles, attendance, leave management, and RBAC authentication.",
-      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API"],
-      link: "https://github.com/uttam9721",
+      id: "enterprise-crm",
+      title: "Enterprise CRM & Pipeline Management System",
+      category: "enterprise",
+      subCategory: "frontend",
+      badge: "Enterprise CRM Platform",
+      image: null,
+      iconType: "crm",
+      isEnterprise: true,
+      summary: "Custom Customer Relationship Management platform built to track customer lifecycles, sales pipeline stages, interaction histories, deal forecasting, and agent performance metrics.",
+      architecture: "React.tsx frontend engineered with customizable pipeline stage boards, multi-criteria lead filtering, activity audit timelines, and secure API communication.",
+      challenges: "Built interactive drag-and-drop lead stage movement with optimistic UI updates, complex composite search filters, and real-time deal stage transitions.",
+      techStack: ["React.tsx", "TypeScript", "Tailwind CSS", "REST APIs", "Axios"],
       demo: "",
-      featured: true,
+      github: null,
+      featured: false,
     },
+
+    // 5. BillNest — Commercial Billing Management
     {
-      id: 105,
-      name: "Learning Management System",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
-      description: "A complete LMS platform for managing courses, students, educational content, with Stripe payment integration and secure Clerk authentication.",
-      techStack: ["React.js", "Node.js", "MongoDB", "Stripe", "Clerk"],
-      link: "https://github.com/uttam9721",
-      demo: "",
-      featured: true,
-    },
-    {
-      id: 106,
-      name: "B2B Business Platform",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80",
-      description: "A scalable business-focused web application designed to streamline B2B operations, communication, and workflows with optimized frontend/backend.",
-      techStack: ["React.js", "TypeScript", "Node.js", "MongoDB", "REST API"],
-      link: "https://github.com/uttam9721",
-      demo: "",
-      featured: true,
-    },
-    {
-      id: 18,
-      name: "BillNest — Billing Management",
-      category: "frontend",
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-      description: "Developed a modern and responsive billing management website with a clean UI, intuitive navigation, and user-friendly interface.",
-      techStack: ["React.js", "Tailwind CSS"],
-      link: null,
+      id: "billnest",
+      title: "BillNest — Billing & Invoice Platform",
+      category: "enterprise",
+      subCategory: "frontend",
+      badge: "Commercial Web App",
+      image: billnestImg,
+      isEnterprise: false,
+      summary: "Modern invoicing and billing management system built with high-velocity data entry, calculation engines, and clean responsive UI.",
+      architecture: "React.js + Tailwind CSS with modular component composition, responsive layout grids, and client-side calculation caching.",
+      challenges: "Engineered seamless invoice item line additions, real-time tax/discount computation, and print-ready PDF layouts without layout shifts.",
+      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
       demo: "https://billnest.modexa.in/",
-      featured: false,
+      github: "https://github.com/uttam9721",
+      featured: true,
     },
+
+    // 6. Qalb — Dating & Matrimonial Real-Time Platform (From CV)
     {
-      id: 0,
-      name: "RudraStyles — Clothing Brand",
-      category: "frontend",
-      image: Clothing,
-      description: "Modern clothing brand e-commerce website with product showcase, responsive UI, custom design sections.",
-      techStack: ["React.js", "Tailwind", "Vercel"],
-      link: "https://github.com/uttam9721/rudraStyles",
-      demo: "https://rudraStyles.vercel.app/",
-      featured: false,
+      id: "qalb",
+      title: "Qalb — Real-Time Dating & Matrimonial Web App",
+      category: "fullstack",
+      subCategory: "fullstack",
+      badge: "Real-Time Full-Stack",
+      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+      isEnterprise: false,
+      summary: "Built 100% of the frontend from scratch using React.js, TypeScript, and Tailwind CSS with a scalable, component-based, mobile-first architecture. Featuring real-time chat and meetings.",
+      architecture: "React.js frontend with Firebase Authentication (email/password + mobile OTP), real-time chat via Socket.io, and Context API global state across 5+ feature modules.",
+      challenges: "Integrated 30+ REST API endpoints for profiles, matches, chats, and meetings, securing 100% of user sessions from onboarding.",
+      techStack: ["React.js", "TypeScript", "Tailwind CSS", "Socket.io", "Firebase", "REST APIs"],
+      demo: "https://qalbsoulmate.com",
+      github: "https://github.com/uttam9721",
+      featured: true,
     },
+
+    // 7. Gokul Sweets / Flavoro — Food Ordering Platform
     {
-      id: 10,
-      name: "DPGIC — Modern School Website",
+      id: "flavoro",
+      title: "Gokul Sweets / Flavoro — Food Ordering Platform",
       category: "frontend",
-      image: school,
-      description: "Developed a modern and responsive school website showcasing academic information, admissions details, events, and announcements with a clean UI and smooth user experience.",
-      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
-      link: "https://dpgic.vercel.app/",
-      demo: "https://dpgic.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 13,
-      name: "Frontend Job Portal — Job Listing UI",
-      category: "frontend",
-      image: food,
-      description: "Designed a modern job listing platform with responsive UI, job filtering, and clean user experience for browsing frontend job opportunities.",
-      techStack: ["React.js", "CSS", "JavaScript", "Vercel"],
-      link: "https://github.com/uttam9721/Frontend_job",
-      demo: "https://frontend-job-six.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 14,
-      name: "E-Commerce Cart & Payment System",
-      category: "frontend",
-      image: shoping,
-      description: "Developed a responsive e-commerce cart and payment system with product listing, add-to-cart functionality, quantity management, and dynamic cart updates.",
-      techStack: ["React.js", "Bootstrap", "JavaScript", "Vercel"],
-      link: "https://github.com/uttam9721/payment",
-      demo: "https://payment-liard-two.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 15,
-      name: "Gokul Sweets — Food Ordering Web App",
-      category: "frontend",
-      image: flavoro,
-      description: "Developed a responsive food ordering web application with product listing, category filtering, cart management, and seamless user experience.",
+      subCategory: "frontend",
+      badge: "State Management (Redux)",
+      image: flavoroImg,
+      isEnterprise: false,
+      summary: "Dynamic food ordering web application with category filtering, cart state persistence, search indexing, and seamless order checkout flow.",
+      architecture: "Engineered using Redux Toolkit slices for centralized cart, filter, and item states. High-performance re-render isolation.",
+      challenges: "Designed instant sub-category filtering without lag, dynamic quantity mutations, and responsive cart drawers for mobile viewports.",
       techStack: ["React.js", "Tailwind CSS", "Redux Toolkit", "Vercel"],
-      link: "https://github.com/uttam9721/flavoro",
       demo: "https://flavoro-amber.vercel.app/",
-      featured: false,
+      github: "https://github.com/uttam9721/flavoro",
+      featured: true,
     },
+
+    // 8. PetWorld — Pet Adoption MERN Platform
     {
-      id: 17,
-      name: "DevScope — Developer Analytics Dashboard",
-      category: "mern",
-      image: analyzer,
-      description: "A full-stack developer analytics dashboard that fetches and visualizes coding profiles from platforms like LeetCode, GitHub, HackerRank, and LinkedIn.",
-      techStack: ["React.js", "Tailwind CSS", "Node.js", "Express.js"],
-      link: "https://github.com/uttam9721/DevScope",
-      demo: "",
-      featured: false,
-    },
-    {
-      id: 121,
-      name: "TheUiSchool — Online Learning Platform",
-      category: "frontend",
-      image: UiSchool,
-      description: "Developed a modern e-learning platform featuring course exploration, learning resources, quizzes, AI study assistant, and community discussions.",
-      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
-      link: "https://github.com/uttam9721/learnify",
-      demo: "https://learnify-one-jet.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 122,
-      name: "Food Ordering App",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
-      description: "Full-stack food delivery web app built with MERN stack, cart, payments, admin dashboard and Stripe integration.",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "https://github.com/uttam9721/Restaurant",
-      demo: "",
-      featured: false,
-    },
-    {
-      id: 123,
-      name: "E-Learning Platform",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=800&q=80",
-      description: "MERN stack e-learning app with authentication, Stripe payments and admin CRUD panel.",
-      techStack: ["React", "MongoDB", "Stripe", "Clerk"],
-      link: "https://github.com/uttam9721/E-Learning",
-      demo: "",
-      featured: false,
-    },
-    {
-      id: 124,
-      name: "CodeView - Code Editor",
-      category: "mern",
-      image: code,
-      description: "Online code editor with syntax highlighting, autocomplete and theme switching.",
-      techStack: ["React", "Tailwind", "Node", "Express", "CodeMirror"],
-      link: "https://github.com/uttam9721/CodeView_collegeProject",
-      demo: "",
-      featured: false,
-    },
-    {
-      id: 125,
-      name: "CryptoPlace",
-      category: "frontend",
-      image: coin,
-      description: "Cryptocurrency tracking platform with real-time charts and Firebase authentication.",
-      techStack: ["React", "Chart.js", "Tailwind", "Firebase"],
-      link: "https://coin-weld-zeta.vercel.app/",
-      demo: "https://coin-weld-zeta.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 126,
-      name: "Modexa - E-Commerce",
-      category: "mern",
-      image: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=800&q=80",
-      description: "Full-stack ecommerce platform with authentication, cart system and Stripe payment integration.",
-      techStack: ["React", "Node", "MongoDB", "JWT", "Stripe"],
-      link: "https://github.com/uttam9721/Modexa",
-      demo: "",
-      featured: false,
-    },
-    {
-      id: 127,
-      name: "FloraVision",
-      category: "frontend",
-      image: flora,
-      description: "Modern plant shop website with elegant UI and animations.",
-      techStack: ["React", "Tailwind", "JavaScript"],
-      link: "https://floravision-pied.vercel.app/",
-      demo: "https://floravision-pied.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 128,
-      name: "MyShop",
-      category: "frontend",
-      image: shop,
-      description: "Responsive e-commerce UI with product listing and cart system.",
-      techStack: ["React", "Tailwind", "JavaScript"],
-      link: "https://my-shop-ten-mauve.vercel.app/",
-      demo: "https://my-shop-ten-mauve.vercel.app/",
-      featured: false,
-    },
-    {
-      id: 129,
-      name: "Developer Portfolio — Interactive Showcase",
-      category: "frontend",
-      image: port,
-      description: "Built a fully responsive and visually engaging developer portfolio to highlight projects, technical skills, and professional experience.",
-      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
-      link: "https://github.com/uttam9721/our_website",
-      demo: "https://modexa.in",
-      featured: false,
-    },
-    {
-      id: 130,
-      name: "PetWorld — Pet Adoption Platform",
-      category: "mern",
-      image: dog,
-      description: "Full-stack pet adoption platform with authentication, protected routes, cart system, address management, and MERN backend deployed on Render.",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-      link: "https://github.com/uttam9721/petWord",
+      id: "petworld",
+      title: "PetWorld — Pet Adoption Full-Stack Platform",
+      category: "fullstack",
+      subCategory: "fullstack",
+      badge: "MERN Stack System",
+      image: dogImg,
+      isEnterprise: false,
+      summary: "End-to-end pet adoption platform with user authentication, protected routes, adoption application flows, and administrative CRUD panel.",
+      architecture: "Full MERN stack. Express.js REST API with JWT verification, MongoDB document store, and React client deployed across Vercel & Render.",
+      challenges: "Implemented secure token refresh in HTTP headers, role-based admin endpoints for approving pet listings, and schema validation with Mongoose.",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
       demo: "https://pet-word.vercel.app/",
+      github: "https://github.com/uttam9721/petWord",
+      featured: true,
+    },
+
+    // 9. DevScope — Developer Analytics Dashboard
+    {
+      id: "devscope",
+      title: "DevScope — Developer Analytics Dashboard",
+      category: "fullstack",
+      subCategory: "fullstack",
+      badge: "Analytics & APIs",
+      image: analyzerImg,
+      isEnterprise: false,
+      summary: "Centralized developer dashboard aggregating coding statistics from LeetCode, GitHub, HackerRank, and LinkedIn into visual charts.",
+      architecture: "Asynchronous API aggregator querying multiple developer platforms, caching response payloads, and rendering SVG data charts.",
+      challenges: "Handled rate limiting from external developer APIs, normalized disparate profile schemas, and built responsive data visualization cards.",
+      techStack: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "REST APIs"],
+      demo: "",
+      github: "https://github.com/uttam9721/DevScope",
       featured: false,
-    }
+    },
+
+    // 10. CodeView — Code Editor
+    {
+      id: "codeview",
+      title: "CodeView — Web Code Editor & Runner",
+      category: "tools",
+      subCategory: "tools",
+      badge: "Developer Tool",
+      image: codeImg,
+      isEnterprise: false,
+      summary: "In-browser code editor featuring multi-language syntax highlighting, themes, live output console, and code sharing capabilities.",
+      architecture: "Integrated CodeMirror editor engine into React lifecycle, with custom theme bindings, syntax linters, and state sync.",
+      challenges: "Managed keyboard shortcuts, automated bracket closures, and maintained smooth 60fps typing without debounce lag.",
+      techStack: ["React.js", "Tailwind CSS", "CodeMirror", "Node.js"],
+      demo: "",
+      github: "https://github.com/uttam9721/CodeView_collegeProject",
+      featured: false,
+    },
+
+    // 11. CryptoPlace — Live Crypto Market Tracker
+    {
+      id: "cryptoplace",
+      title: "CryptoPlace — Live Crypto Market Tracker",
+      category: "frontend",
+      subCategory: "frontend",
+      badge: "Financial Data UI",
+      image: coinImg,
+      isEnterprise: false,
+      summary: "Real-time cryptocurrency tracking platform showing market capitalizations, 24-hour volume graphs, currency conversions, and price alerts.",
+      architecture: "Consumes cryptocurrency ticker APIs with polling intervals and renders dynamic Chart.js time-series graphs.",
+      challenges: "Engineered smooth chart animations on frequent tick updates without re-mounting canvas elements.",
+      techStack: ["React.js", "Tailwind CSS", "Chart.js", "REST APIs", "Vercel"],
+      demo: "https://coin-weld-zeta.vercel.app/",
+      github: "https://github.com/uttam9721",
+      featured: false,
+    },
+
+    // 12. DPGIC — Academic Portal
+    {
+      id: "dpgic",
+      title: "DPGIC — Academic Institutional Portal",
+      category: "frontend",
+      subCategory: "frontend",
+      badge: "Institutional Portal",
+      image: schoolImg,
+      isEnterprise: false,
+      summary: "Comprehensive school web portal with academic notices, admissions guidelines, event galleries, and faculty directory.",
+      architecture: "Component-driven React architecture optimized for fast mobile load times on variable 4G networks.",
+      challenges: "Structured accessible navigation for non-tech-savvy parents and built image lightbox galleries with zero bundle overhead.",
+      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+      demo: "https://dpgic.vercel.app/",
+      github: "https://github.com/uttam9721",
+      featured: false,
+    },
+
+    // 13. RudraStyles — Fashion Store
+    {
+      id: "rudrastyles",
+      title: "RudraStyles — E-Commerce Apparel Catalog",
+      category: "frontend",
+      subCategory: "frontend",
+      badge: "E-Commerce UI",
+      image: clothingImg,
+      isEnterprise: false,
+      summary: "Fashion apparel showcase featuring responsive grid collections, product filters, visual image zoom, and cart preview.",
+      architecture: "Modular UI components with micro-animations for clothing collections, hover zoom previews, and cart drawer interaction.",
+      challenges: "Optimized high-resolution product imagery to maintain sub-1s initial page load time.",
+      techStack: ["React.js", "Tailwind CSS", "Vercel"],
+      demo: "https://rudraStyles.vercel.app/",
+      github: "https://github.com/uttam9721/rudraStyles",
+      featured: false,
+    },
+
+    // 14. FloraVision — Botanical Showcase
+    {
+      id: "floravision",
+      title: "FloraVision — Botanical Showcase",
+      category: "frontend",
+      subCategory: "frontend",
+      badge: "E-Commerce UI",
+      image: floraImg,
+      isEnterprise: false,
+      summary: "Clean botanical e-commerce platform designed with micro-interactions, category tabs, and smooth layout transitions.",
+      architecture: "Lightweight React application highlighting minimalistic design principles and responsive flexbox layouts.",
+      challenges: "Crafted subtle glassmorphism cards and clean responsive design without external heavy UI libraries.",
+      techStack: ["React.js", "Tailwind CSS", "JavaScript", "Vercel"],
+      demo: "https://floravision-pied.vercel.app/",
+      github: "https://github.com/uttam9721",
+      featured: false,
+    },
+
+    /* 
+    // --------------------------------------------------------------------------
+    // COMMENTED OUT AS PER USER REQUEST:
+    // Cart & Checkout System — Payment Workflows
+    // --------------------------------------------------------------------------
+    {
+      id: "shopingcart",
+      title: "Cart & Checkout System — Payment Workflows",
+      category: "frontend",
+      badge: "Checkout Architecture",
+      image: shopingImg,
+      summary: "Interactive shopping cart management system featuring item increments, voucher code validation, and dynamic payment breakdown.",
+      architecture: "Built with pure state reducers to test scalable cart mutations and checkout step workflows.",
+      challenges: "Synchronized cross-component cart state and simulated multiple payment gateway interfaces.",
+      techStack: ["React.js", "Bootstrap", "JavaScript", "Vercel"],
+      demo: "https://payment-liard-two.vercel.app/",
+      github: "https://github.com/uttam9721/payment",
+      featured: false,
+    },
+    */
   ];
 
-  const openLink = (url) => {
-    if (url) window.open(url, "_blank");
+  const filteredProjects = projects.filter((p) => {
+    if (activeFilter === "all") return true;
+    if (activeFilter === "enterprise") return p.category === "enterprise";
+    if (activeFilter === "fullstack") return p.category === "fullstack" || p.subCategory === "fullstack";
+    if (activeFilter === "frontend") return p.category === "frontend" || p.subCategory === "frontend";
+    if (activeFilter === "tools") return p.category === "tools";
+    return true;
+  });
+
+  const getEnterpriseIcon = (type) => {
+    switch (type) {
+      case "fintech":
+        return <FaCreditCard className="text-emerald-400" />;
+      case "fleet":
+        return <FaCar className="text-sky-400" />;
+      case "b2b":
+        return <FaBoxes className="text-purple-400" />;
+      case "crm":
+        return <FaUsersCog className="text-amber-400" />;
+      default:
+        return <FaShieldAlt className="text-sky-400" />;
+    }
   };
 
   return (
-    <section id="Projects" className="relative py-24">
-      <div className="absolute w-[600px] h-[600px] orb-cyan top-1/4 left-[-200px] pointer-events-none z-0"></div>
-      <div className="absolute w-[600px] h-[600px] orb-pink bottom-0 right-[-200px] pointer-events-none z-0"></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-cyan-400 uppercase mb-2">Showcase</h2>
-          <h1 className="text-4xl md:text-5xl font-display font-bold">Featured <span className="neon-text">Builds</span></h1>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A selection of enterprise-grade applications, full-stack platforms, and modern frontend interfaces I've engineered.
+    <section
+      id="Projects"
+      className="relative py-24 bg-[#080d1a] text-slate-200 overflow-hidden border-t border-slate-800/80"
+    >
+      <div className="absolute inset-0 tech-grid pointer-events-none opacity-30"></div>
+      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-sky-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono uppercase tracking-wider">
+            <FaLayerGroup className="text-xs" />
+            <span>Commercial & Production Builds</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
+            Shipped systems & <span className="text-heading-gradient">web applications</span>.
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Enterprise platforms, full-stack systems, and client interfaces engineered with modern frameworks.
           </p>
         </div>
 
+        {/* Filter Pills */}
         <div className="flex justify-center mb-12">
-          <div className="flex cyber-glass p-1 rounded-full backdrop-blur-md border border-cyan-500/30 overflow-x-auto hide-scrollbar">
+          <div className="flex flex-wrap justify-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 backdrop-blur-md">
             <button
-              onClick={() => setActiveTab("all")}
-              className={`px-6 py-2 rounded-full font-bold transition-all whitespace-nowrap ${
-                activeTab === "all"
-                  ? "bg-purple-500/20 text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
-                  : "text-gray-400 hover:text-white"
+              onClick={() => setActiveFilter("all")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeFilter === "all"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
               }`}
             >
-              All Projects
+              All Projects ({projects.length})
             </button>
             <button
-              onClick={() => setActiveTab("frontend")}
-              className={`px-6 py-2 rounded-full font-bold transition-all whitespace-nowrap ${
-                activeTab === "frontend"
-                  ? "bg-cyan-500/20 text-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.5)]"
-                  : "text-gray-400 hover:text-white"
+              onClick={() => setActiveFilter("enterprise")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeFilter === "enterprise"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
               }`}
             >
-              Frontend
+              🏢 Enterprise & Commercial
             </button>
             <button
-              onClick={() => setActiveTab("mern")}
-              className={`px-6 py-2 rounded-full font-bold transition-all whitespace-nowrap ${
-                activeTab === "mern"
-                  ? "bg-pink-500/20 text-pink-400 shadow-[0_0_10px_rgba(236,72,153,0.5)]"
-                  : "text-gray-400 hover:text-white"
+              onClick={() => setActiveFilter("fullstack")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeFilter === "fullstack"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
               }`}
             >
-              Full Stack
+              Full-Stack (MERN / Nest)
+            </button>
+            <button
+              onClick={() => setActiveFilter("frontend")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeFilter === "frontend"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+              }`}
+            >
+              Frontend Applications
+            </button>
+            <button
+              onClick={() => setActiveFilter("tools")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeFilter === "tools"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+              }`}
+            >
+              Tools & Editors
             </button>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {cardItem
-            .filter((item) => activeTab === "all" || item.category === activeTab)
-            .map((item) => (
-              <div
-                key={item.id}
-                className="cyber-glass rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border-t border-l border-white/5 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] flex flex-col h-[440px]"
-              >
-                <div className="relative h-52 shrink-0 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080214] via-transparent to-transparent z-10"></div>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800/80 hover:border-slate-700 transition-all duration-300 group hover:-translate-y-1.5 shadow-lg shadow-black/40"
+            >
+              {/* Project Header: Image OR Enterprise Confidential Banner */}
+              {project.image ? (
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#0a0f1d]">
                   <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700 filter saturate-150 brightness-75 group-hover:brightness-100"
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                   />
-                  {item.featured && (
-                    <div className="absolute top-4 right-4 z-20 bg-[#080214]/80 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-pink-500 border border-pink-500/30 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                      FEATURED
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090e1c] via-[#090e1c]/40 to-transparent"></div>
+
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-1 rounded-md text-[10px] font-mono uppercase tracking-wider bg-slate-900/90 text-sky-300 border border-sky-500/30 backdrop-blur-md">
+                      {project.badge}
+                    </span>
+                  </div>
+
+                  {project.featured && (
+                    <div className="absolute top-3 right-3">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 backdrop-blur-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Featured
+                      </span>
                     </div>
                   )}
                 </div>
+              ) : (
+                /* Enterprise Confidential Banner (No image per NDA requirement) */
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-gradient-to-br from-[#0c1527] via-[#09101d] to-[#060913] p-5 flex flex-col justify-between border-b border-slate-800/80">
+                  <div className="absolute inset-0 tech-grid opacity-30 pointer-events-none"></div>
+                  
+                  {/* Top Bar of Enterprise Card */}
+                  <div className="flex items-center justify-between relative z-10">
+                    <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xl shadow-inner">
+                      {getEnterpriseIcon(project.iconType)}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                      <FaLock className="text-amber-400 text-[9px]" />
+                      Company Project
+                    </span>
+                  </div>
 
-                <div className="p-6 relative z-20 -mt-6 flex-1 flex flex-col">
-                  <h2 className="text-xl font-display font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
-                    {item.name}
-                  </h2>
+                  {/* Bottom details of Enterprise Card */}
+                  <div className="relative z-10">
+                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider bg-slate-900/90 text-sky-300 border border-sky-500/30 inline-block mb-1.5">
+                      {project.badge}
+                    </span>
+                    <div className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Commercial Production System
+                    </div>
+                  </div>
+                </div>
+              )}
 
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
-                    {item.description}
+              {/* Card Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 className="text-lg font-display font-bold text-white group-hover:text-sky-300 transition-colors leading-snug mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">
+                    {project.summary}
                   </p>
+                </div>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {item.techStack.map((tech, i) => (
+                {/* Tech Stack Pills */}
+                <div className="pt-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.map((tech, idx) => (
                       <span
-                        key={i}
-                        className="text-[10px] bg-purple-500/10 text-purple-300 border border-purple-500/30 px-2 py-1 rounded-full uppercase font-bold tracking-wider"
+                        key={idx}
+                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-900 text-slate-300 border border-slate-800"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  <div className="flex gap-3 mt-auto">
-                    {item.demo && (
-                      <button
-                        onClick={() => openLink(item.demo)}
-                        className="flex-1 text-center py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-sm shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all"
+                {/* Card Actions */}
+                <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 font-medium py-1 px-2 rounded-lg hover:bg-sky-500/10 transition"
+                  >
+                    <FaInfoCircle className="text-xs" />
+                    <span>Deep Dive</span>
+                  </button>
+
+                  <div className="flex items-center gap-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition"
+                        title="View Source Code on GitHub"
                       >
-                        Live Demo
-                      </button>
+                        <FaGithub className="text-sm" />
+                      </a>
                     )}
-                    {item.link && (
-                      <button
-                        onClick={() => openLink(item.link)}
-                        className="flex-1 px-4 py-2.5 rounded-lg border border-white/20 hover:border-white hover:bg-white/5 transition-all text-white font-bold text-sm flex items-center justify-center gap-2"
+
+                    {project.demo ? (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-sky-600 hover:bg-sky-500 shadow-md shadow-sky-600/30 transition"
                       >
-                        Source Code
-                      </button>
+                        <span>Live Demo</span>
+                        <FaExternalLinkAlt className="text-[10px]" />
+                      </a>
+                    ) : (
+                      <span className="text-[11px] font-mono text-slate-500 py-1.5 px-2">
+                        {project.isEnterprise ? "Enterprise NDA" : "Internal / Repo"}
+                      </span>
                     )}
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Architecture Deep Dive Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div 
+            className="w-full max-w-2xl bg-[#0c1220] border border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="px-6 py-4 bg-[#080d19] border-b border-slate-800 flex items-center justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-sky-400 uppercase tracking-wider block">
+                  Project Deep Dive
+                </span>
+                <h3 className="text-lg font-bold text-white">
+                  {selectedProject.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+              >
+                <FaTimes />
+              </button>
+            </div>
+
+            {/* Modal Scrollable Content */}
+            <div className="p-6 overflow-y-auto space-y-6 text-sm text-slate-300">
+              {/* Project Snapshot Header */}
+              {selectedProject.image ? (
+                <div className="rounded-xl overflow-hidden border border-slate-800 h-48 bg-slate-900">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="rounded-xl overflow-hidden border border-slate-800 p-6 bg-gradient-to-br from-[#0c1527] to-[#070b14] flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-2.5 py-1 rounded-md text-xs font-mono bg-sky-500/10 border border-sky-500/30 text-sky-400">
+                      {selectedProject.badge}
+                    </span>
+                    <span className="text-xs font-mono text-amber-400 flex items-center gap-1.5">
+                      <FaLock className="text-xs" />
+                      Confidential Commercial Project
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400 font-mono leading-relaxed">
+                    Proprietary commercial application engineered for production business workflows. Screenshots omitted to comply with enterprise confidentiality policies.
+                  </p>
+                </div>
+              )}
+
+              {/* Summary */}
+              <div>
+                <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">
+                  Overview & Purpose
+                </h4>
+                <p className="leading-relaxed text-slate-300 text-sm">
+                  {selectedProject.summary}
+                </p>
+              </div>
+
+              {/* System Architecture */}
+              <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold flex items-center gap-2">
+                  <FaServer className="text-xs" />
+                  <span>Architecture & Stack</span>
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed font-mono">
+                  {selectedProject.architecture}
+                </p>
+              </div>
+
+              {/* Engineering Challenges Solved */}
+              <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold flex items-center gap-2">
+                  <FaCheckCircle className="text-xs" />
+                  <span>Technical Challenges Overcome</span>
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {selectedProject.challenges}
+                </p>
+              </div>
+
+              {/* Tech Stack List */}
+              <div>
+                <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-semibold">
+                  Technologies Utilized
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.techStack.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 rounded-md text-xs font-mono bg-slate-900 text-sky-300 border border-slate-800"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer Actions */}
+            <div className="px-6 py-3.5 bg-[#080d19] border-t border-slate-800 flex items-center justify-end gap-3">
+              {selectedProject.github && (
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 border border-slate-700 transition flex items-center gap-2"
+                >
+                  <FaGithub />
+                  <span>Source Code</span>
+                </a>
+              )}
+              {selectedProject.demo ? (
+                <a
+                  href={selectedProject.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-sky-500 hover:bg-sky-400 shadow-md shadow-sky-500/20 transition flex items-center gap-2"
+                >
+                  <span>Open Live Demo</span>
+                  <FaExternalLinkAlt className="text-[10px]" />
+                </a>
+              ) : (
+                <span className="text-xs font-mono text-slate-500 px-3 py-2">
+                  {selectedProject.isEnterprise ? "Commercial Deployment Under NDA" : "Internal Repository"}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
-}
+};
 
-export default PortFolio;
+export default Portfolio;

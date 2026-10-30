@@ -1,315 +1,123 @@
-// // import React from "react";
-// // import {
-// //   FaFacebook,
-// //   FaTwitter,
-// //   FaInstagram,
-// //   FaLinkedinIn,
-// // } from "react-icons/fa6";
-// // import { SiNpm } from "react-icons/si";
-
-
-// // function Footer() {
-// //   return (
-// //     <>
-// //       <hr />
-// //       <footer className="py-12">
-// //         <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
-// //           <div className="flex flex-col items-center justify-center">
-// //             <div className="flex space-x-4">
-// //               <a
-// //                 href="https://www.npmjs.com/package/cb-react-smart-loader"
-// //                 target="_blank"
-// //                 rel="noopener noreferrer"
-// //                 aria-label="Facebook"
-// //               >
-// //                  <SiNpm size={24} />
-// //               </a>
-// //               <a
-// //                 href="https://www.facebook.com/share/aqaQwWoAyZZuRTbw/?mibextid=qi2Omg"
-// //                 target="_blank"
-// //                 rel="noopener noreferrer"
-// //                 aria-label="Facebook"
-// //               >
-// //                 <FaFacebook size={24} />
-// //               </a>
-// //               <a
-// //                 href="https://x.com/Uttammaurya01?t=ktD3SvhJ4_ol6DZ8yfEvGA&s=08"
-// //                 target="_blank"
-// //                 rel="noopener noreferrer"
-// //                 aria-label="Twitter"
-// //               >
-// //                 <FaTwitter size={24} />
-// //               </a>
-// //               <a
-// //                 href="https://www.instagram.com/iamuttam_maurya?utm_source=qr&igsh=MXNkZHh4MXE4MWczMw=="
-// //                 target="_blank"
-// //                 rel="noopener noreferrer"
-// //                 aria-label="Instagram"
-// //               >
-// //                 <FaInstagram size={24} />
-// //               </a>
-// //               <a
-// //                 href="https://www.linkedin.com/in/uttam-kumar-23243823b"
-// //                 target="_blank"
-// //                 rel="noopener noreferrer"
-// //                 aria-label="LinkedIn"
-// //               >
-// //                 <FaLinkedinIn size={24} />
-// //               </a>
-// //             </div>
-// //             <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col items-center">
-// //               <p className="text-sm">
-// //                 &copy; 2024 Your Company. All rights reserved.
-// //               </p>
-// //               <p className="text-sm">Developed by ❤️ Uttam Maurya</p>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </footer>
-// //     </>
-// //   );
-// // }
-
-// // export default Footer;
-
-
-
-
-// import React from "react";
-// import {
-//   FaGithub,
-//   FaLinkedin,
-//   FaInstagram,
-//   FaEnvelope,
-// } from "react-icons/fa";
-// import { SiNpm, SiLeetcode } from "react-icons/si";
-
-// function Footer() {
-//   return (
-//     <>
-//       <hr />
-
-//       <footer className="py-8 bg-white">
-//         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center text-center">
-
-//           {/* ===== Name & Role ===== */}
-//           <h2 className="text-xl font-semibold">
-//             Uttam Maurya
-//           </h2>
-
-//           <p className="text-gray-600 text-sm mt-1">
-//             Full Stack Web Developer (MERN)
-//           </p>
-
-//           {/* ===== Social Icons ===== */}
-//           <div className="flex gap-6 text-xl mt-4 text-gray-700">
-
-//             {/* Email */}
-//             <a
-//               href="mailto:uttammaurya377@gmail.com"
-//               aria-label="Email"
-//               className="hover:text-green-500 transition"
-//             >
-//               <FaEnvelope />
-//             </a>
-
-//             {/* GitHub */}
-//             <a
-//               href="https://github.com/uttam9721"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               aria-label="GitHub"
-//               className="hover:text-black transition"
-//             >
-//               <FaGithub />
-//             </a>
-
-//             {/* LinkedIn */}
-//             <a
-//               href="https://www.linkedin.com/in/uttam-fullstack"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               aria-label="LinkedIn"
-//               className="hover:text-blue-600 transition"
-//             >
-//               <FaLinkedin />
-//             </a>
-
-//             {/* Instagram */}
-//             <a
-//               href="https://www.instagram.com/iamuttam_maurya"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               aria-label="Instagram"
-//               className="hover:text-pink-500 transition"
-//             >
-//               <FaInstagram />
-//             </a>
-
-//             {/* NPM Package */}
-//             <a
-//               href="https://www.npmjs.com/package/cb-react-smart-loader"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               aria-label="NPM"
-//               className="hover:text-red-500 transition"
-//             >
-//               <SiNpm />
-//             </a>
-
-//             {/* LeetCode */}
-//             <a
-//               href="https://leetcode.com/u/uttammaurya01/"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               aria-label="LeetCode"
-//               className="hover:text-[#FFA116] transition"
-//             >
-//               <SiLeetcode />
-//             </a>
-
-//           </div>
-
-//           {/* ===== Copyright ===== */}
-//           <p className="text-gray-500 text-sm mt-6">
-//             © {new Date().getFullYear()} Uttam Maurya. All rights reserved.
-//           </p>
-
-//         </div>
-//       </footer>
-//     </>
-//   );
-// }
-
-// export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// add color 
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaEnvelope,
+const logo = "/logo.jpg";
+import { Link } from "react-scroll";
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaEnvelope, 
+  FaNpm, 
+  FaArrowUp 
 } from "react-icons/fa";
-import { SiNpm, SiLeetcode } from "react-icons/si";
-import ChatWidget from './ChatWidget';
+import { SiLeetcode } from "react-icons/si";
 
-function Footer() {
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <>
-      <footer
-        className="relative overflow-hidden bg-[#080214] text-white py-10 border-t border-purple-500/20"
-      >
-        {/* ===== Glow ===== */}
-        <div className="absolute inset-0 cyber-grid z-0 pointer-events-none opacity-50"></div>
-        <div className="absolute w-[400px] h-[400px] orb-cyan top-1/2 left-0 -translate-y-1/2 pointer-events-none z-0"></div>
-        <div className="absolute w-[400px] h-[400px] orb-pink top-1/2 right-0 -translate-y-1/2 pointer-events-none z-0"></div>
+    <footer className="relative bg-[#050811] text-slate-400 py-16 border-t border-slate-800/80 overflow-hidden">
+      <div className="absolute inset-0 dot-matrix pointer-events-none opacity-20"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-slate-800/80">
+          {/* Identity */}
+          <div className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Uttam Kumar"
+              className="w-10 h-10 rounded-full object-cover border border-slate-700 shadow-md"
+            />
+            <div>
+              <h3 className="font-display font-bold text-white text-base">
+                Uttam Kumar
+              </h3>
+              <p className="text-xs font-mono text-slate-500">
+                Full-Stack & Frontend Engineer • Bangalore, India
+              </p>
+            </div>
+          </div>
 
-          {/* ===== Name & Role ===== */}
-          <h2
-            className="text-xl font-semibold 
-            bg-gradient-to-r from-[#1d4ed8] via-[#22c55e] to-[#facc15] 
-            bg-clip-text text-transparent"
-          >
-            Uttam Maurya
-          </h2>
+          {/* Quick Nav Links */}
+          <div className="flex flex-wrap justify-center gap-6 text-xs font-medium text-slate-400">
+            <Link to="Home" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Home</Link>
+            <Link to="About" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">About & Journey</Link>
+            <Link to="Skills" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Skills</Link>
+            <Link to="Projects" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Projects</Link>
+            <Link to="NpmPackage" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Open Source</Link>
+            <Link to="Stats" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Metrics</Link>
+            <Link to="Contact" smooth duration={500} offset={-80} className="hover:text-white cursor-pointer transition">Contact</Link>
+          </div>
 
-          <p className="text-gray-400 text-sm mt-1">
-            Full Stack Web Developer (MERN)
-          </p>
-
-          {/* ===== Social Icons ===== */}
-          <div className="flex gap-6 text-xl mt-5 text-gray-300">
-
-            <a
-              href="mailto:uttammaurya377@gmail.com"
-              aria-label="Email"
-              className="hover:text-green-400 hover:scale-110 transition"
-            >
-              <FaEnvelope />
-            </a>
-
+          {/* Social Links */}
+          <div className="flex items-center gap-4 text-slate-400">
             <a
               href="https://github.com/uttam9721"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="hover:text-white hover:scale-110 transition"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-white hover:border-slate-700 transition"
+              aria-label="GitHub Profile"
             >
-              <FaGithub />
+              <FaGithub className="text-sm" />
             </a>
-
             <a
               href="https://www.linkedin.com/in/uttam-fullstack"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="hover:text-blue-400 hover:scale-110 transition"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-sky-400 hover:border-slate-700 transition"
+              aria-label="LinkedIn Profile"
             >
-              <FaLinkedin />
+              <FaLinkedin className="text-sm" />
             </a>
-
-            <a
-              href="https://www.instagram.com/iamuttam_maurya"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:text-pink-400 hover:scale-110 transition"
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="https://www.npmjs.com/package/cb-react-smart-loader"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="NPM"
-              className="hover:text-red-400 hover:scale-110 transition"
-            >
-              <SiNpm />
-            </a>
-
             <a
               href="https://leetcode.com/u/uttammaurya01/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LeetCode"
-              className="hover:text-[#FFA116] hover:scale-110 transition"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-amber-400 hover:border-slate-700 transition"
+              aria-label="LeetCode Profile"
             >
-              <SiLeetcode />
+              <SiLeetcode className="text-sm text-amber-500" />
             </a>
+            <a
+              href="https://www.npmjs.com/package/cb-react-smart-loader"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-red-400 hover:border-slate-700 transition"
+              aria-label="NPM Package"
+            >
+              <FaNpm className="text-sm text-red-500" />
+            </a>
+            <a
+              href="mailto:uttammaurya377@gmail.com"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-emerald-400 hover:border-slate-700 transition"
+              aria-label="Email"
+            >
+              <FaEnvelope className="text-sm" />
+            </a>
+          </div>
+        </div>
 
+        {/* Bottom Credits & Back to Top */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+          <div>
+            © {new Date().getFullYear()} Uttam Kumar. All rights reserved.
           </div>
 
-          {/* Divider */}
-          <div className="w-full max-w-md h-px bg-white/10 my-6"></div>
-
-          {/* ===== Copyright ===== */}
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Uttam Maurya. All rights reserved.
-          </p>
-
+          <div className="flex items-center gap-4">
+            <span>Built with React & Tailwind CSS</span>
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-white hover:bg-slate-800 transition flex items-center gap-1.5"
+              title="Back to Top"
+            >
+              <FaArrowUp className="text-[10px]" />
+              <span className="text-[11px]">Top</span>
+            </button>
+          </div>
         </div>
-      </footer>
-      {/* <ChatWidget /> */}
-    </>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
