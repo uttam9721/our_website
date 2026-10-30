@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -11,11 +11,8 @@ import {
   FaFilePdf, 
   FaVideo, 
   FaPaperPlane, 
-  FaLinkedin, 
-  FaGithub,
   FaPhoneAlt 
 } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
   const {

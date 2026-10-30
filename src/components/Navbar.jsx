@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 const logo = "/logo.jpg";
 import { Link } from "react-scroll";
 import { 
   FaBars, 
   FaTimes, 
   FaFilePdf, 
-  FaSearch, 
-  FaGithub, 
-  FaLinkedin 
+  FaSearch 
 } from "react-icons/fa";
 
 const Navbar = ({ onOpenCommandPalette }) => {

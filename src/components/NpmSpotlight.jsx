@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { 
   FaNpm, 
@@ -6,7 +6,6 @@ import {
   FaCheck, 
   FaExternalLinkAlt, 
   FaBoxOpen, 
-  FaCode, 
   FaHeart 
 } from "react-icons/fa";
 

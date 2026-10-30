@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { 
   FaExternalLinkAlt, 
   FaGithub, 
@@ -6,13 +6,11 @@ import {
   FaInfoCircle, 
   FaTimes, 
   FaCheckCircle, 
-  FaCode, 
   FaServer, 
-  FaDatabase,
-  FaCreditCard,
-  FaCar,
-  FaBoxes,
-  FaUsersCog
+  FaCreditCard, 
+  FaCar, 
+  FaBoxes, 
+  FaUsersCog 
 } from "react-icons/fa";
 
 // Import real project screenshots from assets for builds with images

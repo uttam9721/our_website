@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -7,23 +7,23 @@ import {
   SiTailwindcss, 
   SiRedux, 
   SiHtml5, 
-  SiCss3,
   SiNodedotjs, 
   SiExpress, 
-  SiNestjs,
+  SiNestjs, 
   SiSocketdotio, 
   SiMongodb, 
-  SiPostgresql,
+  SiPostgresql, 
   SiMysql, 
-  SiGit, 
+  SiFirebase, 
+  SiClerk, 
+  SiAuth0, 
   SiGithub, 
   SiDocker, 
   SiPostman, 
   SiVite, 
-  SiVercel, 
   SiNpm 
 } from "react-icons/si";
-import { FaLaptopCode, FaServer, FaDatabase, FaTools } from "react-icons/fa";
+import { FaLaptopCode, FaServer, FaDatabase, FaTools, FaShieldAlt, FaKey } from "react-icons/fa";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -55,7 +55,19 @@ const Skills = () => {
         { name: "Express.js", level: "Advanced", icon: <SiExpress className="text-slate-300" />, note: "Custom Middleware, Route Controllers, Error Handlers" },
         { name: "Socket.io", level: "Proficient", icon: <SiSocketdotio className="text-white" />, note: "Real-time bidirectional events, chat, live sync" },
         { name: "RESTful APIs", level: "Advanced", icon: <FaServer className="text-sky-400" />, note: "Resource modeling, HTTP verbs, status codes, CORS" },
-        { name: "JWT & RBAC", level: "Proficient", icon: <FaServer className="text-amber-400" />, note: "Token authentication, role-based route guards" },
+      ],
+    },
+    {
+      id: "auth",
+      title: "Authentication & Identity Management",
+      icon: <FaShieldAlt className="text-amber-400" />,
+      description: "Implementing user onboarding, token lifecycles, OAuth providers, and role-based permissions.",
+      skills: [
+        { name: "Firebase Auth", level: "Advanced", icon: <SiFirebase className="text-amber-400" />, note: "Phone OTP, Email/Password, Social Providers" },
+        { name: "Clerk", level: "Proficient", icon: <SiClerk className="text-purple-400" />, note: "Modern Session Management, User Profiles, MFA" },
+        { name: "Auth0", level: "Proficient", icon: <SiAuth0 className="text-orange-400" />, note: "Universal Login, SSO, Multi-Tenant Auth" },
+        { name: "JWT Authentication", level: "Advanced", icon: <FaKey className="text-emerald-400" />, note: "Access & Refresh Tokens, Header Verification" },
+        { name: "RBAC (Access Control)", level: "Advanced", icon: <FaShieldAlt className="text-sky-400" />, note: "Role-Based Route Guards, Protected Views" },
       ],
     },
     {
@@ -144,6 +156,16 @@ const Skills = () => {
               }`}
             >
               Backend & APIs
+            </button>
+            <button
+              onClick={() => setActiveCategory("auth")}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition ${
+                activeCategory === "auth"
+                  ? "bg-sky-500 text-white font-semibold shadow-md shadow-sky-500/20"
+                  : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
+              }`}
+            >
+              Authentication & Security
             </button>
             <button
               onClick={() => setActiveCategory("database")}

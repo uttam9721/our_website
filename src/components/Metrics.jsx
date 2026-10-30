@@ -1,9 +1,7 @@
-import React from "react";
 import { 
   FaGithub, 
   FaExternalLinkAlt, 
   FaCodeBranch, 
-  FaStar, 
   FaFire, 
   FaBrain, 
   FaTerminal 

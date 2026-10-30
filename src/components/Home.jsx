@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import toast from "react-hot-toast";
 import { 
@@ -58,6 +58,7 @@ export const engineer = {
   stack: {
     frontend: ["React.js (TSX)", "TypeScript", "Next.js", "Tailwind CSS"],
     backend: ["Node.js", "NestJS", "Express.js", "REST APIs", "Socket.io"],
+    auth: ["Firebase", "Clerk", "Auth0", "JWT & RBAC"],
     database: ["PostgreSQL", "MongoDB", "SQL / MySQL"]
   },
   publishedLib: "cb-react-smart-loader (npm)",
