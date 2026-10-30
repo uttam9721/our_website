@@ -163,6 +163,7 @@ const CommandPalette = ({ isOpen, onClose }) => {
           </div>
           <span>Shortcut: <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">Ctrl+K</kbd></span>
         </div>
+        
       </div>
     </div>
   );
