@@ -84,7 +84,7 @@ const About = () => {
     {
       icon: <FaShieldAlt className="text-emerald-400" />,
       title: "Enterprise Production Systems",
-      desc: "Engineered commercial applications: InDreamPay, FleetOps, Planipro, and ERPAG across 8+ modules.",
+      desc: "Engineered scalable web applications across FinTech, Fleet & HR Operations, B2B, and ERP modules.",
       link: null,
     },
   ];

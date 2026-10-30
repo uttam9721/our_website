@@ -9,15 +9,13 @@ import {
   FaCode, 
   FaServer, 
   FaDatabase,
-  FaShieldAlt,
   FaCreditCard,
   FaCar,
   FaBoxes,
-  FaUsersCog,
-  FaLock
+  FaUsersCog
 } from "react-icons/fa";
 
-// Import real project screenshots from assets for non-confidential builds
+// Import real project screenshots from assets for builds with images
 import billnestImg from "../assets/billnest.png";
 import flavoroImg from "../assets/flavoro.png";
 import dogImg from "../assets/dog.png";
@@ -34,16 +32,15 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    // 1. InDreamPay — FinTech & Digital Payments (Company Project - No image per NDA)
+    // 1. Digital Payment & FinTech Platform
     {
-      id: "indreampay",
-      title: "InDreamPay — Digital Payments & FinTech Platform",
+      id: "digital-payments-platform",
+      title: "Digital Payment & FinTech Platform",
       category: "enterprise",
       subCategory: "fullstack",
-      badge: "Commercial FinTech System",
+      badge: "FinTech Architecture",
       image: null,
       iconType: "fintech",
-      isEnterprise: true,
       summary: "Modern digital payment and financial services platform built with React (TSX), NestJS, and PostgreSQL, supporting multi-tier merchant transactions, payment gateway workflows, and real-time settlement tracking.",
       architecture: "React.tsx frontend with modular component architecture, powered by a NestJS enterprise backend, PostgreSQL relational database, and secure payment processing pipelines.",
       challenges: "Engineered idempotent payment transaction execution, resilient webhook consumption for payment gateways, high-performance PostgreSQL query optimization, and PCI-DSS aligned security practices.",
@@ -53,17 +50,16 @@ const Portfolio = () => {
       featured: true,
     },
 
-    // 2. HR & Fleet Management — Cars, Drivers & Car Inspection (Company Project - No image per NDA)
+    // 2. HR & Fleet Management Platform (Cars, Drivers & Car Inspection)
     {
       id: "fleet-hr-management",
-      title: "FleetOps — HR, Vehicle & Driver Management System",
+      title: "HR & Fleet Operations Platform",
       category: "enterprise",
       subCategory: "frontend",
-      badge: "Enterprise Fleet & HR",
+      badge: "Fleet & HR Operations",
       image: null,
       iconType: "fleet",
-      isEnterprise: true,
-      summary: "Enterprise HR and fleet management web application built to coordinate corporate drivers, vehicle allocations, shift rosters, and an end-to-end digital Car Inspection workflow with damage documentation and condition reports.",
+      summary: "Enterprise HR and fleet management web application built to coordinate drivers, vehicle allocations, shift rosters, and an end-to-end digital Car Inspection workflow with damage documentation and condition reports.",
       architecture: "Modular React.tsx architecture with robust state machines for vehicle inspection forms, real-time driver allocation views, and secure RESTful API integrations.",
       challenges: "Architected a complex multi-stage vehicle inspection wizard with photo attachments, offline checklist validation, dynamic driver shift scheduling, and status transition audit logs.",
       techStack: ["React.tsx", "TypeScript", "Tailwind CSS", "REST APIs", "Axios", "Form State Machine"],
@@ -72,17 +68,16 @@ const Portfolio = () => {
       featured: true,
     },
 
-    // 3. Planipro — Aspice Affair B2B Platform (From CV & Company Project)
+    // 3. Enterprise B2B Commerce Platform
     {
-      id: "planipro-b2b",
-      title: "Planipro — Aspice Affair Enterprise B2B Platform",
+      id: "enterprise-b2b-platform",
+      title: "Enterprise B2B Commerce Platform",
       category: "enterprise",
       subCategory: "fullstack",
-      badge: "Enterprise B2B Solution",
+      badge: "B2B Wholesale Platform",
       image: null,
       iconType: "b2b",
-      isEnterprise: true,
-      summary: "Responsive, reusable React.js and JavaScript components for Planipro, a B2B enterprise platform improving UI consistency and maintainability across multiple modules.",
+      summary: "Scalable enterprise B2B platform streamlining wholesale buyer and vendor interactions, bulk ordering systems, vendor quotation negotiation, and automated invoice tracking.",
       architecture: "React.js frontend paired with Node.js/Express backend APIs, powering interactive dashboards, order management, and reporting workflows.",
       challenges: "Optimized UI performance using lazy-loaded routes and memoization, ensuring smooth cross-browser compatibility and consistent data rendering across 10+ modules.",
       techStack: ["React.js", "TypeScript", "Node.js", "Tailwind CSS", "REST APIs", "Memoization"],
@@ -91,16 +86,15 @@ const Portfolio = () => {
       featured: true,
     },
 
-    // 4. Enterprise CRM System (Company Project - No image per NDA)
+    // 4. Enterprise CRM & Pipeline Management System
     {
       id: "enterprise-crm",
       title: "Enterprise CRM & Pipeline Management System",
       category: "enterprise",
       subCategory: "frontend",
-      badge: "Enterprise CRM Platform",
+      badge: "CRM & Pipeline Platform",
       image: null,
       iconType: "crm",
-      isEnterprise: true,
       summary: "Custom Customer Relationship Management platform built to track customer lifecycles, sales pipeline stages, interaction histories, deal forecasting, and agent performance metrics.",
       architecture: "React.tsx frontend engineered with customizable pipeline stage boards, multi-criteria lead filtering, activity audit timelines, and secure API communication.",
       challenges: "Built interactive drag-and-drop lead stage movement with optimistic UI updates, complex composite search filters, and real-time deal stage transitions.",
@@ -110,7 +104,7 @@ const Portfolio = () => {
       featured: false,
     },
 
-    // 5. BillNest — Commercial Billing Management
+    // 5. BillNest — Invoicing & Billing Management
     {
       id: "billnest",
       title: "BillNest — Billing & Invoice Platform",
@@ -118,7 +112,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "Commercial Web App",
       image: billnestImg,
-      isEnterprise: false,
       summary: "Modern invoicing and billing management system built with high-velocity data entry, calculation engines, and clean responsive UI.",
       architecture: "React.js + Tailwind CSS with modular component composition, responsive layout grids, and client-side calculation caching.",
       challenges: "Engineered seamless invoice item line additions, real-time tax/discount computation, and print-ready PDF layouts without layout shifts.",
@@ -128,7 +121,7 @@ const Portfolio = () => {
       featured: true,
     },
 
-    // 6. Qalb — Dating & Matrimonial Real-Time Platform (From CV)
+    // 6. Qalb — Dating & Matrimonial Real-Time Platform
     {
       id: "qalb",
       title: "Qalb — Real-Time Dating & Matrimonial Web App",
@@ -136,7 +129,6 @@ const Portfolio = () => {
       subCategory: "fullstack",
       badge: "Real-Time Full-Stack",
       image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
-      isEnterprise: false,
       summary: "Built 100% of the frontend from scratch using React.js, TypeScript, and Tailwind CSS with a scalable, component-based, mobile-first architecture. Featuring real-time chat and meetings.",
       architecture: "React.js frontend with Firebase Authentication (email/password + mobile OTP), real-time chat via Socket.io, and Context API global state across 5+ feature modules.",
       challenges: "Integrated 30+ REST API endpoints for profiles, matches, chats, and meetings, securing 100% of user sessions from onboarding.",
@@ -154,7 +146,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "State Management (Redux)",
       image: flavoroImg,
-      isEnterprise: false,
       summary: "Dynamic food ordering web application with category filtering, cart state persistence, search indexing, and seamless order checkout flow.",
       architecture: "Engineered using Redux Toolkit slices for centralized cart, filter, and item states. High-performance re-render isolation.",
       challenges: "Designed instant sub-category filtering without lag, dynamic quantity mutations, and responsive cart drawers for mobile viewports.",
@@ -172,7 +163,6 @@ const Portfolio = () => {
       subCategory: "fullstack",
       badge: "MERN Stack System",
       image: dogImg,
-      isEnterprise: false,
       summary: "End-to-end pet adoption platform with user authentication, protected routes, adoption application flows, and administrative CRUD panel.",
       architecture: "Full MERN stack. Express.js REST API with JWT verification, MongoDB document store, and React client deployed across Vercel & Render.",
       challenges: "Implemented secure token refresh in HTTP headers, role-based admin endpoints for approving pet listings, and schema validation with Mongoose.",
@@ -190,7 +180,6 @@ const Portfolio = () => {
       subCategory: "fullstack",
       badge: "Analytics & APIs",
       image: analyzerImg,
-      isEnterprise: false,
       summary: "Centralized developer dashboard aggregating coding statistics from LeetCode, GitHub, HackerRank, and LinkedIn into visual charts.",
       architecture: "Asynchronous API aggregator querying multiple developer platforms, caching response payloads, and rendering SVG data charts.",
       challenges: "Handled rate limiting from external developer APIs, normalized disparate profile schemas, and built responsive data visualization cards.",
@@ -208,7 +197,6 @@ const Portfolio = () => {
       subCategory: "tools",
       badge: "Developer Tool",
       image: codeImg,
-      isEnterprise: false,
       summary: "In-browser code editor featuring multi-language syntax highlighting, themes, live output console, and code sharing capabilities.",
       architecture: "Integrated CodeMirror editor engine into React lifecycle, with custom theme bindings, syntax linters, and state sync.",
       challenges: "Managed keyboard shortcuts, automated bracket closures, and maintained smooth 60fps typing without debounce lag.",
@@ -226,7 +214,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "Financial Data UI",
       image: coinImg,
-      isEnterprise: false,
       summary: "Real-time cryptocurrency tracking platform showing market capitalizations, 24-hour volume graphs, currency conversions, and price alerts.",
       architecture: "Consumes cryptocurrency ticker APIs with polling intervals and renders dynamic Chart.js time-series graphs.",
       challenges: "Engineered smooth chart animations on frequent tick updates without re-mounting canvas elements.",
@@ -244,7 +231,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "Institutional Portal",
       image: schoolImg,
-      isEnterprise: false,
       summary: "Comprehensive school web portal with academic notices, admissions guidelines, event galleries, and faculty directory.",
       architecture: "Component-driven React architecture optimized for fast mobile load times on variable 4G networks.",
       challenges: "Structured accessible navigation for non-tech-savvy parents and built image lightbox galleries with zero bundle overhead.",
@@ -262,7 +248,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "E-Commerce UI",
       image: clothingImg,
-      isEnterprise: false,
       summary: "Fashion apparel showcase featuring responsive grid collections, product filters, visual image zoom, and cart preview.",
       architecture: "Modular UI components with micro-animations for clothing collections, hover zoom previews, and cart drawer interaction.",
       challenges: "Optimized high-resolution product imagery to maintain sub-1s initial page load time.",
@@ -280,7 +265,6 @@ const Portfolio = () => {
       subCategory: "frontend",
       badge: "E-Commerce UI",
       image: floraImg,
-      isEnterprise: false,
       summary: "Clean botanical e-commerce platform designed with micro-interactions, category tabs, and smooth layout transitions.",
       architecture: "Lightweight React application highlighting minimalistic design principles and responsive flexbox layouts.",
       challenges: "Crafted subtle glassmorphism cards and clean responsive design without external heavy UI libraries.",
@@ -289,27 +273,6 @@ const Portfolio = () => {
       github: "https://github.com/uttam9721",
       featured: false,
     },
-
-    /* 
-    // --------------------------------------------------------------------------
-    // COMMENTED OUT AS PER USER REQUEST:
-    // Cart & Checkout System — Payment Workflows
-    // --------------------------------------------------------------------------
-    {
-      id: "shopingcart",
-      title: "Cart & Checkout System — Payment Workflows",
-      category: "frontend",
-      badge: "Checkout Architecture",
-      image: shopingImg,
-      summary: "Interactive shopping cart management system featuring item increments, voucher code validation, and dynamic payment breakdown.",
-      architecture: "Built with pure state reducers to test scalable cart mutations and checkout step workflows.",
-      challenges: "Synchronized cross-component cart state and simulated multiple payment gateway interfaces.",
-      techStack: ["React.js", "Bootstrap", "JavaScript", "Vercel"],
-      demo: "https://payment-liard-two.vercel.app/",
-      github: "https://github.com/uttam9721/payment",
-      featured: false,
-    },
-    */
   ];
 
   const filteredProjects = projects.filter((p) => {
@@ -332,7 +295,7 @@ const Portfolio = () => {
       case "crm":
         return <FaUsersCog className="text-amber-400" />;
       default:
-        return <FaShieldAlt className="text-sky-400" />;
+        return <FaServer className="text-sky-400" />;
     }
   };
 
@@ -349,13 +312,13 @@ const Portfolio = () => {
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono uppercase tracking-wider">
             <FaLayerGroup className="text-xs" />
-            <span>Commercial & Production Builds</span>
+            <span>Featured Systems & Builds</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">
             Shipped systems & <span className="text-heading-gradient">web applications</span>.
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Enterprise platforms, full-stack systems, and client interfaces engineered with modern frameworks.
+            Full-stack platforms, scalable web architectures, and client interfaces engineered with modern frameworks.
           </p>
         </div>
 
@@ -380,7 +343,7 @@ const Portfolio = () => {
                   : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60"
               }`}
             >
-              🏢 Enterprise & Commercial
+              Enterprise Platforms
             </button>
             <button
               onClick={() => setActiveFilter("fullstack")}
@@ -422,7 +385,7 @@ const Portfolio = () => {
               key={project.id}
               className="glass-card rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800/80 hover:border-slate-700 transition-all duration-300 group hover:-translate-y-1.5 shadow-lg shadow-black/40"
             >
-              {/* Project Header: Image OR Enterprise Confidential Banner */}
+              {/* Project Header: Screenshot OR Architecture Banner */}
               {project.image ? (
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#0a0f1d]">
                   <img
@@ -448,29 +411,25 @@ const Portfolio = () => {
                   )}
                 </div>
               ) : (
-                /* Enterprise Confidential Banner (No image per NDA requirement) */
+                /* Clean Architecture Banner */
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-gradient-to-br from-[#0c1527] via-[#09101d] to-[#060913] p-5 flex flex-col justify-between border-b border-slate-800/80">
                   <div className="absolute inset-0 tech-grid opacity-30 pointer-events-none"></div>
                   
-                  {/* Top Bar of Enterprise Card */}
+                  {/* Top Bar of Architecture Card */}
                   <div className="flex items-center justify-between relative z-10">
                     <div className="p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xl shadow-inner">
                       {getEnterpriseIcon(project.iconType)}
                     </div>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30 backdrop-blur-md">
-                      <FaLock className="text-amber-400 text-[9px]" />
-                      Company Project
+                    <span className="px-2.5 py-1 rounded-md text-[10px] font-mono uppercase tracking-wider bg-sky-500/10 text-sky-300 border border-sky-500/30 backdrop-blur-md">
+                      {project.badge}
                     </span>
                   </div>
 
-                  {/* Bottom details of Enterprise Card */}
+                  {/* Bottom details of Architecture Card */}
                   <div className="relative z-10">
-                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider bg-slate-900/90 text-sky-300 border border-sky-500/30 inline-block mb-1.5">
-                      {project.badge}
-                    </span>
                     <div className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                      Commercial Production System
+                      Production Web Architecture
                     </div>
                   </div>
                 </div>
@@ -536,7 +495,7 @@ const Portfolio = () => {
                       </a>
                     ) : (
                       <span className="text-[11px] font-mono text-slate-500 py-1.5 px-2">
-                        {project.isEnterprise ? "Enterprise NDA" : "Internal / Repo"}
+                        Production Architecture
                       </span>
                     )}
                   </div>
@@ -589,13 +548,13 @@ const Portfolio = () => {
                     <span className="px-2.5 py-1 rounded-md text-xs font-mono bg-sky-500/10 border border-sky-500/30 text-sky-400">
                       {selectedProject.badge}
                     </span>
-                    <span className="text-xs font-mono text-amber-400 flex items-center gap-1.5">
-                      <FaLock className="text-xs" />
-                      Confidential Commercial Project
+                    <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Active Production System
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400 font-mono leading-relaxed">
-                    Proprietary commercial application engineered for production business workflows. Screenshots omitted to comply with enterprise confidentiality policies.
+                  <p className="text-xs text-slate-300 font-mono leading-relaxed">
+                    Scalable architecture engineered with strict TypeScript typing, modular services, and high-performance database indexing.
                   </p>
                 </div>
               )}
@@ -675,7 +634,7 @@ const Portfolio = () => {
                 </a>
               ) : (
                 <span className="text-xs font-mono text-slate-500 px-3 py-2">
-                  {selectedProject.isEnterprise ? "Commercial Deployment Under NDA" : "Internal Repository"}
+                  Production Architecture
                 </span>
               )}
             </div>

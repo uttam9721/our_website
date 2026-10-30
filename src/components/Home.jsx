@@ -78,9 +78,9 @@ export const engineer = {
   }
 }`,
     achievements: `// verified-milestones.md
-- 💳 InDreamPay: FinTech Platform (React.tsx, NestJS, Postgres)
-- 🚗 FleetOps: HR & Vehicle Management with Car Inspection flow
-- 🏢 Planipro: Aspice Affair B2B Platform (planipro.aspiceaffair.com)
+- 💳 Digital Payment & FinTech Platform (React.tsx, NestJS, Postgres)
+- 🚗 HR & Fleet Operations with Vehicle Inspection workflow
+- 🏢 Enterprise B2B Commerce & Workflow System
 - 🚀 Published NPM Library: cb-react-smart-loader
 - 🧠 180+ Data Structures & Algorithms solved on LeetCode
 - 🏆 3-Star Java Developer Verified on HackerRank
@@ -131,7 +131,7 @@ export const engineer = {
               Full-Stack & Frontend Engineer with commercial production experience at{" "}
               <span className="text-sky-300 font-semibold">I-next Web Technologies</span> and{" "}
               <span className="text-emerald-300 font-semibold">Amzsoft Innovexa</span>. 
-              Creator of <span className="text-emerald-400 font-mono text-xs sm:text-sm bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">cb-react-smart-loader</span> on NPM and builder of scalable enterprise platforms (InDreamPay, FleetOps, Planipro).
+              Creator of <span className="text-emerald-400 font-mono text-xs sm:text-sm bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">cb-react-smart-loader</span> on NPM and builder of scalable enterprise platforms (Digital Payments, Fleet Operations, B2B Commerce).
             </p>
 
             {/* Action Buttons (Mobile-First Wrap) */}
