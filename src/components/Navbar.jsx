@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const logo = "/logo.jpg";
+const logo = "/photo.avif";
 import { Link } from "react-scroll";
 import { 
   FaBars, 

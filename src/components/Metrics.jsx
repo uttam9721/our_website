@@ -20,32 +20,46 @@ const Metrics = () => {
 
   const pinnedRepos = [
     {
+      name: "E-Learning",
+      desc: "Full-Stack LMS with modular architecture, Clerk role-based access control (RBAC), Stripe payments, and admin metrics dashboard.",
+      language: "React / Node / Clerk / Stripe",
+      category: "Full-Stack LMS",
+      link: "https://github.com/uttam9721/E-Learning",
+    },
+    {
       name: "cb-react-smart-loader",
-      desc: "Published React npm package providing customizable, lightweight smart loaders.",
-      language: "JavaScript / React",
-      stars: "Open Source",
+      desc: "Published React npm package providing zero-dependency, lightweight smart loaders with fluid SVG physics and hook controls.",
+      language: "TypeScript / React / NPM",
+      category: "NPM Package",
       link: "https://www.npmjs.com/package/cb-react-smart-loader",
     },
     {
-      name: "petWord",
-      desc: "Full-Stack MERN pet adoption web platform with JWT auth & Render deployment.",
-      language: "JavaScript / MERN",
-      stars: "Full Stack",
-      link: "https://github.com/uttam9721/petWord",
+      name: "Socketio",
+      desc: "Low-latency event-driven architecture using WebSockets / Socket.IO with multi-room broadcasting, live presence, and auto-reconnect.",
+      language: "Node.js / WebSockets / Redis",
+      category: "Real-Time Engine",
+      link: "https://github.com/uttam9721/Socketio",
     },
     {
-      name: "flavoro",
-      desc: "Food ordering application featuring Redux Toolkit state slices and cart system.",
-      language: "React.js / Redux",
-      stars: "Frontend App",
-      link: "https://github.com/uttam9721/flavoro",
+      name: "Full-Authentication",
+      desc: "Enterprise authentication flow with dual-token JWT (access/refresh), salted bcrypt password hashing, HTTP-only cookie security, and RBAC.",
+      language: "Express / JWT / Bcrypt / RBAC",
+      category: "Identity & IAM",
+      link: "https://github.com/uttam9721/Full-Authentication",
     },
     {
-      name: "DevScope",
-      desc: "Developer analytics dashboard aggregating coding metrics across platforms.",
-      language: "Node.js / React",
-      stars: "API Aggregator",
-      link: "https://github.com/uttam9721/DevScope",
+      name: "CodeView",
+      desc: "Cloud-based interactive code sandbox allowing live compilation of HTML, CSS, JS, and React with Monaco Editor and live preview.",
+      language: "React / Monaco Editor / AST",
+      category: "Developer Tooling",
+      link: "https://github.com/uttam9721/CodeView_collegeProject",
+    },
+    {
+      name: "Go-Microservice",
+      desc: "High-throughput concurrent backend service utilizing Go goroutines, channel synchronization, and idiomatic low-latency REST APIs.",
+      language: "Go (Golang) / Concurrency",
+      category: "Microservices",
+      link: "https://github.com/uttam9721/Go",
     },
   ];
 
@@ -181,23 +195,27 @@ const Metrics = () => {
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {pinnedRepos.map((repo, idx) => (
               <a
                 key={idx}
                 href={repo.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card rounded-2xl p-5 flex flex-col justify-between hover:border-slate-700 transition group hover:-translate-y-1"
+                className="glass-card rounded-2xl p-5 flex flex-col justify-between hover:border-sky-500/40 transition group hover:-translate-y-1 relative overflow-hidden"
               >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-sky-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-sky-500/15 transition-all"></div>
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <FaCodeBranch className="text-sky-400 text-sm" />
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400">
-                      {repo.stars}
-                    </span>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <FaCodeBranch className="text-sky-400 text-sm" />
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 font-semibold">
+                        {repo.category}
+                      </span>
+                    </div>
+                    <span className="text-xs text-slate-500 group-hover:text-slate-300 transition">↗</span>
                   </div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors mb-1.5">
+                  <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors mb-2 font-display">
                     {repo.name}
                   </h4>
                   <p className="text-xs text-slate-400 leading-relaxed mb-4">
@@ -205,9 +223,9 @@ const Metrics = () => {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span>{repo.language}</span>
-                  <span className="group-hover:text-slate-300 transition">View ↗</span>
+                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span className="text-slate-400 font-medium">{repo.language}</span>
+                  <span className="text-sky-400 group-hover:translate-x-0.5 transition-transform">Explore Codebase</span>
                 </div>
               </a>
             ))}

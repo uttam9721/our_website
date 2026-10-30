@@ -1,4 +1,3 @@
-import React from "react";
 import CountUp from "react-countup";
 import { TypeAnimation } from "react-type-animation";
 import { FaEye, FaUsers, FaFolderOpen, FaStar, FaCodeBranch, FaFireAlt, FaTrophy } from "react-icons/fa";
