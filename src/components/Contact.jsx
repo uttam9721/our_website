@@ -215,9 +215,10 @@ const Contact = () => {
               {/* Action Buttons */}
               <div className="grid sm:grid-cols-2 gap-3 pt-2">
                 <a
-                  href="/UttamKumarCV.pdf"
+                  href="/Uttam_Kumar_CV.pdf?v=20261031"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Uttam_Kumar_CV.pdf"
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 shadow-md shadow-sky-500/20 transition"
                 >
                   <FaFilePdf />

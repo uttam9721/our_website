@@ -148,9 +148,10 @@ export const engineer = {
               </Link>
 
               <a
-                href="/UttamKumarCV.pdf"
+                href="/Uttam_Kumar_CV.pdf?v=20261031"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Uttam_Kumar_CV.pdf"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm text-slate-200 bg-slate-800/90 hover:bg-slate-700 border border-slate-700/80 hover:border-slate-600 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <FaFilePdf className="text-rose-400" />

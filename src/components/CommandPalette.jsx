@@ -75,7 +75,7 @@ const CommandPalette = ({ isOpen, onClose }) => {
       category: "Quick Actions",
       items: [
         { id: "action-copy-email", label: "Copy Email (uttammaurya377@gmail.com)", icon: <FaCopy className="text-sky-400" />, action: copyEmail },
-        { id: "action-resume", label: "Download Resume / CV (PDF)", icon: <FaFilePdf className="text-rose-400" />, action: () => { window.open("/UttamKumarCV.pdf", "_blank"); onClose(); } },
+        { id: "action-resume", label: "Download Resume / CV (PDF)", icon: <FaFilePdf className="text-rose-400" />, action: () => { window.open("/Uttam_Kumar_CV.pdf?v=20261031", "_blank"); onClose(); } },
       ],
     },
     {

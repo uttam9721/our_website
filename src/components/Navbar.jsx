@@ -102,9 +102,10 @@ const Navbar = ({ onOpenCommandPalette }) => {
 
               {/* Resume Download Button */}
               <a
-                href="/UttamKumarCV.pdf"
+                href="/Uttam_Kumar_CV.pdf?v=20261031"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Uttam_Kumar_CV.pdf"
                 className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 shadow-md shadow-sky-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <FaFilePdf className="text-sm" />
@@ -154,9 +155,10 @@ const Navbar = ({ onOpenCommandPalette }) => {
                   <span>Open Quick Command Palette</span>
                 </button>
                 <a
-                  href="/UttamKumarCV.pdf"
+                  href="/Uttam_Kumar_CV.pdf?v=20261031"
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Uttam_Kumar_CV.pdf"
                   className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 shadow-md shadow-sky-500/20"
                 >
                   <FaFilePdf />
