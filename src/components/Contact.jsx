@@ -212,6 +212,39 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* Preferred Job Locations Card */}
+              <div className="p-4 rounded-xl bg-gradient-to-br from-[#0c1527] via-slate-900/90 to-[#080d19] border border-sky-500/30 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 rounded-lg bg-sky-500/10 text-sky-400 text-xs">
+                      <FaMapMarkerAlt />
+                    </div>
+                    <p className="text-[10px] font-mono uppercase text-sky-300 font-semibold tracking-wider">
+                      Preferred Job Locations
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Open to Relocate
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Currently based in Bangalore, actively exploring Full-Time opportunities across:
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {["Noida", "Gurgaon", "Delhi NCR", "Pune", "Bangalore"].map((city) => (
+                    <span
+                      key={city}
+                      className="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium hover:border-sky-500/50 hover:bg-slate-800 transition shadow-sm"
+                    >
+                      📍 {city}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               {/* Action Buttons */}
               <div className="grid sm:grid-cols-2 gap-3 pt-2">
                 <a

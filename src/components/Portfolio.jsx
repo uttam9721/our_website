@@ -44,7 +44,7 @@ const Portfolio = () => {
       architecture: "Modular React.js client architecture styled with Tailwind CSS, utilizing Auth0 Organizations for multi-tenant fleet isolation, role-based route guards for Admin vs User privileges, and Swagger-documented REST APIs for directional telemetry, emergency stop controls, and live device diagnostics.",
       architectureNote: "Enterprise robotics teleoperation dashboard engineered with React.js, Tailwind CSS, Auth0 Organizations (dual User/Admin roles), and Swagger OpenAPI endpoints.",
       challenges: "Configured dual-role Auth0 authentication workflows with dynamic organization tenant creation, integrated and validated Swagger endpoints for real-time robotic controls, and built an ultra-responsive operator cockpit UI with zero debounce latency.",
-      techStack: ["React.js", "Tailwind CSS", "Auth0 (RBAC & Orgs)", "Swagger / OpenAPI", "REST APIs", "Axios"],
+      techStack: ["React.js", "Tailwind CSS", "Auth0 (RBAC & Orgs)", "Swagger", "REST APIs", "Axios"],
       demo: "",
       github: null,
       featured: true,

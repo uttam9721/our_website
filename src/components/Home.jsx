@@ -113,8 +113,18 @@ export const engineer = {
             <span>Available for Full-Time & High-Impact Roles</span>
           </div>
 
+          <div className="inline-flex items-center flex-wrap sm:flex-nowrap gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-xl sm:rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono shadow-sm backdrop-blur-sm">
+            <span className="flex items-center gap-1.5 text-sky-300 font-semibold shrink-0">
+              <FaMapMarkerAlt className="text-sky-400 text-xs" />
+              <span>Preferred Job Locations:</span>
+            </span>
+            <span className="text-slate-100 font-medium">
+              Noida <span className="text-slate-500">•</span> Gurgaon <span className="text-slate-500">•</span> Delhi <span className="text-slate-500">•</span> Pune <span className="text-slate-500">•</span> Bangalore
+            </span>
+          </div>
+
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-slate-400 text-xs font-mono">
-            <FaMapMarkerAlt className="text-sky-400 text-[11px]" />
+            <span className="text-slate-400">Current Base:</span>
             <span>Bangalore, IN</span>
             <span className="text-slate-600">•</span>
             <FaClock className="text-slate-400 text-[11px]" />
