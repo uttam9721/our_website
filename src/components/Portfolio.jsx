@@ -43,7 +43,7 @@ const Portfolio = () => {
       summary: "Mission-critical robotics control and teleoperation web platform engineered with React.js and Tailwind CSS. Implemented Auth0 authentication supporting dual login options ('Login with User' for operators & 'Login with Admin' for fleet supervisors), Auth0 Organization creation for multi-tenant enterprise isolation, and Swagger / OpenAPI integration for real-time robot command dispatch, status telemetry, and emergency controls.",
       architecture: "Modular React.js client architecture styled with Tailwind CSS, utilizing Auth0 Organizations for multi-tenant fleet isolation, role-based route guards for Admin vs User privileges, and Swagger-documented REST APIs for directional telemetry, emergency stop controls, and live device diagnostics.",
       architectureNote: "Enterprise robotics teleoperation dashboard engineered with React.js, Tailwind CSS, Auth0 Organizations (dual User/Admin roles), and Swagger OpenAPI endpoints.",
-      challenges: "Configured dual-role Auth0 authentication workflows with dynamic organization tenant creation, integrated and validated Swagger/OpenAPI endpoints for real-time robotic controls, and built an ultra-responsive operator cockpit UI with zero debounce latency.",
+      challenges: "Configured dual-role Auth0 authentication workflows with dynamic organization tenant creation, integrated and validated Swagger endpoints for real-time robotic controls, and built an ultra-responsive operator cockpit UI with zero debounce latency.",
       techStack: ["React.js", "Tailwind CSS", "Auth0 (RBAC & Orgs)", "Swagger / OpenAPI", "REST APIs", "Axios"],
       demo: "",
       github: null,

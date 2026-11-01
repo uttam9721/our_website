@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import toast from "react-hot-toast";
-import { 
-  FaLinkedin, 
-  FaGithub, 
-  FaCopy, 
-  FaCheck, 
-  FaArrowRight, 
-  FaFilePdf, 
-  FaNpm, 
-  FaClock, 
-  FaMapMarkerAlt, 
+import {
+  FaLinkedin,
+  FaGithub,
+  FaCopy,
+  FaCheck,
+  FaArrowRight,
+  FaFilePdf,
+  FaNpm,
+  FaClock,
+  FaMapMarkerAlt,
   FaLaptopCode,
-  FaPhoneAlt 
+  FaPhoneAlt,
+  FaBriefcase,
+  FaUserCheck,
+  FaExternalLinkAlt,
+  FaServer,
+  FaAward,
+  FaRobot
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const Home = () => {
   const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState("typescript");
+  const [activeTab, setActiveTab] = useState("overview"); // Default open: Visual Details UI
   const [currentTime, setCurrentTime] = useState("");
 
   // Live Bangalore Time (IST UTC+5:30)
@@ -51,10 +57,10 @@ const Home = () => {
     typescript: `// uttam-engineer.config.ts
 export const engineer = {
   name: "Uttam Kumar",
-  title: "Full-Stack & Frontend Engineer",
+  title: "Full-Stack & Frontend Developer",
   location: "Bangalore, India",
   phone: "+91 9721039470",
-  currentRole: "Frontend Developer @ I-next Web Technologies",
+  currentRole: "Frontend Developer",
   stack: {
     frontend: ["React.js (TSX)", "TypeScript", "Next.js", "Tailwind CSS"],
     backend: ["Node.js", "NestJS", "Express.js", "REST APIs", "Socket.io"],
@@ -62,7 +68,7 @@ export const engineer = {
     database: ["PostgreSQL", "MongoDB", "SQL / MySQL"]
   },
   publishedLib: "cb-react-smart-loader (npm)",
-  availability: "Open to Full-Time Engineering Roles"
+  availability: "Open to Full-Time Developer Roles"
 };`,
     architecture: `// system-architecture.json
 {
@@ -130,8 +136,8 @@ export const engineer = {
             </div>
 
             <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
-              Full-Stack & Frontend Engineer with commercial production experience at{" "}
-              <span className="text-sky-300 font-semibold">I-next Web Technologies</span>. 
+              Full-Stack & Frontend Developer with commercial production experience at{" "}
+              <span className="text-sky-300 font-semibold">I-next Web Technologies</span>.
               Creator of <span className="text-emerald-400 font-mono text-xs sm:text-sm bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">cb-react-smart-loader</span> on NPM and builder of high-performance, scalable enterprise web platforms.
             </p>
 
@@ -240,64 +246,262 @@ export const engineer = {
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-500/80 inline-block"></span>
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500/80 inline-block"></span>
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                  <span className="ml-1 sm:ml-2 text-[11px] sm:text-xs font-mono text-slate-400 flex items-center gap-1">
-                    <FaLaptopCode className="text-sky-400 text-xs" />
-                    developer-spec.ts
+                  <span className="ml-1 sm:ml-2 text-[11px] sm:text-xs font-mono text-slate-300 flex items-center gap-1.5">
+                    {activeTab === "overview" && (
+                      <>
+                        <FaUserCheck className="text-emerald-400 text-xs" />
+                        <span>uttam-profile.card</span>
+                      </>
+                    )}
+                    {activeTab === "typescript" && (
+                      <>
+                        <FaLaptopCode className="text-sky-400 text-xs" />
+                        <span>developer-spec.ts</span>
+                      </>
+                    )}
+                    {activeTab === "architecture" && (
+                      <>
+                        <FaServer className="text-indigo-400 text-xs" />
+                        <span>system-architecture.json</span>
+                      </>
+                    )}
+                    {activeTab === "achievements" && (
+                      <>
+                        <FaAward className="text-amber-400 text-xs" />
+                        <span>verified-milestones.md</span>
+                      </>
+                    )}
                   </span>
                 </div>
-                <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-slate-500 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
-                  Node v20.x
-                </span>
+                <div>
+                  {activeTab === "overview" ? (
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/60 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Verified Developer
+                    </span>
+                  ) : (
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-slate-500 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                      Node v20.x
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Terminal Tabs */}
               <div className="flex border-b border-slate-800/80 bg-[#090e1c] text-[11px] sm:text-xs font-mono overflow-x-auto hide-scrollbar">
                 <button
+                  onClick={() => setActiveTab("overview")}
+                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition flex items-center gap-1.5 ${activeTab === "overview"
+                      ? "border-emerald-400 text-emerald-300 bg-slate-800/50 font-semibold"
+                      : "border-transparent text-slate-400 hover:text-slate-200"
+                    }`}
+                >
+                  <FaUserCheck className="text-emerald-400 text-xs" />
+                  <span>Overview</span>
+                  <span className="text-[9px] px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    UI
+                  </span>
+                </button>
+                <button
                   onClick={() => setActiveTab("typescript")}
-                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${
-                    activeTab === "typescript"
+                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${activeTab === "typescript"
                       ? "border-sky-400 text-sky-300 bg-slate-800/40 font-semibold"
                       : "border-transparent text-slate-500 hover:text-slate-300"
-                  }`}
+                    }`}
                 >
                   Config
                 </button>
                 <button
                   onClick={() => setActiveTab("architecture")}
-                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${
-                    activeTab === "architecture"
+                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${activeTab === "architecture"
                       ? "border-sky-400 text-sky-300 bg-slate-800/40 font-semibold"
                       : "border-transparent text-slate-500 hover:text-slate-300"
-                  }`}
+                    }`}
                 >
                   Architecture
                 </button>
                 <button
                   onClick={() => setActiveTab("achievements")}
-                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${
-                    activeTab === "achievements"
+                  className={`px-3 py-2 border-b-2 whitespace-nowrap transition ${activeTab === "achievements"
                       ? "border-sky-400 text-sky-300 bg-slate-800/40 font-semibold"
                       : "border-transparent text-slate-500 hover:text-slate-300"
-                  }`}
+                    }`}
                 >
                   Highlights
                 </button>
               </div>
 
-              {/* Code Content Area (Responsive Scrolling) */}
-              <div className="p-3 sm:p-5 font-mono text-[10px] sm:text-xs text-slate-300 leading-relaxed overflow-x-auto bg-[#0b101e] min-h-[240px] sm:min-h-[280px]">
-                <pre className="text-slate-300 font-mono">
-                  <code>{codeSnippets[activeTab]}</code>
-                </pre>
-              </div>
+              {/* Tab Content: Visual Overview UI (Default) OR Code Content */}
+              {activeTab === "overview" ? (
+                <div className="p-3.5 sm:p-5 bg-[#0b101e] space-y-3 font-sans">
+                  {/* Profile Identity Card */}
+                  <div className="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-slate-900 via-slate-900/80 to-[#0e182f] border border-slate-800 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-sky-500/20 font-display shrink-0">
+                        UK
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-sm sm:text-base font-display font-bold text-white tracking-tight truncate">
+                            Uttam Kumar
+                          </h3>
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" title="Active & Available"></span>
+                        </div>
+                        <p className="text-[11px] sm:text-xs text-sky-400 font-medium truncate">
+                          Full-Stack & Frontend Developer
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                      <span>Available for Hire</span>
+                    </div>
+                  </div>
+
+                  {/* 2x2 Details Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    {/* Current Company */}
+                    <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                      <div className="p-1.5 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-400 mt-0.5 shrink-0">
+                        <FaBriefcase className="text-xs" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="text-[10px] font-mono uppercase text-slate-500 block">Current Role</span>
+                        <span className="text-slate-200 text-xs font-semibold truncate block">
+                          Frontend Developer
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Location */}
+                    <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                      <div className="p-1.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mt-0.5 shrink-0">
+                        <FaMapMarkerAlt className="text-xs" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="text-[10px] font-mono uppercase text-slate-500 block">Location</span>
+                        <span className="text-slate-200 text-xs font-semibold truncate block">
+                          Bangalore, India <span className="text-[10px] text-slate-500 font-mono">(IST UTC+5:30)</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Direct Contact */}
+                    <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                      <div className="p-1.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 mt-0.5 shrink-0">
+                        <FaPhoneAlt className="text-xs" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="text-[10px] font-mono uppercase text-slate-500 block">Direct Contact</span>
+                        <a href="tel:+919721039470" className="text-slate-200 text-xs font-semibold hover:text-amber-400 font-mono block truncate">
+                          +91 9721039470
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Published NPM Package */}
+                    <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                      <div className="p-1.5 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-500 mt-0.5 shrink-0">
+                        <FaNpm className="text-sm" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="text-[10px] font-mono uppercase text-slate-500 block">Published NPM Library</span>
+                        <a
+                          href="https://www.npmjs.com/package/cb-react-smart-loader"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-200 text-xs font-semibold hover:text-rose-400 font-mono flex items-center gap-1 truncate"
+                        >
+                          <span className="truncate">cb-react-smart-loader</span>
+                          <FaExternalLinkAlt className="text-[9px] text-slate-500 shrink-0" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Core Stack Breakdown */}
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+                      Core Engineering Stack
+                    </span>
+
+                    <div className="space-y-1.5 text-[11px]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-16 font-mono text-[10px] text-sky-400 shrink-0">Frontend:</span>
+                        <div className="flex flex-wrap gap-1">
+                          {["React.js (TSX)", "TypeScript", "Next.js", "Tailwind CSS"].map((t) => (
+                            <span key={t} className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-sky-950/60 text-sky-300 border border-sky-800/60">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <span className="w-16 font-mono text-[10px] text-emerald-400 shrink-0">Backend:</span>
+                        <div className="flex flex-wrap gap-1">
+                          {["Node.js", "NestJS", "Express.js", "REST APIs", "Socket.io"].map((t) => (
+                            <span key={t} className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-950/60 text-emerald-300 border border-emerald-800/60">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <span className="w-16 font-mono text-[10px] text-amber-400 shrink-0">Auth & DB:</span>
+                        <div className="flex flex-wrap gap-1">
+                          {["Auth0", "JWT & RBAC", "Firebase", "PostgreSQL", "MongoDB"].map((t) => (
+                            <span key={t} className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-amber-950/50 text-amber-300 border border-amber-800/50">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick Action Footer Strip (Commented out)
+                  <div className="pt-0.5 flex items-center justify-between text-[11px] font-mono">
+                    <button
+                      onClick={copyEmail}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition"
+                    >
+                      <FaCopy className="text-[10px] text-sky-400" />
+                      <span>{copied ? "Copied!" : "Copy Email"}</span>
+                    </button>
+
+                    <a
+                      href="/Uttam_Kumar_CV.pdf?v=20261031"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-600/90 hover:bg-sky-500 text-white font-medium shadow-sm transition"
+                    >
+                      <FaFilePdf className="text-[10px]" />
+                      <span>Download CV</span>
+                    </a>
+                  </div>
+                  */}
+                </div>
+              ) : (
+                /* Code Content Area (Responsive Scrolling) */
+                <div className="p-3 sm:p-5 font-mono text-[10px] sm:text-xs text-slate-300 leading-relaxed overflow-x-auto bg-[#0b101e] min-h-[240px] sm:min-h-[280px]">
+                  <pre className="text-slate-300 font-mono">
+                    <code>{codeSnippets[activeTab]}</code>
+                  </pre>
+                </div>
+              )}
 
               {/* Terminal Footer */}
               <div className="px-3 sm:px-4 py-2 bg-[#080c17] border-t border-slate-800 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-400">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span>production/main</span>
+                  <span>{activeTab === "overview" ? "profile/verified" : "production/main"}</span>
                 </div>
-                <span className="text-slate-500">TypeScript • UTF-8</span>
+                <span className="text-slate-500">
+                  {activeTab === "overview" ? "Uttam Kumar • Verified Engineer" : "TypeScript • UTF-8"}
+                </span>
               </div>
             </div>
           </div>
