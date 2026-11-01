@@ -26,7 +26,7 @@ I'm a passionate **Frontend & Full Stack Developer** who enjoys building modern,
 * 🧠 Improving my **Data Structures & Algorithms** skills
 * ⚛️ Strong interest in **React.js, Next.js & TypeScript**
 * 🚀 Experienced with **MERN Stack & REST APIs**
-* 🏢 Worked on **ERP, HR Management, FinTech, LMS & B2B platforms**
+* 🏢 Worked on **Robotics Teleoperation, ERP, HR Management, FinTech, LMS & B2B platforms**
 * 💬 Ask me about **React.js, JavaScript, TypeScript, Node.js, Express.js & MongoDB**
 * 📫 Email: **[uttammaurya377@gmail.com](mailto:uttammaurya377@gmail.com)**
 * 🌐 Portfolio: **https://modexa.in/**
@@ -42,7 +42,7 @@ Database                → MongoDB, MySQL
 Authentication          → JWT, Firebase, Auth0
 Payments                → Stripe
 Real-Time Applications  → Socket.io
-Tools & Platforms       → Git, GitHub, Docker, Postman
+Tools & Platforms       → Git, GitHub, Docker, Postman, Swagger
 Currently Learning      → Python & Generative AI
 Problem Solving        → Data Structures & Algorithms
 \`\`\`
@@ -78,6 +78,28 @@ Problem Solving        → Data Structures & Algorithms
 ---
 
 # 🚀 Featured Projects
+
+## 🤖 Autonomous Robot Control & Fleet Teleoperation Platform
+
+**Enterprise Robotics & Teleoperation Platform**
+
+A mission-critical robot control and teleoperation web application engineered for real-time robotic command dispatch, telemetry monitoring, and multi-tenant organization fleet management.
+
+### Key Features
+
+* 🤖 Real-time robot control & teleoperation command interface
+* 🔐 Dual Auth0 login options: "Login with User" (operator) & "Login with Admin" (fleet supervisor)
+* 🏢 Auth0 Organizations integration with dynamic multi-tenant organization creation & management
+* 🔌 Swagger / OpenAPI REST API integration for robot telemetry, hardware status, and control endpoints
+* 🛡️ Role-Based Access Control (RBAC) protecting sensitive robot movement & emergency controls
+* 📱 High-performance responsive dashboard built with React.js and Tailwind CSS
+* ⚡ Live device status monitoring, battery/sensor diagnostics, and alert system
+
+### Technologies
+
+\`React.js\` \`Tailwind CSS\` \`Auth0 (RBAC & Orgs)\` \`Swagger / OpenAPI\` \`REST APIs\` \`Axios\`
+
+---
 
 ## 💕 Qalb — Dating & Matrimonial Platform
 

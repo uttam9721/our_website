@@ -10,7 +10,8 @@ import {
   FaCreditCard, 
   FaCar, 
   FaBoxes, 
-  FaUsersCog 
+  FaUsersCog,
+  FaRobot
 } from "react-icons/fa";
 
 // Import real project screenshots from assets for builds with images
@@ -30,7 +31,26 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    // 1. Digital Payment & FinTech Platform
+    // 1. Autonomous Robot Control & Fleet Teleoperation Platform
+    {
+      id: "robotics-control-platform",
+      title: "Autonomous Robot Teleoperation & Fleet Control Platform",
+      category: "enterprise",
+      subCategory: "frontend",
+      badge: "Robotics & Teleoperation",
+      image: null,
+      iconType: "robotics",
+      summary: "Mission-critical robotics control and teleoperation web platform engineered with React.js and Tailwind CSS. Implemented Auth0 authentication supporting dual login options ('Login with User' for operators & 'Login with Admin' for fleet supervisors), Auth0 Organization creation for multi-tenant enterprise isolation, and Swagger / OpenAPI integration for real-time robot command dispatch, status telemetry, and emergency controls.",
+      architecture: "Modular React.js client architecture styled with Tailwind CSS, utilizing Auth0 Organizations for multi-tenant fleet isolation, role-based route guards for Admin vs User privileges, and Swagger-documented REST APIs for directional telemetry, emergency stop controls, and live device diagnostics.",
+      architectureNote: "Enterprise robotics teleoperation dashboard engineered with React.js, Tailwind CSS, Auth0 Organizations (dual User/Admin roles), and Swagger OpenAPI endpoints.",
+      challenges: "Configured dual-role Auth0 authentication workflows with dynamic organization tenant creation, integrated and validated Swagger/OpenAPI endpoints for real-time robotic controls, and built an ultra-responsive operator cockpit UI with zero debounce latency.",
+      techStack: ["React.js", "Tailwind CSS", "Auth0 (RBAC & Orgs)", "Swagger / OpenAPI", "REST APIs", "Axios"],
+      demo: "",
+      github: null,
+      featured: true,
+    },
+
+    // 2. Digital Payment & FinTech Platform
     {
       id: "digital-payments-platform",
       title: "Digital Payment & FinTech Platform",
@@ -284,6 +304,8 @@ const Portfolio = () => {
 
   const getEnterpriseIcon = (type) => {
     switch (type) {
+      case "robotics":
+        return <FaRobot className="text-cyan-400" />;
       case "fintech":
         return <FaCreditCard className="text-emerald-400" />;
       case "fleet":
@@ -552,7 +574,7 @@ const Portfolio = () => {
                     </span>
                   </div>
                   <p className="text-xs text-slate-300 font-mono leading-relaxed">
-                    Scalable architecture engineered with strict TypeScript typing, modular services, and high-performance database indexing.
+                    {selectedProject.architectureNote || "Scalable architecture engineered with strict TypeScript typing, modular services, and high-performance database indexing."}
                   </p>
                 </div>
               )}

@@ -20,6 +20,7 @@ import {
   SiGithub, 
   SiDocker, 
   SiPostman, 
+  SiSwagger,
   SiVite, 
   SiNpm 
 } from "react-icons/si";
@@ -65,7 +66,7 @@ const Skills = () => {
       skills: [
         { name: "Firebase Auth", level: "Advanced", icon: <SiFirebase className="text-amber-400" />, note: "Phone OTP, Email/Password, Social Providers" },
         { name: "Clerk", level: "Proficient", icon: <SiClerk className="text-purple-400" />, note: "Modern Session Management, User Profiles, MFA" },
-        { name: "Auth0", level: "Proficient", icon: <SiAuth0 className="text-orange-400" />, note: "Universal Login, SSO, Multi-Tenant Auth" },
+        { name: "Auth0", level: "Proficient", icon: <SiAuth0 className="text-orange-400" />, note: "Organizations, User & Admin Roles, Multi-Tenant Auth" },
         { name: "JWT Authentication", level: "Advanced", icon: <FaKey className="text-emerald-400" />, note: "Access & Refresh Tokens, Header Verification" },
         { name: "RBAC (Access Control)", level: "Advanced", icon: <FaShieldAlt className="text-sky-400" />, note: "Role-Based Route Guards, Protected Views" },
       ],
@@ -88,9 +89,10 @@ const Skills = () => {
       icon: <FaTools className="text-amber-400" />,
       description: "Production packaging, version control branching, automated deployments, and API validation.",
       skills: [
+        { name: "Swagger / OpenAPI", level: "Advanced", icon: <SiSwagger className="text-emerald-400" />, note: "API Contracts, Schema Validation, Endpoint Testing" },
+        { name: "Postman", level: "Advanced", icon: <SiPostman className="text-orange-400" />, note: "API collections, automated testing, mock servers" },
         { name: "Git & GitHub", level: "Advanced", icon: <SiGithub className="text-slate-200" />, note: "Branching strategies, PR reviews, merge management" },
         { name: "Docker", level: "Intermediate", icon: <SiDocker className="text-sky-400" />, note: "Containerization, Dockerfiles, dev environments" },
-        { name: "Postman", level: "Advanced", icon: <SiPostman className="text-orange-400" />, note: "API collections, automated testing, mock servers" },
         { name: "NPM Publishing", level: "Proficient", icon: <SiNpm className="text-red-500" />, note: "Package bundling, semantic versioning, readme docs" },
         { name: "Vite & Vercel", level: "Advanced", icon: <SiVite className="text-purple-400" />, note: "Lightning builds, instant preview deployments" },
       ],

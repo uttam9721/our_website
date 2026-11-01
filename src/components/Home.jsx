@@ -79,6 +79,7 @@ export const engineer = {
   }
 }`,
     achievements: `// verified-milestones.md
+- 🤖 Robotics Teleoperation & Fleet Control (React, Tailwind, Auth0 Orgs, Swagger API)
 - 💳 Digital Payment & FinTech Platform (React.tsx, NestJS, Postgres)
 - 🚗 HR & Fleet Operations with Vehicle Inspection workflow
 - 🏢 Enterprise B2B Commerce & Workflow System
@@ -317,7 +318,7 @@ export const engineer = {
               20+ <span className="text-emerald-400 text-base sm:text-xl font-mono">Projects</span>
             </div>
             <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Shipped & Production Apps</p>
-            <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 font-mono">FinTech, B2B, ERP</p>
+            <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 font-mono">Robotics, FinTech, B2B, ERP</p>
           </div>
 
           <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c1222]/80 border border-slate-800/80 shadow-md backdrop-blur-md">
