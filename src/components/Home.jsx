@@ -519,12 +519,20 @@ export const engineer = {
 
         {/* Engineering Highlights / Impact Metrics Strip (Responsive 2x2 Grid on Mobile) */}
         <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-          <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c1222]/80 border border-slate-800/80 shadow-md backdrop-blur-md">
+          {/* <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c1222]/80 border border-slate-800/80 shadow-md backdrop-blur-md">
             <div className="text-xl sm:text-3xl font-display font-bold text-white mb-0.5 sm:mb-1">
-              1+ <span className="text-sky-400 text-base sm:text-xl font-mono">Yrs Exp</span>
+              1.5+ <span className="text-sky-400 text-base sm:text-xl font-mono">Yrs Exp</span>
             </div>
             <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Commercial Engineering</p>
             <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 font-mono">I-next & Amzsoft</p>
+          </div> */}
+          <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c1222]/80 border border-slate-800/80 shadow-md backdrop-blur-md">
+            <div className="text-xl sm:text-3xl font-display font-bold text-white mb-0.5 sm:mb-1">
+              1.5+ <span className="text-sky-400 text-base sm:text-xl font-mono">Years</span>
+            </div>
+            <p className="text-[11px] sm:text-xs text-slate-400 font-medium">
+              MERN Stack & Full-Stack Development
+            </p>
           </div>
 
           <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[#0c1222]/80 border border-slate-800/80 shadow-md backdrop-blur-md">
